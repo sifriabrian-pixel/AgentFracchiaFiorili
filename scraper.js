@@ -1,153 +1,151 @@
-// scraper.js
-// Extrae todas las propiedades de fracchiapropiedades.com.ar y genera properties.json
+// scraper.js — usa Puppeteer para renderizar JS y obtener todas las propiedades
 
-import axios from 'axios'
-import * as cheerio from 'cheerio'
+import puppeteer from 'puppeteer'
 import fs from 'fs'
 
 const BASE_URL = 'https://www.fracchiapropiedades.com.ar'
-const DELAY_MS = 600
 const sleep = (ms) => new Promise(r => setTimeout(r, ms))
 
-const headers = {
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-  'Accept-Language': 'es-AR,es;q=0.9',
-  'Referer': 'https://www.fracchiapropiedades.com.ar/'
-}
-
-async function fetchAllPropertyIds() {
+async function fetchAllPropertyIds(page) {
   const ids = new Set()
-  console.log('📋 Recolectando IDs por secciones...\n')
+  console.log('📋 Cargando listado de propiedades...\n')
 
-  // Secciones por localidad + operación
-  const sections = [
-    `${BASE_URL}/propiedades`,
-    `${BASE_URL}/propiedades/venta`,
-    `${BASE_URL}/propiedades/alquiler`,
-    `${BASE_URL}/propiedades/monte-grande`,
-    `${BASE_URL}/propiedades/luis-guillon`,
-    `${BASE_URL}/propiedades/canning`,
-    `${BASE_URL}/propiedades/canninge`,
-    `${BASE_URL}/propiedades/ezeiza`,
-    `${BASE_URL}/propiedades/tristan-suarez`,
-    `${BASE_URL}/propiedades/la-union`,
-    `${BASE_URL}/propiedades/lomas-de-zamora`,
-    `${BASE_URL}/propiedades/mar-del-tuyu`,
-    `${BASE_URL}/propiedades/ramos-mejia`,
-    `${BASE_URL}/propiedades/ranchos`,
-    `${BASE_URL}/propiedades/san-bernardo`,
-    `${BASE_URL}/propiedades/alejandro-petion`,
-    `${BASE_URL}/propiedades/el-jaguel`,
-    `${BASE_URL}/propiedades/general-las-heras`,
-  ]
+  await page.goto(`${BASE_URL}/propiedades`, { waitUntil: 'networkidle2', timeout: 30000 })
 
-  // Para cada sección intentar hasta 10 páginas
-  for (const section of sections) {
-    for (let page = 1; page <= 10; page++) {
-      try {
-        const url = page === 1 ? section : `${section}/${page}`
-        const { data } = await axios.get(url, { headers, timeout: 15000 })
-        const $ = cheerio.load(data)
+  // Hacer scroll hasta el fondo para disparar el lazy loading
+  let previousHeight = 0
+  let attempts = 0
 
-        let newFound = 0
-        $('a[href*="/propiedad/"]').each((_, el) => {
-          const match = ($(el).attr('href') || '').match(/\/propiedad\/(\d+)/)
-          if (match && !ids.has(match[1])) {
-            ids.add(match[1])
-            newFound++
-          }
-        })
+  while (attempts < 20) {
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+    await sleep(2000)
 
-        if (newFound === 0) break // no hay más páginas en esta sección
-        console.log(`  ${section.split('/').pop()} p${page}: +${newFound} (total: ${ids.size})`)
-        await sleep(DELAY_MS)
+    const currentHeight = await page.evaluate(() => document.body.scrollHeight)
+    const links = await page.$$eval('a[href*="/propiedad/"]', els =>
+      els.map(el => el.getAttribute('href'))
+    )
 
-      } catch { break }
-    }
+    links.forEach(href => {
+      const match = href?.match(/\/propiedad\/(\d+)/)
+      if (match) ids.add(match[1])
+    })
+
+    console.log(`  Scroll ${attempts + 1}: ${ids.size} propiedades encontradas`)
+
+    if (currentHeight === previousHeight) break
+    previousHeight = currentHeight
+    attempts++
   }
 
   return [...ids]
 }
 
-async function fetchProperty(id) {
+async function fetchProperty(page, id) {
   try {
     const url = `${BASE_URL}/propiedad/${id}`
-    const { data } = await axios.get(url, { headers, timeout: 15000 })
-    const $ = cheerio.load(data)
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 })
+    await sleep(800)
 
-    const titulo = $('title').text().replace(' - Fracchia - Fiorioli Propiedades', '').trim()
+    const data = await page.evaluate(() => {
+      const getText = (selector) => document.querySelector(selector)?.innerText?.trim() || null
+      const getAll  = (selector) => [...document.querySelectorAll(selector)].map(el => el.innerText.trim())
 
-    let precio = null
-    $('*').each((_, el) => {
-      const t = $(el).clone().children().remove().end().text().trim()
-      if (!precio && (t.includes('USD') || t.match(/^\$\s*[\d.]+/)) && t.length < 25) precio = t
-    })
+      // Título
+      const titulo = document.title.replace(' - Fracchia - Fiorioli Propiedades', '').trim()
 
-    let operacion = null
-    $('*').each((_, el) => {
-      const t = $(el).clone().children().remove().end().text().trim()
-      if (!operacion && (t === 'Venta' || t === 'Alquiler')) operacion = t
-    })
-
-    const tipos = ['Departamentos','Casas','Lotes / Terrenos','Dúplex/Tríplex','PH','Locales','Cocheras','Campos','Depósitos / Galpones','Inmuebles Comerciales']
-    let tipo = null
-    $('*').each((_, el) => {
-      const t = $(el).clone().children().remove().end().text().trim()
-      if (!tipo && tipos.includes(t)) tipo = t
-    })
-
-    const getNum = (keywords) => {
-      let val = null
-      $('*').each((_, el) => {
-        if (val) return false
-        const t = $(el).text().trim()
-        for (const kw of keywords) {
-          if (t.toLowerCase().includes(kw) && t.length < 50) {
-            const match = t.match(/(\d+)/)
-            if (match) { val = match[1]; return false }
-          }
-        }
+      // Precio
+      let precio = null
+      document.querySelectorAll('*').forEach(el => {
+        if (precio) return
+        const t = el.childNodes.length === 1 ? el.innerText?.trim() : null
+        if (t && (t.includes('USD') || t.match(/^\$\s*[\d.]+/)) && t.length < 25) precio = t
       })
-      return val
-    }
 
-    const ambientes   = getNum(['ambiente'])
-    const dormitorios = getNum(['dormitorio'])
-    const banos       = getNum(['baño'])
-    const supCubierta = getNum(['cubierta'])
-    const supTotal    = getNum(['total'])
+      // Operación
+      let operacion = null
+      document.querySelectorAll('*').forEach(el => {
+        if (operacion) return
+        const t = el.innerText?.trim()
+        if (t === 'Venta' || t === 'Alquiler') operacion = t
+      })
 
-    const bodyText = $('body').text().toLowerCase()
-    const comodidades = []
-    const checks = {
-      'cochera': 'cochera', 'pileta': 'pileta', 'parrilla': 'parrilla',
-      'jardín': 'jardín', 'patio': 'patio', 'balcon': 'balcón',
-      'calefacción': 'calefacción', 'solarium': 'solarium',
-      'acepta mascota': 'acepta mascotas'
-    }
-    for (const [k, v] of Object.entries(checks)) {
-      if (bodyText.includes(k)) comodidades.push(v)
-    }
+      // Tipo
+      const tipos = ['Departamentos','Casas','Lotes / Terrenos','Dúplex/Tríplex','PH','Locales','Cocheras','Campos']
+      let tipo = null
+      document.querySelectorAll('*').forEach(el => {
+        if (tipo) return
+        const t = el.innerText?.trim()
+        if (tipos.includes(t)) tipo = t
+      })
 
-    const financiacion = []
-    if (bodyText.includes('apto crédito')) financiacion.push('Apto Crédito')
-    if (bodyText.includes('anticipo y cuotas')) financiacion.push('Anticipo y cuotas')
-    if (bodyText.includes('acepta permuta')) financiacion.push('Acepta permuta')
+      // Dirección
+      let direccion = null
+      document.querySelectorAll('*').forEach(el => {
+        if (direccion) return
+        const t = el.innerText?.trim()
+        if (t?.match(/^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s]+\s+\d+/) && t.length < 60) direccion = t
+      })
 
-    let descripcion = ''
-    $('p').each((_, el) => {
-      const t = $(el).text().trim().replace(/\s+/g, ' ')
-      if (t.length > descripcion.length && t.length > 80) descripcion = t
+      // Números
+      const getNum = (kw) => {
+        let val = null
+        document.querySelectorAll('*').forEach(el => {
+          if (val) return
+          const t = el.innerText?.trim()?.toLowerCase()
+          if (t?.includes(kw) && t.length < 50) {
+            const m = t.match(/(\d+)/)
+            if (m) val = m[1]
+          }
+        })
+        return val
+      }
+
+      const bodyText = document.body.innerText.toLowerCase()
+
+      // Comodidades
+      const comodidades = []
+      const checks = {
+        'cochera': 'cochera', 'pileta': 'pileta', 'parrilla': 'parrilla',
+        'jardín': 'jardín', 'patio': 'patio', 'balcon': 'balcón',
+        'calefacción': 'calefacción', 'solarium': 'solarium',
+        'acepta mascota': 'acepta mascotas'
+      }
+      for (const [k, v] of Object.entries(checks)) {
+        if (bodyText.includes(k)) comodidades.push(v)
+      }
+
+      const financiacion = []
+      if (bodyText.includes('apto crédito')) financiacion.push('Apto Crédito')
+      if (bodyText.includes('anticipo y cuotas')) financiacion.push('Anticipo y cuotas')
+      if (bodyText.includes('acepta permuta')) financiacion.push('Acepta permuta')
+
+      // Descripción
+      let descripcion = ''
+      document.querySelectorAll('p').forEach(el => {
+        const t = el.innerText?.trim().replace(/\s+/g, ' ')
+        if (t?.length > descripcion.length && t.length > 80) descripcion = t
+      })
+
+      return {
+        titulo,
+        precio,
+        operacion,
+        tipo,
+        direccion,
+        ambientes:   getNum('ambiente'),
+        dormitorios: getNum('dormitorio'),
+        banos:       getNum('baño'),
+        supCubierta: getNum('cubierta'),
+        supTotal:    getNum('total'),
+        comodidades,
+        financiacion,
+        descripcion: descripcion.substring(0, 1000)
+      }
     })
 
-    return {
-      id, url, titulo, operacion, tipo,
-      precio, ambientes, dormitorios, banos,
-      supCubierta: supCubierta ? `${supCubierta}m²` : null,
-      supTotal:    supTotal    ? `${supTotal}m²`    : null,
-      comodidades, financiacion,
-      descripcion: descripcion.substring(0, 1000),
+    return { id, url, ...data,
+      supCubierta: data.supCubierta ? `${data.supCubierta}m²` : null,
+      supTotal:    data.supTotal    ? `${data.supTotal}m²`    : null,
       scrapedAt: new Date().toISOString()
     }
 
@@ -157,23 +155,33 @@ async function fetchProperty(id) {
 }
 
 async function main() {
-  console.log('🚀 Scraper — Fracchia-Fiorioli Propiedades\n')
+  console.log('🚀 Scraper Puppeteer — Fracchia-Fiorioli Propiedades\n')
 
-  const ids = await fetchAllPropertyIds()
-  console.log(`\n✅ Total IDs encontrados: ${ids.length}\n`)
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  })
 
-  if (!ids.length) {
-    console.error('❌ No se encontraron propiedades.')
+  const page = await browser.newPage()
+  await page.setViewport({ width: 1280, height: 900 })
+
+  let ids = []
+  try {
+    ids = await fetchAllPropertyIds(page)
+    console.log(`\n✅ Total IDs: ${ids.length}\n`)
+  } catch (err) {
+    console.error('Error recolectando IDs:', err.message)
+    await browser.close()
     process.exit(1)
   }
 
-  console.log('🔍 Scrapeando fichas...\n')
+  console.log('🔍 Scrapeando fichas individuales...\n')
   const properties = []
   let ok = 0, errors = 0
 
   for (let i = 0; i < ids.length; i++) {
     process.stdout.write(`  [${i+1}/${ids.length}] ${ids[i]}... `)
-    const prop = await fetchProperty(ids[i])
+    const prop = await fetchProperty(page, ids[i])
     if (prop?.titulo) {
       properties.push(prop)
       ok++
@@ -182,8 +190,10 @@ async function main() {
       errors++
       console.log('⚠️  sin datos')
     }
-    await sleep(DELAY_MS)
+    await sleep(500)
   }
+
+  await browser.close()
 
   fs.writeFileSync('./properties.json', JSON.stringify({
     lastUpdated: new Date().toISOString(),
