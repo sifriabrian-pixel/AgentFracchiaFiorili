@@ -10,7 +10,7 @@ import QRCode from 'qrcode'
 import cron from 'node-cron'
 import http from 'http'
 
-import { askClaude, reloadProperties } from './src/claude.js'
+import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup } from './src/memory.js'
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
@@ -82,11 +82,6 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => logger.info(`🌐 Servidor QR en puerto ${PORT} → /qr`))
 
-// ─── MENSAJES DE SEGUIMIENTO ───────────────────────────────────────────────
-const FOLLOWUP_MSGS = {
-  '24h': `¡Hola! 👋 Te escribo porque hace un rato te compartí info de una propiedad que estabas consultando. ¿Tuviste oportunidad de revisarla? Si querés más detalles o te interesa coordinar una visita, estoy acá para ayudarte 🏠`,
-  '48h': `¡Hola de nuevo! 😊 Quería saber si pudiste revisar el link para agendar la visita que te compartí. Si necesitás ayuda o querés ver otras opciones, avisame — estamos para lo que necesites 🤝`
-}
 
 // ─── NOTIFICACIÓN AL GRUPO INTERNO ────────────────────────────────────────
 async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
