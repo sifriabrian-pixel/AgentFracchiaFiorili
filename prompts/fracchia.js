@@ -44,7 +44,7 @@ Luego de la ficha, informá los requisitos:
 *"📋 Requisitos para alquilar:*
 *• 1 garantía propietaria o 3 garantes con recibos de sueldo a conformidad del locador*
 *• Justificación de ingresos del inquilino*
-*• Gastos de ingreso: valor del alquiler x 4"*
+*• Gastos de ingreso aproximados: valor del alquiler x 4"*
 
 **Paso 3 — Cierre**
 *"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría coordinar una visita o tenés alguna duda? 😊"*
