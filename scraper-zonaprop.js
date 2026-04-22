@@ -1,175 +1,137 @@
 // scraper-zonaprop.js
-// Scrapea el perfil de Fracchia-Fiorioli en ZonaProp y mergea los IDs con properties.json
+// Scrapea el perfil de Fracchia en ZonaProp y mergea los IDs con properties.json
 
 import puppeteer from 'puppeteer'
 import fs from 'fs'
 
-const ZONAPROP_PROFILE = 'https://www.zonaprop.com.ar/inmobiliarias/fracchia-fiorioli-propiedades_30448546-inmuebles.html'
+const BASE_ZP = 'https://www.zonaprop.com.ar'
+const PROFILE = 'https://www.zonaprop.com.ar/inmobiliarias/fracchia-fiorioli-propiedades_30448546-inmuebles.html'
 const sleep = (ms) => new Promise(r => setTimeout(r, ms))
 
-// ─── EXTRAER IDs Y DATOS DE ZONAPROP ──────────────────────────────────────
 async function scrapeZonaprop(page) {
-  console.log('📋 Cargando perfil de ZonaProp...\n')
-  
-  await page.goto(ZONAPROP_PROFILE, { waitUntil: 'networkidle2', timeout: 30000 })
-  await sleep(3000)
-
-  const zpProperties = []
+  console.log('📋 Scrapeando perfil de ZonaProp...\n')
+  const all = []
+  let url = PROFILE
   let pageNum = 1
 
-  while (true) {
-    console.log(`  Página ${pageNum}...`)
+  while (url) {
+    console.log(`  Página ${pageNum}: ${url}`)
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 })
+    await sleep(3000)
 
-    // Scroll para cargar todas las propiedades de la página
-    for (let i = 0; i < 5; i++) {
+    // Scroll para cargar todas las cards
+    for (let i = 0; i < 4; i++) {
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
-      await sleep(2000)
+      await sleep(1500)
     }
 
     const items = await page.evaluate(() => {
-      const results = []
-      
-      // ZonaProp usa diferentes selectores según la versión
-      const cards = document.querySelectorAll(
-        '[data-id], .postingCard, .posting-card, [class*="postingCard"], [class*="posting-card"]'
-      )
+      const cards = document.querySelectorAll('[data-qa="posting PROPERTY"]')
+      return [...cards].map(card => {
+        const zpId = card.getAttribute('data-id')
+        const toPosting = card.getAttribute('data-to-posting') || ''
+        const zpUrl = toPosting ? `https://www.zonaprop.com.ar${toPosting.split('?')[0]}` : null
 
-      cards.forEach(card => {
-        // Extraer ID de ZonaProp
-        const id = card.getAttribute('data-id') || 
-                   card.getAttribute('data-posting-id') ||
-                   card.querySelector('[data-id]')?.getAttribute('data-id')
+        const precio = card.querySelector('[data-qa="POSTING_CARD_PRICE"]')?.innerText?.trim()
+        const features = card.querySelector('[data-qa="POSTING_CARD_FEATURES"]')?.innerText?.trim()
+        const address = card.querySelector('.postingLocations-module__location-address')?.innerText?.trim()
+        const location = card.querySelector('[data-qa="POSTING_CARD_LOCATION"]')?.innerText?.trim()
+        const desc = card.querySelector('[data-qa="POSTING_CARD_DESCRIPTION"]')?.innerText?.trim()
 
-        // Extraer link
-        const linkEl = card.querySelector('a[href*="/propiedades/"]')
-        const link = linkEl?.href || null
-
-        // Extraer título
-        const titulo = card.querySelector('h2, h3, [class*="title"], [class*="titulo"]')?.innerText?.trim()
-
-        // Extraer precio
-        const precio = card.querySelector('[class*="price"], [class*="precio"]')?.innerText?.trim()
-
-        // Extraer dirección
-        const direccion = card.querySelector('[class*="address"], [class*="direccion"], [class*="location"]')?.innerText?.trim()
-
-        // Extraer características
-        const ambientes = card.querySelector('[class*="ambiente"], [class*="room"]')?.innerText?.trim()
-        const superficie = card.querySelector('[class*="surface"], [class*="superficie"]')?.innerText?.trim()
-
-        if (id || link) {
-          // Extraer ID numérico del link si no hay data-id
-          let zpId = id
-          if (!zpId && link) {
-            const match = link.match(/-(\d+)\.html/)
-            if (match) zpId = match[1]
-          }
-
-          results.push({ zpId, link, titulo, precio, direccion, ambientes, superficie })
-        }
-      })
-
-      return results
+        return { zpId, zpUrl, precio, features, address, location, desc }
+      }).filter(i => i.zpId)
     })
-
-    if (items.length === 0) {
-      console.log('  No se encontraron propiedades en esta página.')
-      break
-    }
 
     console.log(`  → ${items.length} propiedades encontradas`)
-    zpProperties.push(...items)
+    all.push(...items)
 
-    // Buscar botón de siguiente página
-    const nextPage = await page.evaluate(() => {
-      const next = document.querySelector(
-        '[class*="next"], [aria-label="Siguiente"], a[href*="pagina-"]'
-      )
-      return next ? next.href : null
-    })
+    // Buscar siguiente página
+    const nextUrl = await page.evaluate((base) => {
+      const next = document.querySelector('a[data-qa="page-next"], a[aria-label="Siguiente página"], .pagination-module__next a')
+      return next ? (next.href.startsWith('http') ? next.href : base + next.getAttribute('href')) : null
+    }, BASE_ZP)
 
-    if (!nextPage) break
-
-    await page.goto(nextPage, { waitUntil: 'networkidle2', timeout: 30000 })
-    await sleep(3000)
+    url = nextUrl
     pageNum++
+    if (url) await sleep(2000)
   }
 
-  return zpProperties
+  return all
 }
 
-// ─── NORMALIZAR TEXTO PARA COMPARACIÓN ────────────────────────────────────
 function normalize(str) {
   if (!str) return ''
   return str.toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9\s]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+    .replace(/\s+/g, ' ').trim()
 }
 
-// ─── CALCULAR SIMILITUD ENTRE DOS STRINGS ─────────────────────────────────
-function similarity(a, b) {
-  const na = normalize(a)
-  const nb = normalize(b)
-  if (!na || !nb) return 0
-  
-  const wordsA = new Set(na.split(' '))
-  const wordsB = new Set(nb.split(' '))
-  const intersection = [...wordsA].filter(w => wordsB.has(w) && w.length > 3)
-  return intersection.length / Math.max(wordsA.size, wordsB.size)
+function extractPrice(str) {
+  if (!str) return null
+  return str.replace(/[^0-9]/g, '')
 }
 
-// ─── MERGEAR CON properties.json ──────────────────────────────────────────
-function mergeWithProperties(zpProperties) {
-  if (!fs.existsSync('./properties.json')) {
-    console.error('❌ No se encontró properties.json — corré el scraper principal primero')
-    process.exit(1)
-  }
-
+function mergeWithProperties(zpItems) {
   const data = JSON.parse(fs.readFileSync('./properties.json', 'utf8'))
-  const properties = data.properties
+  const props = data.properties
+  let matched = 0, unmatched = 0
 
-  let matched = 0
-  let unmatched = 0
-
-  for (const zp of zpProperties) {
+  for (const zp of zpItems) {
     if (!zp.zpId) continue
 
     let bestMatch = null
     let bestScore = 0
 
-    for (const prop of properties) {
-      // Match por precio
-      const precioScore = zp.precio && prop.precio
-        ? (normalize(zp.precio).replace(/\D/g, '') === normalize(prop.precio).replace(/\D/g, '') ? 0.5 : 0)
-        : 0
+    const zpPrecio = extractPrice(zp.precio)
+    const zpAddr = normalize(zp.address)
+    const zpDesc = normalize(zp.desc)
 
-      // Match por título/dirección
-      const titleScore = similarity(zp.titulo, prop.titulo) * 0.3
-      const dirScore = similarity(zp.direccion, prop.direccion) * 0.4
-      const dirTitleScore = similarity(zp.direccion, prop.titulo) * 0.3
+    for (const prop of props) {
+      let score = 0
 
-      const total = precioScore + titleScore + dirScore + dirTitleScore
+      // Match por precio (peso alto)
+      const propPrecio = extractPrice(prop.precio)
+      if (zpPrecio && propPrecio && zpPrecio === propPrecio) score += 0.5
 
-      if (total > bestScore) {
-        bestScore = total
+      // Match por dirección
+      if (zpAddr && prop.direccion) {
+        const propAddr = normalize(prop.direccion)
+        // Extraer número de calle
+        const zpNum = zpAddr.match(/\d+/)?.[0]
+        const propNum = propAddr.match(/\d+/)?.[0]
+        if (zpNum && propNum && zpNum === propNum) score += 0.3
+        // Match por nombre de calle
+        const zpStreet = zpAddr.replace(/\d+/g, '').trim()
+        const propStreet = propAddr.replace(/\d+/g, '').trim()
+        if (zpStreet && propStreet && zpStreet.length > 3 && propStreet.includes(zpStreet.split(' ')[0])) score += 0.2
+      }
+
+      // Match por descripción
+      if (zpDesc && prop.titulo) {
+        const propTitulo = normalize(prop.titulo)
+        const words = zpDesc.split(' ').filter(w => w.length > 5)
+        const matches = words.filter(w => propTitulo.includes(w))
+        score += (matches.length / Math.max(words.length, 1)) * 0.2
+      }
+
+      if (score > bestScore) {
+        bestScore = score
         bestMatch = prop
       }
     }
 
-    if (bestMatch && bestScore > 0.3) {
+    if (bestMatch && bestScore >= 0.3) {
       bestMatch.zonapropId = zp.zpId
-      bestMatch.zonapropUrl = zp.link
+      bestMatch.zonapropUrl = zp.zpUrl
       matched++
-      console.log(`  ✅ Match (${Math.round(bestScore * 100)}%): ${bestMatch.titulo?.substring(0, 45)} → ZP:${zp.zpId}`)
+      console.log(`  ✅ (${Math.round(bestScore * 100)}%) ${bestMatch.titulo?.substring(0, 45)} → ZP:${zp.zpId}`)
     } else {
       unmatched++
-      console.log(`  ⚠️  Sin match: ${zp.titulo?.substring(0, 45)} (ZP:${zp.zpId})`)
+      console.log(`  ⚠️  Sin match: ${zp.address} ${zp.precio} (ZP:${zp.zpId})`)
     }
   }
 
-  // Guardar properties.json actualizado
   data.lastUpdated = new Date().toISOString()
   data.zonapropLastSync = new Date().toISOString()
   fs.writeFileSync('./properties.json', JSON.stringify(data, null, 2), 'utf8')
@@ -177,12 +139,11 @@ function mergeWithProperties(zpProperties) {
   return { matched, unmatched }
 }
 
-// ─── MAIN ──────────────────────────────────────────────────────────────────
 async function main() {
   console.log('🚀 Scraper ZonaProp — Fracchia-Fiorioli\n')
 
   const browser = await puppeteer.launch({
-    headless: false, // visible para pasar captchas si aparecen
+    headless: false,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   })
 
@@ -190,30 +151,23 @@ async function main() {
   await page.setViewport({ width: 1280, height: 900 })
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
 
-  let zpProperties = []
-  try {
-    zpProperties = await scrapeZonaprop(page)
-    console.log(`\n✅ Total propiedades en ZonaProp: ${zpProperties.length}\n`)
-  } catch (err) {
-    console.error('❌ Error scrapeando ZonaProp:', err.message)
-    await browser.close()
-    process.exit(1)
-  }
-
+  const zpItems = await scrapeZonaprop(page)
   await browser.close()
 
-  if (zpProperties.length === 0) {
-    console.error('❌ No se encontraron propiedades en ZonaProp')
+  console.log(`\n✅ Total en ZonaProp: ${zpItems.length}\n`)
+
+  if (!zpItems.length) {
+    console.error('❌ No se encontraron propiedades')
     process.exit(1)
   }
 
   console.log('🔗 Mergeando con properties.json...\n')
-  const { matched, unmatched } = mergeWithProperties(zpProperties)
+  const { matched, unmatched } = mergeWithProperties(zpItems)
 
   console.log(`\n✅ Merge completo:`)
-  console.log(`   Propiedades matcheadas: ${matched}`)
-  console.log(`   Sin match: ${unmatched}`)
-  console.log(`   properties.json actualizado con IDs de ZonaProp`)
+  console.log(`   Matcheadas: ${matched}`)
+  console.log(`   Sin match:  ${unmatched}`)
+  console.log(`   properties.json actualizado`)
 }
 
 main().catch(console.error)
