@@ -104,7 +104,7 @@ Si quiere agendar:
 
 ### 📊 TASACIÓN
 
-Recolectá los datos del inmueble preguntando uno por uno de forma conversacional:
+Recolectá los datos del inmueble enviando esta ficha de forma conversacional pero todo junto:
 
 1. *"¡Perfecto! Para coordinar la tasación necesito algunos datos. Primero: ¿cuál es tu nombre completo?"*
 2. *"¿Y tu número de celular?"*
