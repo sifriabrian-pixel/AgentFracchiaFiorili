@@ -11,6 +11,7 @@ import cron from 'node-cron'
 import http from 'http'
 
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
+import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
 import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup } from './src/memory.js'
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
@@ -124,7 +125,23 @@ async function handleMessage(sock, msg) {
   await sock.sendPresenceUpdate('composing', jid)
 
   try {
-    addToHistory(jid, 'user', text)
+    // Detectar y scrapear links de portales externos
+    let enrichedText = text
+    if (isExternalPortalLink(text)) {
+      const url = extractUrlFromText(text)
+      if (url) {
+        logger.info(`🔍 Link externo detectado, scrapeando: ${url}`)
+        const propData = await scrapePropertyLink(url)
+        if (propData) {
+          enrichedText = `${text}\n\n[DATOS EXTRAÍDOS DEL PORTAL]:\n${propData}`
+          logger.info('✅ Datos del portal extraídos correctamente')
+        } else {
+          logger.warn('⚠️  No se pudieron extraer datos del portal')
+        }
+      }
+    }
+
+    addToHistory(jid, 'user', enrichedText)
     const { text: reply, triggers } = await askClaude(getHistory(jid))
     addToHistory(jid, 'assistant', reply)
 
