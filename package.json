@@ -20,7 +20,6 @@
     "pino": "^8.19.0",
     "pino-pretty": "^11.0.0",
     "qrcode": "^1.5.3",
-    "puppeteer": "^21.0.0"
-
+    "qrcode-terminal": "^0.12.0"
   }
 }
