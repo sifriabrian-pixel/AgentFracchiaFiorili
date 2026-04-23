@@ -1,13 +1,11 @@
 // src/scrapeLink.js
-// Scrapea links externos de portales (ZonaProp, MercadoLibre, BuscaProp)
-// y extrae los datos de la propiedad para pasárselos a Claude
+// Intenta leer links de portales externos con axios (liviano, sin browser)
+// Si el portal bloquea, retorna null y el agente pregunta manualmente
 
-import puppeteer from 'puppeteer'
+import axios from 'axios'
+import * as cheerio from 'cheerio'
 
-const sleep = (ms) => new Promise(r => setTimeout(r, ms))
-
-// Portales soportados
-const PORTALES = ['zonaprop.com.ar', 'inmuebles.mercadolibre.com.ar', 'buscaprop.com.ar', 'argenprop.com']
+const PORTALES = ['zonaprop.com.ar', 'mercadolibre.com.ar', 'buscaprop.com.ar', 'argenprop.com']
 
 export function isExternalPortalLink(text) {
   return PORTALES.some(portal => text.includes(portal))
@@ -18,98 +16,58 @@ export function extractUrlFromText(text) {
   return match ? match[0] : null
 }
 
-async function scrapeZonaprop(page, url) {
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 20000 })
-  await sleep(2000)
-
-  return await page.evaluate(() => {
-    const titulo = document.querySelector('h1')?.innerText?.trim()
-    const precio = document.querySelector('[class*="price"]')?.innerText?.trim()
-    const direccion = document.querySelector('[class*="address"]')?.innerText?.trim()
-    const features = document.querySelector('[data-qa="POSTING_CARD_FEATURES"], [class*="main-features"]')?.innerText?.trim()
-    const desc = document.querySelector('[data-qa="POSTING_DESCRIPTION"], [class*="description"]')?.innerText?.trim()
-    const ubicacion = document.querySelector('[class*="location"]')?.innerText?.trim()
-
-    return { titulo, precio, direccion: direccion || ubicacion, features, descripcion: desc?.substring(0, 500) }
-  })
-}
-
-async function scrapeMercadoLibre(page, url) {
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 20000 })
-  await sleep(2000)
-
-  return await page.evaluate(() => {
-    const titulo = document.querySelector('h1')?.innerText?.trim()
-    const precio = document.querySelector('.andes-money-amount__fraction, [class*="price"]')?.innerText?.trim()
-    const direccion = document.querySelector('[class*="location"], [class*="address"]')?.innerText?.trim()
-    const features = [...document.querySelectorAll('.ui-pdp-features li, [class*="attribute"]')]
-      .map(el => el.innerText?.trim()).filter(Boolean).join(' | ')
-    const desc = document.querySelector('.ui-pdp-description__content, [class*="description"]')?.innerText?.trim()
-
-    return { titulo, precio, direccion, features, descripcion: desc?.substring(0, 500) }
-  })
-}
-
-async function scrapeGeneric(page, url) {
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 20000 })
-  await sleep(2000)
-
-  return await page.evaluate(() => {
-    const titulo = document.querySelector('h1')?.innerText?.trim()
-    // Buscar precio en el body
-    let precio = null
-    document.querySelectorAll('*').forEach(el => {
-      if (precio) return
-      const t = el.childNodes.length === 1 ? el.innerText?.trim() : null
-      if (t && (t.includes('USD') || t.includes('$ ')) && t.length < 25) precio = t
-    })
-    const direccion = document.querySelector('[class*="address"], [class*="location"], [class*="ubicacion"]')?.innerText?.trim()
-    const desc = document.querySelector('[class*="description"], [class*="descripcion"]')?.innerText?.trim()
-
-    return { titulo, precio, direccion, features: null, descripcion: desc?.substring(0, 500) }
-  })
-}
-
 export async function scrapePropertyLink(url) {
-  let browser = null
   try {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    const { data } = await axios.get(url, {
+      timeout: 8000,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'es-AR,es;q=0.9',
+      }
     })
 
-    const page = await browser.newPage()
-    await page.setViewport({ width: 1280, height: 900 })
-    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
-    await page.setExtraHTTPHeaders({ 'Accept-Language': 'es-AR,es;q=0.9' })
+    const $ = cheerio.load(data)
 
-    let data = null
+    // Extraer título
+    const titulo = $('h1').first().text().trim() || $('title').text().trim()
 
-    if (url.includes('zonaprop.com.ar')) {
-      data = await scrapeZonaprop(page, url)
-    } else if (url.includes('mercadolibre.com.ar')) {
-      data = await scrapeMercadoLibre(page, url)
-    } else {
-      data = await scrapeGeneric(page, url)
-    }
+    // Extraer precio
+    let precio = null
+    $('*').each((_, el) => {
+      if (precio) return false
+      const t = $(el).clone().children().remove().end().text().trim()
+      if (t && (t.includes('USD') || t.match(/^\$\s*[\d.]+/)) && t.length < 25) precio = t
+    })
 
-    await browser.close()
+    // Extraer dirección
+    const direccion = $('[class*="address"], [class*="location"], [class*="ubicacion"], [class*="direccion"]')
+      .first().text().trim().replace(/\s+/g, ' ')
 
-    // Formatear resultado
-    if (!data?.titulo && !data?.precio) return null
+    // Extraer características
+    const features = $('[class*="features"], [class*="caracteristicas"], [data-qa="POSTING_CARD_FEATURES"]')
+      .first().text().trim().replace(/\s+/g, ' ')
+
+    // Extraer descripción
+    let descripcion = ''
+    $('p').each((_, el) => {
+      const t = $(el).text().trim().replace(/\s+/g, ' ')
+      if (t.length > descripcion.length && t.length > 80) descripcion = t
+    })
+
+    if (!titulo && !precio) return null
 
     const parts = [
-      data.titulo    ? `Título: ${data.titulo}` : null,
-      data.precio    ? `Precio: ${data.precio}` : null,
-      data.direccion ? `Dirección: ${data.direccion}` : null,
-      data.features  ? `Características: ${data.features}` : null,
-      data.descripcion ? `Descripción: ${data.descripcion}` : null,
+      titulo     ? `Título: ${titulo}` : null,
+      precio     ? `Precio: ${precio}` : null,
+      direccion  ? `Dirección: ${direccion.substring(0, 100)}` : null,
+      features   ? `Características: ${features.substring(0, 200)}` : null,
+      descripcion ? `Descripción: ${descripcion.substring(0, 400)}` : null,
     ].filter(Boolean)
 
-    return parts.join('\n')
+    return parts.length >= 2 ? parts.join('\n') : null
 
-  } catch (err) {
-    if (browser) await browser.close().catch(() => {})
+  } catch {
     return null
   }
 }
