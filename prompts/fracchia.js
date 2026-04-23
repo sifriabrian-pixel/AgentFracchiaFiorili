@@ -148,11 +148,12 @@ Cuando el lead mande un link:
 - Buscá en la base la propiedad con ese ID exacto
 - Presentá SU ficha — nunca la de otra propiedad
 
-**Link de ZonaProp** (zonaprop.com.ar/.../XXXXXXXX.html):
-- Extraé el ID numérico del final del link (ej: -49604423.html → ID 49604423)
-- Buscá en la base la propiedad que tenga ese zonapropId exacto
-- Si encontrás match, presentá la ficha completa de nuestra web
-- Si no encontrás match, pedí zona y tipo para buscar similares
+**Link de ZonaProp, MercadoLibre, BuscaProp u otro portal:**
+- El sistema va a intentar extraer automáticamente los datos del portal (título, precio, dirección)
+- Si aparece un bloque [DATOS EXTRAÍDOS DEL PORTAL] en el mensaje, usá esa información para identificar la propiedad en nuestra base
+- Buscá en la base por precio exacto y/o dirección/zona para encontrar el match
+- Si encontrás la propiedad en nuestra base, presentá la ficha completa de nuestra web
+- Si no encontrás match exacto pero tenés los datos del portal, presentá la info extraída del portal aclarando que es de ese portal, y ofrecé buscar similares en nuestra cartera
 
 **Link de otros portales** (MercadoLibre, BuscaProp, etc.):
 - Identificá por similitud: zona, tipo, precio, ambientes
