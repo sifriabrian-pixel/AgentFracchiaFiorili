@@ -84,24 +84,40 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => logger.info(`🌐 Servidor QR en puerto ${PORT} → /qr`))
 
 
-// ─── NOTIFICACIÓN AL GRUPO INTERNO ────────────────────────────────────────
+// ─── NOTIFICACIÓN AL GRUPO Y ASESOR ───────────────────────────────────────
 async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
-  if (!GRUPO_JID) {
-    logger.warn('⚠️  GRUPO_WHATSAPP_JID no configurado — saltando notificación')
-    return
+  const numero = userId.replace('@s.whatsapp.net', '')
+  const msg =
+    `🔔 *Nuevo lead calificado*\n\n` +
+    `📱 *WhatsApp del lead:* wa.me/${numero}\n` +
+    `🏠 *Propiedad consultada:* ${propiedadInteres || 'No especificada'}\n\n` +
+    `💬 *Último mensaje del agente:*\n${replyText}\n\n` +
+    `✅ Se le pasó el link de Calendly para agendar. Estén atentos por si confirma visita.`
+
+  // Notificar al asesor individual
+  const ASESOR_NOTIF = process.env.WHATSAPP_ASESOR
+  if (ASESOR_NOTIF) {
+    try {
+      const asesorJid = `${ASESOR_NOTIF}@s.whatsapp.net`
+      await sock.sendMessage(asesorJid, { text: msg })
+      logger.info(`✅ Asesor notificado — lead: ${numero}`)
+    } catch (err) {
+      logger.error({ err }, '❌ Error notificando al asesor')
+    }
   }
-  try {
-    const numero = userId.replace('@s.whatsapp.net', '')
-    const msg =
-      `🔔 *Nuevo lead interesado en agendar visita*\n\n` +
-      `📱 *WhatsApp del lead:* wa.me/${numero}\n` +
-      `🏠 *Propiedad consultada:* ${propiedadInteres || 'No especificada'}\n\n` +
-      `💬 *Último mensaje del agente:*\n${replyText}\n\n` +
-      `✅ Se le pasó el link de Calendly para agendar. Estén atentos por si confirma visita.`
-    await sock.sendMessage(GRUPO_JID, { text: msg })
-    logger.info(`✅ Grupo notificado — lead: ${numero}`)
-  } catch (err) {
-    logger.error({ err }, '❌ Error notificando al grupo')
+
+  // Notificar al grupo si está configurado
+  if (GRUPO_JID) {
+    try {
+      await sock.sendMessage(GRUPO_JID, { text: msg })
+      logger.info(`✅ Grupo notificado — lead: ${numero}`)
+    } catch (err) {
+      logger.error({ err }, '❌ Error notificando al grupo')
+    }
+  }
+
+  if (!ASESOR_NOTIF && !GRUPO_JID) {
+    logger.warn('⚠️  WHATSAPP_ASESOR y GRUPO_WHATSAPP_JID no configurados — saltando notificación')
   }
 }
 
