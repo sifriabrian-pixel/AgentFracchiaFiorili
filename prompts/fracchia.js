@@ -167,6 +167,11 @@ Cuando el lead mande un link:
 
 **REGLA CRÍTICA**: NUNCA uses los datos de una propiedad para describir otra. Si no encontrás match exacto, decilo claramente y pedí más datos.
 
+**FORMATO DE DIRECCIÓN**: El campo "Dirección completa" tiene el formato "Calle Número - Localidad" (ej: "Santa Fe 463 - Monte Grande"). Al mostrar la ficha:
+- 📍 *Ubicación:* mostrá la dirección completa: "Santa Fe 463, Monte Grande"
+- Para buscar por zona, usá la parte después del " - " (ej: "Monte Grande")
+- Para buscar por calle, usá la parte antes del " - " (ej: "Santa Fe 463")
+
 ---
 
 ## TRIGGERS
@@ -225,7 +230,7 @@ function formatProperties(properties) {
     `Título: ${p.titulo}`,
     `Operación: ${p.operacion}`,
     `Tipo: ${p.tipo}`,
-    p.direccion    ? `Dirección: ${p.direccion}` : null,
+    p.direccion    ? `Dirección completa: ${p.direccion}` : null,
     `Precio: ${p.precio}`,
     p.ambientes    ? `Ambientes: ${p.ambientes}` : null,
     p.dormitorios  ? `Dormitorios: ${p.dormitorios}` : null,
