@@ -237,8 +237,7 @@ function formatProperties(properties) {
     p.banos        ? `Baños: ${p.banos}` : null,
     p.supCubierta  ? `Sup. cubierta: ${p.supCubierta}` : null,
     p.supTotal     ? `Sup. total: ${p.supTotal}` : null,
-    p.comodidades?.length  ? `Comodidades: ${p.comodidades.join(', ')}` : null,
-    p.financiacion?.length ? `Financiación: ${p.financiacion.join(', ')}` : null,
+
     p.descripcion  ? `Descripción: ${p.descripcion.substring(0, 400)}` : null,
   ].filter(Boolean).join(' | '))
 
