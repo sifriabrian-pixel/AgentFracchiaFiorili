@@ -74,12 +74,27 @@ async function fetchProperty(page, id) {
         if (tipos.includes(t)) tipo = t
       })
 
+      // Extraer dirección junto al ícono de location
+      // Formato en la web: "Calle 123 - Localidad"
       let direccion = null
-      document.querySelectorAll('*').forEach(el => {
-        if (direccion) return
-        const t = el.innerText?.trim()
-        if (t?.match(/^[A-ZÁÉÍÓÚÑ][a-záéíóúñ\s]+\s+\d+/) && t.length < 60) direccion = t
-      })
+      let zona = null
+
+      const locationImgs = document.querySelectorAll('img[src*="icon_location"]')
+      for (const img of locationImgs) {
+        const parent = img.parentElement
+        const t = parent?.innerText?.trim().replace(/\s+/g, ' ')
+        // Validar que tenga formato de dirección: texto + número (no características)
+        if (t && t.length > 3 && t.length < 100 && !t.includes('\n') && t.match(/\d/)) {
+          const parts = t.split(' - ')
+          if (parts.length >= 2) {
+            direccion = parts[0].trim()
+            zona = parts[parts.length - 1].trim()
+          } else if (t.match(/[A-Za-z].*\d/)) {
+            direccion = t
+          }
+          if (direccion) break
+        }
+      }
 
       const getNum = (kw) => {
         let val = null
@@ -93,10 +108,27 @@ async function fetchProperty(page, id) {
         return val
       }
 
-      const bodyText = document.body.innerText.toLowerCase()
+      // Buscar comodidades SOLO en la sección de comodidades, no en todo el body
+      // para evitar capturar datos de propiedades relacionadas
       const comodidades = []
-      const checks = { 'cochera':'cochera','pileta':'pileta','parrilla':'parrilla','jardín':'jardín','patio':'patio','balcon':'balcón','calefacción':'calefacción','solarium':'solarium','acepta mascota':'acepta mascotas' }
-      for (const [k,v] of Object.entries(checks)) { if (bodyText.includes(k)) comodidades.push(v) }
+      const comodSection = document.querySelector('section, [class*="comodidades"], [class*="amenities"]')
+      
+      // Buscar el h2/h3 que diga "Comodidades" y tomar solo ese bloque
+      let comodContainer = null
+      document.querySelectorAll('h2, h3, h4').forEach(h => {
+        if (h.innerText?.trim() === 'Comodidades') {
+          comodContainer = h.closest('section') || h.parentElement
+        }
+      })
+      
+      const comodText = (comodContainer || comodSection)?.innerText?.toLowerCase() || ''
+      
+      if (comodText) {
+        const checks = { 'cochera':'cochera','pileta':'pileta','parrilla':'parrilla','jardín':'jardín','patio':'patio','balcon':'balcón','calefacción':'calefacción','solarium':'solarium','acepta mascota':'acepta mascotas' }
+        for (const [k,v] of Object.entries(checks)) { if (comodText.includes(k)) comodidades.push(v) }
+      }
+      
+      const bodyText = document.body.innerText.toLowerCase()
 
       const financiacion = []
       if (bodyText.includes('apto crédito')) financiacion.push('Apto Crédito')
@@ -109,7 +141,7 @@ async function fetchProperty(page, id) {
         if (t?.length > descripcion.length && t.length > 80) descripcion = t
       })
 
-      return { titulo, precio, operacion, tipo, direccion,
+      return { titulo, precio, operacion, tipo, direccion, zona,
         ambientes: getNum('ambiente'), dormitorios: getNum('dormitorio'),
         banos: getNum('baño'), supCubierta: getNum('cubierta'), supTotal: getNum('total'),
         comodidades, financiacion, descripcion: descripcion.substring(0, 1000) }
