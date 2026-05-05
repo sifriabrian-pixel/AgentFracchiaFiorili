@@ -108,26 +108,7 @@ async function fetchProperty(page, id) {
         return val
       }
 
-      // Buscar comodidades SOLO en la sección de comodidades, no en todo el body
-      // para evitar capturar datos de propiedades relacionadas
       const comodidades = []
-      const comodSection = document.querySelector('section, [class*="comodidades"], [class*="amenities"]')
-      
-      // Buscar el h2/h3 que diga "Comodidades" y tomar solo ese bloque
-      let comodContainer = null
-      document.querySelectorAll('h2, h3, h4').forEach(h => {
-        if (h.innerText?.trim() === 'Comodidades') {
-          comodContainer = h.closest('section') || h.parentElement
-        }
-      })
-      
-      const comodText = (comodContainer || comodSection)?.innerText?.toLowerCase() || ''
-      
-      if (comodText) {
-        const checks = { 'cochera':'cochera','pileta':'pileta','parrilla':'parrilla','jardín':'jardín','patio':'patio','balcon':'balcón','calefacción':'calefacción','solarium':'solarium','acepta mascota':'acepta mascotas' }
-        for (const [k,v] of Object.entries(checks)) { if (comodText.includes(k)) comodidades.push(v) }
-      }
-      
       const bodyText = document.body.innerText.toLowerCase()
 
       const financiacion = []
