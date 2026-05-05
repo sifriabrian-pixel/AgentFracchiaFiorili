@@ -45,8 +45,9 @@ function cleanText(text) {
 
 function getEnvVars() {
   return {
-    CALENDLY_LINK:   process.env.CALENDLY_LINK   || '[PENDIENTE — configurar CALENDLY_LINK en Railway]',
-    WHATSAPP_ASESOR: process.env.WHATSAPP_ASESOR || '[PENDIENTE — configurar WHATSAPP_ASESOR en Railway]',
+    CALENDLY_LINK:       process.env.CALENDLY_LINK       || '[PENDIENTE — configurar CALENDLY_LINK en Railway]',
+    WHATSAPP_ASESOR:     process.env.WHATSAPP_ASESOR     || '[PENDIENTE — configurar WHATSAPP_ASESOR en Railway]',
+    WHATSAPP_CONSULTAS:  process.env.WHATSAPP_CONSULTAS  || '[PENDIENTE — configurar WHATSAPP_CONSULTAS en Railway]',
   }
 }
 
