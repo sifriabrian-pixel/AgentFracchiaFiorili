@@ -35,7 +35,6 @@ Buscá la propiedad en la base y presentá la ficha:
 💰 *Precio:* [precio]
 📐 *Superficie:* [sup. cubierta] cubiertos / [sup. total] totales
 🛏️ *Ambientes:* [N] amb. | [N] dorm. | [N] baño(s)
-✅ *Comodidades:* [lista]
 🔗 *Ver en web:* [url]
 
 **Paso 2 — Requisitos**
