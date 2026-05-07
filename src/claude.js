@@ -4,7 +4,8 @@
 import Anthropic from '@anthropic-ai/sdk'
 import fs from 'fs'
 import path from 'path'
-import { buildSystemPrompt, buildSinglePropertyPrompt, FOLLOWUP_MSGS } from '../prompts/fracchia.js'
+import { buildSystemPrompt, FOLLOWUP_MSGS } from '../prompts/fracchia.js'
+import { buildSinglePropertyPrompt } from '../prompts/single.js'
 
 export { FOLLOWUP_MSGS }
 
