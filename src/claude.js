@@ -4,7 +4,7 @@
 import Anthropic from '@anthropic-ai/sdk'
 import fs from 'fs'
 import path from 'path'
-import { buildSystemPrompt, FOLLOWUP_MSGS } from '../prompts/fracchia.js'
+import { buildSystemPrompt, buildSinglePropertyPrompt, FOLLOWUP_MSGS } from '../prompts/fracchia.js'
 
 export { FOLLOWUP_MSGS }
 
@@ -17,9 +17,20 @@ function loadProperties() {
     const data = JSON.parse(raw)
     return data.properties || []
   } catch {
-    console.warn('⚠️  No se encontró properties.json — el agente funcionará sin base de propiedades')
+    console.warn('⚠️  No se encontró properties.json')
     return []
   }
+}
+
+// Extraer ID de propiedad de un link de la web propia
+function extractPropertyId(text) {
+  const match = text.match(/fracchiapropiedades\.com\.ar\/propiedad\/(\d+)/)
+  return match ? match[1] : null
+}
+
+// Buscar propiedad por ID exacto
+function findPropertyById(id, properties) {
+  return properties.find(p => p.id === id) || null
 }
 
 function parseTriggers(text) {
@@ -45,9 +56,9 @@ function cleanText(text) {
 
 function getEnvVars() {
   return {
-    CALENDLY_LINK:       process.env.CALENDLY_LINK       || '[PENDIENTE — configurar CALENDLY_LINK en Railway]',
-    WHATSAPP_ASESOR:     process.env.WHATSAPP_ASESOR     || '[PENDIENTE — configurar WHATSAPP_ASESOR en Railway]',
-    WHATSAPP_CONSULTAS:  process.env.WHATSAPP_CONSULTAS  || '[PENDIENTE — configurar WHATSAPP_CONSULTAS en Railway]',
+    CALENDLY_LINK:      process.env.CALENDLY_LINK      || '[PENDIENTE — configurar CALENDLY_LINK en Railway]',
+    WHATSAPP_ASESOR:    process.env.WHATSAPP_ASESOR    || '[PENDIENTE — configurar WHATSAPP_ASESOR en Railway]',
+    WHATSAPP_CONSULTAS: process.env.WHATSAPP_CONSULTAS || '[PENDIENTE — configurar WHATSAPP_CONSULTAS en Railway]',
   }
 }
 
@@ -56,7 +67,20 @@ let cachedProperties = null
 export async function askClaude(history) {
   if (!cachedProperties) cachedProperties = loadProperties()
 
-  const systemPrompt = buildSystemPrompt(cachedProperties, getEnvVars())
+  // Detectar si el último mensaje del usuario tiene un link de la web propia
+  const lastUserMsg = [...history].reverse().find(m => m.role === 'user')
+  const propId = lastUserMsg ? extractPropertyId(lastUserMsg.content) : null
+  const matchedProperty = propId ? findPropertyById(propId, cachedProperties) : null
+
+  // Si encontramos la propiedad por ID, pasamos solo esa al prompt
+  // Si no, pasamos toda la base (para búsquedas generales)
+  let systemPrompt
+  if (matchedProperty) {
+    console.log(`🎯 Propiedad encontrada por ID ${propId}: ${matchedProperty.titulo}`)
+    systemPrompt = buildSinglePropertyPrompt(matchedProperty, getEnvVars())
+  } else {
+    systemPrompt = buildSystemPrompt(cachedProperties, getEnvVars())
+  }
 
   const response = await client.messages.create({
     model:      'claude-opus-4-5',
