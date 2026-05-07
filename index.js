@@ -87,12 +87,28 @@ server.listen(PORT, () => logger.info(`🌐 Servidor QR en puerto ${PORT} → /q
 // ─── NOTIFICACIÓN AL GRUPO Y ASESOR ───────────────────────────────────────
 async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
   const numero = userId.replace('@s.whatsapp.net', '')
+  // Detectar tipo de notificación según propiedadInteres
+  const esInquilino = propiedadInteres?.toLowerCase().includes('consulta de inquilino')
+  const esTasacion = propiedadInteres?.toLowerCase().includes('tasación')
+
+  let titulo, detalle
+  if (esInquilino) {
+    titulo = '🔔 *Nueva Consulta de Inquilino Activo*'
+    detalle = `✅ Revisar y contactar al inquilino a la brevedad.`
+  } else if (esTasacion) {
+    titulo = '🔔 *Nueva Solicitud de Tasación*'
+    detalle = `✅ Coordinar visita de tasación con el propietario.`
+  } else {
+    titulo = '🔔 *Nuevo lead interesado en agendar visita*'
+    detalle = `✅ Se le pasó el link de Calendly. Estén atentos por si confirma visita.`
+  }
+
   const msg =
-    `🔔 *Nuevo lead calificado*\n\n` +
-    `📱 *WhatsApp del lead:* wa.me/${numero}\n` +
-    `🏠 *Propiedad consultada:* ${propiedadInteres || 'No especificada'}\n\n` +
-    `💬 *Último mensaje del agente:*\n${replyText}\n\n` +
-    `✅ Se le pasó el link de Calendly para agendar. Estén atentos por si confirma visita.`
+    `${titulo}\n\n` +
+    `📱 *WhatsApp:* wa.me/${numero}\n` +
+    `🏠 *Propiedad/Consulta:* ${propiedadInteres || 'No especificada'}\n\n` +
+    `💬 *Último mensaje del cliente:*\n${replyText}\n\n` +
+    detalle
 
   // Notificar al asesor individual
   const ASESOR_NOTIF = process.env.WHATSAPP_ASESOR
@@ -191,7 +207,7 @@ async function handleMessage(sock, msg) {
     if (triggers.grupoNotificar && !state.grupoNotificado) {
       updateLeadState(jid, { grupoNotificado: true })
       const updatedState = getLeadState(jid)
-      await notifyGrupo(sock, jid, updatedState.propiedadInteres, reply)
+      await notifyGrupo(sock, jid, updatedState.propiedadInteres, text)
     }
 
   } catch (err) {
