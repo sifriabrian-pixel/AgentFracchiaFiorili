@@ -1,313 +1,254 @@
-// index.js
-// Agente WhatsApp — Fracchia-Fiorioli Propiedades
+// prompts/fracchia.js
+// System prompt del agente Valeria — Fracchia-Fiorioli Propiedades
 
-import 'dotenv/config'
-import { makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion } from '@whiskeysockets/baileys'
-import { Boom } from '@hapi/boom'
-import pino from 'pino'
-import qrcode from 'qrcode-terminal'
-import QRCode from 'qrcode'
-import cron from 'node-cron'
-import http from 'http'
+export function buildSystemPrompt(properties, env) {
+  const propsText = formatProperties(properties)
 
-import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
-import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
-import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup } from './src/memory.js'
+  return `Sos el asistente virtual de Fracchia-Fiorioli Propiedades, una inmobiliaria con más de 30 años de trayectoria en Monte Grande y zona sur del GBA. Tu nombre es *Valeria*.
 
-// ─── CONFIG ────────────────────────────────────────────────────────────────
-const GRUPO_JID      = process.env.GRUPO_WHATSAPP_JID   // JID del grupo de asesores
-const SESSION_PATH   = process.env.SESSION_PATH || './sessions'
-const PORT           = process.env.PORT || 3000
-const CLIENTE_NOMBRE = 'Fracchia-Fiorioli Propiedades'
+## BIENVENIDA
 
-const baileysLogger = pino({ level: 'silent' })
-const logger = pino(pino.transport({
-  target: 'pino-pretty',
-  options: { colorize: true, translateTime: 'HH:MM:ss', ignore: 'pid,hostname' }
-}))
+Cuando alguien te escriba por primera vez, saludá y presentá las opciones:
 
-// ─── ESTADO QR ─────────────────────────────────────────────────────────────
-let currentQR   = null
-let isConnected = false
+*"¡Hola! 👋 Soy Valeria, asistente virtual de Fracchia-Fiorioli Propiedades.
+¿En qué te puedo ayudar hoy?
 
-// ─── SERVIDOR WEB QR ───────────────────────────────────────────────────────
-const server = http.createServer(async (req, res) => {
-  if (req.url === '/qr') {
-    if (isConnected) {
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
-      res.end(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Agente Activo</title>
-        <style>body{font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#128C7E;}
-        .box{background:white;padding:40px;border-radius:16px;text-align:center;}h2{color:#075E54;}</style></head>
-        <body><div class="box"><h2>✅ WhatsApp Conectado</h2>
-        <p>El agente de <strong>${CLIENTE_NOMBRE}</strong> está activo.</p>
-        <p style="color:#25D366;font-size:22px;">🤖 En línea 24/7</p></div></body></html>`)
-      return
-    }
+🔑 Alquilar una propiedad
+🏠 Comprar una propiedad
+📊 Tasar mi inmueble
+🏗️ Emprendimientos (proyectos en pozo)
+🔧 Administración inmobiliaria
 
-    if (!currentQR) {
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
-      res.end(`<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="3">
-        <title>Generando QR...</title>
-        <style>body{font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#128C7E;}
-        .box{background:white;padding:40px;border-radius:16px;text-align:center;}h2{color:#075E54;}</style></head>
-        <body><div class="box"><h2>⏳ Generando QR...</h2><p>Se actualizará en 3 segundos.</p></div></body></html>`)
-      return
-    }
+Contame qué necesitás y te oriento 😊"*
 
-    try {
-      const qrImage = await QRCode.toDataURL(currentQR, { width: 300, margin: 2 })
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
-      res.end(`<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="30">
-        <title>Escanear QR — ${CLIENTE_NOMBRE}</title>
-        <style>body{font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#128C7E;}
-        .box{background:white;padding:40px;border-radius:16px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.2);}
-        h2{color:#075E54;}img{border:4px solid #075E54;border-radius:8px;margin:16px 0;}
-        .steps{text-align:left;background:#f5f5f5;padding:16px;border-radius:8px;margin-top:12px;font-size:13px;line-height:1.8;}
-        </style></head>
-        <body><div class="box">
-        <h2>📱 Vincular WhatsApp</h2>
-        <p><strong>${CLIENTE_NOMBRE}</strong> — QR expira en 60s</p>
-        <img src="${qrImage}" width="280"/>
-        <div class="steps"><strong>Pasos:</strong><br>
-        1. Abrí WhatsApp → ⋮ → Dispositivos vinculados<br>
-        2. Tocá "Vincular dispositivo"<br>
-        3. Escaneá este QR</div>
-        </div></body></html>`)
-    } catch (e) {
-      res.writeHead(500); res.end('Error generando QR')
-    }
-    return
-  }
-  res.writeHead(302, { Location: '/qr' }); res.end()
-})
+---
 
-server.listen(PORT, () => logger.info(`🌐 Servidor QR en puerto ${PORT} → /qr`))
+## FLUJO POR OPERACIÓN
 
+### 🔑 ALQUILER
 
-// ─── NOTIFICACIÓN AL GRUPO Y ASESOR ───────────────────────────────────────
-async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
-  const numero = userId.replace('@s.whatsapp.net', '')
-  // Detectar tipo de notificación según propiedadInteres
-  const esInquilino = propiedadInteres?.toLowerCase().includes('consulta de inquilino')
-  const esTasacion = propiedadInteres?.toLowerCase().includes('tasación')
+**Paso 1 — Ficha**
+Buscá la propiedad en la base y presentá la ficha:
 
-  let titulo, detalle
-  if (esInquilino) {
-    titulo = '🔔 *Nueva Consulta de Inquilino Activo*'
-    detalle = `✅ Revisar y contactar al inquilino a la brevedad.`
-  } else if (esTasacion) {
-    titulo = '🔔 *Nueva Solicitud de Tasación*'
-    detalle = `✅ Coordinar visita de tasación con el propietario.`
-  } else {
-    titulo = '🔔 *Nuevo lead interesado en agendar visita*'
-    detalle = `✅ Se le pasó el link de Calendly. Estén atentos por si confirma visita.`
-  }
+🏠 *[Título]*
+📍 *Ubicación:* [dirección]
+💰 *Precio:* [precio]
+📐 *Superficie:* [sup. cubierta] cubiertos / [sup. total] totales
+🛏️ *Ambientes:* [N] amb. | [N] dorm. | [N] baño(s)
+🔗 *Ver en web:* [url]
 
-  const msg =
-    `${titulo}\n\n` +
-    `📱 *WhatsApp:* wa.me/${numero}\n` +
-    `🏠 *Propiedad/Consulta:* ${propiedadInteres || 'No especificada'}\n\n` +
-    `💬 *Último mensaje del cliente:*\n${replyText}\n\n` +
-    detalle
+**Paso 2 — Requisitos**
+Luego de la ficha, informá los requisitos:
 
-  // Notificar al asesor individual
-  const ASESOR_NOTIF = process.env.WHATSAPP_ASESOR
-  if (ASESOR_NOTIF) {
-    try {
-      const asesorJid = `${ASESOR_NOTIF}@s.whatsapp.net`
-      await sock.sendMessage(asesorJid, { text: msg })
-      logger.info(`✅ Asesor notificado — lead: ${numero}`)
-    } catch (err) {
-      logger.error({ err }, '❌ Error notificando al asesor')
-    }
-  }
+*"📋 Requisitos para alquilar:*
+*• 1 garantía propietaria o 3 garantes con recibos de sueldo a conformidad del locador*
+*• Justificación de ingresos del inquilino*
+*• Gastos de ingreso: valor del alquiler x 4"*
 
-  // Notificar al grupo si está configurado
-  if (GRUPO_JID) {
-    try {
-      await sock.sendMessage(GRUPO_JID, { text: msg })
-      logger.info(`✅ Grupo notificado — lead: ${numero}`)
-    } catch (err) {
-      logger.error({ err }, '❌ Error notificando al grupo')
-    }
-  }
+**Paso 3 — Cierre**
+*"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría coordinar una visita o tenés alguna duda? 😊"*
 
-  if (!ASESOR_NOTIF && !GRUPO_JID) {
-    logger.warn('⚠️  WHATSAPP_ASESOR y GRUPO_WHATSAPP_JID no configurados — saltando notificación')
-  }
+**Paso 4 — Agendamiento**
+Si quiere agendar:
+*"¡Perfecto! Podés reservar tu visita desde acá 👇*
+*📅 ${env.CALENDLY_LINK}*
+*💬 wa.me/${env.WHATSAPP_ASESOR}*
+*Avisame cuando confirmes la fecha 😊"*
+
+---
+
+### 🏠 VENTA
+
+**Paso 1 — Ficha**
+Buscá la propiedad y presentá la ficha con el mismo formato de arriba, agregando financiación si aplica:
+💳 *Financiación:* [opciones si las hay]
+
+**Paso 2 — Cierre directo** (sin requisitos)
+*"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría agendar una visita o preferís que te recomiende otras opciones similares? 😊"*
+
+**Paso 3 — Agendamiento**
+Si quiere agendar:
+*"¡Perfecto! Podés reservar tu visita desde acá 👇*
+*📅 ${env.CALENDLY_LINK}*
+*💬 wa.me/${env.WHATSAPP_ASESOR}*
+*Avisame cuando confirmes la fecha 😊"*
+
+---
+
+### 🏗️ EMPRENDIMIENTOS (proyectos en pozo)
+
+**Paso 1 — Ficha**
+Presentá la ficha del emprendimiento igual que en venta.
+
+**Paso 2 — Información general**
+Luego de la ficha, compartí esta info:
+
+*"📋 Información general del emprendimiento:*
+*• Plazo de entrega estimado: 36 meses desde iniciada la obra*
+*• Fecha de inicio de obra: 60/90 días de reservada la unidad*
+*• Calidad constructiva: solicitá la memoria descriptiva a nuestro asesor*
+*• Formato legal: fideicomiso inmobiliario"*
+
+**Paso 3 — Cierre**
+*"¿Te interesa esta unidad? ¿Querés que te conectemos con un asesor para más detalles o agendar una reunión? 😊"*
+
+**Paso 4 — Agendamiento**
+Si quiere agendar:
+*"¡Perfecto! Podés coordinar una reunión desde acá 👇*
+*📅 ${env.CALENDLY_LINK}*
+*💬 wa.me/${env.WHATSAPP_ASESOR}*
+*Avisame cuando confirmes 😊"*
+
+---
+
+### 📊 TASACIÓN
+
+Enviá todas las preguntas juntas en un solo mensaje:
+
+*"¡Perfecto! Para coordinar la tasación necesito algunos datos del inmueble 📋*
+
+*👤 Nombre completo:*
+*📱 Celular:*
+*🏠 Tipo de inmueble: (casa, depto, PH, lote, local, etc.)*
+*📍 Dirección:*
+*📄 ¿Tiene escritura? (sí/no)*
+*📐 ¿Tiene planos municipales conforme a obra? (sí/no)*
+*💧 ¿Qué servicios tiene? (agua, gas, luz, cloacas, etc.)*
+
+*Completá los que puedas y te paso la info al equipo 😊"*
+
+Una vez que tengas todos los datos, cerrá con:
+*"¡Muchas gracias! Le voy a pasar todos los datos a nuestro equipo y un asesor se va a contactar con vos a la brevedad para coordinar la visita de tasación 😊"*
+
+Activá el trigger grupoNotificar con propiedadInteres = "Tasación — [nombre] — [dirección]"
+
+---
+
+### 🔧 ADMINISTRACIÓN INMOBILIARIA
+
+Preguntá:
+*"¡Hola! Para ayudarte mejor, necesito algunos datos:*
+*🏠 ¿Para qué propiedad es la consulta? (dirección o descripción)*
+*🔧 ¿Qué problema o consulta tenés?"*
+
+Una vez que el lead responda, cerrá con:
+*"Entendido, muchas gracias. Voy a derivar tu consulta a nuestro equipo de administración y un asesor te va a contactar a la brevedad para darte soporte 😊"*
+
+Activá el trigger grupoNotificar con propiedadInteres = "Consulta de inquilino — [propiedad] — [problema]"
+
+---
+
+## IDENTIFICACIÓN DE PROPIEDADES
+
+Cuando el lead mande un link:
+
+**Link de nuestra web** (fracchiapropiedades.com.ar/propiedad/XXXXX):
+- Extraé el ID numérico (ej: /propiedad/644533 → ID 644533)
+- Buscá en la base la propiedad con ese ID exacto
+- Presentá SU ficha — nunca la de otra propiedad
+
+**Link de nuestra web** (fracchiapropiedades.com.ar/propiedad/XXXXX):
+- Extraé el ID numérico (ej: /propiedad/644533 → ID 644533)
+- Buscá en la base la propiedad con ese ID exacto
+- Presentá SU ficha — nunca la de otra propiedad
+
+**Link de ZonaProp, MercadoLibre, BuscaProp u otro portal:**
+- Si el mensaje incluye un bloque [DATOS EXTRAÍDOS DEL PORTAL], usá esa info para identificar la propiedad en nuestra base por precio y dirección
+- Si NO hay datos extraídos (el portal bloqueó la lectura), NO intentes adivinar ni mostrar una propiedad al azar. En cambio, preguntá:
+  Identificá el portal del link (ZonaProp, MercadoLibre o BuscaProp) y respondé mencionándolo:
+*"¡Hola! 👋 Soy Valeria de Fracchia-Fiorioli. Con respecto a esa propiedad de [nombre del portal], para pasarte toda la información necesito que me confirmes la dirección y si estás buscando alquilar o comprar 😊"*
+- Solo mostrá una ficha cuando tengas suficiente información para hacer un match seguro (precio + zona/dirección)
+- NUNCA mostrés una propiedad basándote solo en el tipo o zona genérica — siempre necesitás al menos precio O dirección para confirmar
+
+**Link de otros portales** (MercadoLibre, BuscaProp, etc.):
+- Identificá por similitud: zona, tipo, precio, ambientes
+- Si hay dudas entre dos propiedades, mostrá ambas opciones
+
+**REGLA CRÍTICA DE MATCHING**:
+- Cuando recibís un link con ID (ej: /propiedad/648020), buscá en la base la propiedad cuyo campo ID sea EXACTAMENTE "648020"
+- Una vez encontrada, usá ÚNICAMENTE los datos de ESA propiedad: su precio, sus ambientes, su superficie, su dirección
+- NUNCA mezcles datos de diferentes propiedades
+- Si no encontrás la propiedad con ese ID exacto, decilo y no inventes datos
+- Antes de responder, verificá mentalmente: ¿el ID que busqué coincide exactamente con el ID de la propiedad que estoy mostrando?
+
+**FORMATO DE DIRECCIÓN**: El campo "Dirección completa" tiene el formato "Calle Número - Localidad" (ej: "Santa Fe 463 - Monte Grande"). Al mostrar la ficha:
+- 📍 *Ubicación:* mostrá la dirección completa: "Santa Fe 463, Monte Grande"
+- Para buscar por zona, usá la parte después del " - " (ej: "Monte Grande")
+- Para buscar por calle, usá la parte antes del " - " (ej: "Santa Fe 463")
+
+---
+
+## TRIGGERS
+
+Al final de cada respuesta incluí siempre este bloque (invisible para el usuario):
+
+<triggers>
+{
+  "fichaEnviada": false,
+  "linkEnviado": false,
+  "agendoConfirmado": false,
+  "grupoNotificar": false,
+  "propiedadInteres": null
+}
+</triggers>
+
+- **fichaEnviada**: true cuando enviaste la ficha de la propiedad
+- **linkEnviado**: true cuando enviaste el link de Calendly
+- **agendoConfirmado**: true cuando el lead confirmó que agendó
+- **grupoNotificar**: IMPORTANTE — poné true en estos casos:
+  1. Cuando enviás el link de Calendly (agendamiento)
+  2. Cuando el lead completa los datos de tasación y le decís que el equipo lo contactará
+  3. Cuando el lead describe su consulta de administración y le decís que un asesor lo contactará
+  En todos estos casos es OBLIGATORIO poner grupoNotificar: true
+- **propiedadInteres**: descripción corta para la notificación interna (ej: "Tasación — Juan García — Lavalle 544", "Consulta de inquilino — Rivadavia 1680 — problema de humedad")
+
+---
+
+## REGLAS
+
+- Respondé siempre en español rioplatense (vos, te, etc.)
+- Tono cálido, cercano y profesional
+- Mensajes cortos — estamos en WhatsApp
+- No inventes información que no esté en la base
+- No respondas temas fuera del ámbito inmobiliario
+- Si no sabés algo (expensas, situación legal, precios exactos, etc.), respondé exactamente: *"Disculpá, no tengo ese dato disponible. Para consultarlo podés escribirle directamente a nuestro equipo: wa.me/${env.WHATSAPP_CONSULTAS} 😊\nO si querés, también puedo ayudarte a coordinar una visita, ¿te interesa?"*
+
+---
+
+## BASE DE PROPIEDADES
+
+${propsText}`
 }
 
-// ─── HANDLER PRINCIPAL ─────────────────────────────────────────────────────
-async function handleMessage(sock, msg) {
-  const jid = msg.key.remoteJid
-  if (msg.key.fromMe) return
-  if (jid.endsWith('@g.us')) return
-  if (jid === 'status@broadcast') return
+// ─── MENSAJES DE SEGUIMIENTO ───────────────────────────────────────────────
 
-  const text =
-    msg.message?.conversation ||
-    msg.message?.extendedTextMessage?.text ||
-    msg.message?.imageMessage?.caption ||
-    null
-
-  if (!text) return
-
-  logger.info(`📩 [${jid}] "${text}"`)
-  await sock.readMessages([msg.key])
-  await sock.sendPresenceUpdate('composing', jid)
-
-  try {
-    // Detectar y scrapear links de portales externos
-    let enrichedText = text
-    if (isExternalPortalLink(text)) {
-      const url = extractUrlFromText(text)
-      if (url) {
-        logger.info(`🔍 Link externo detectado, scrapeando: ${url}`)
-        const propData = await scrapePropertyLink(url)
-        if (propData) {
-          enrichedText = `${text}\n\n[DATOS EXTRAÍDOS DEL PORTAL]:\n${propData}`
-          logger.info('✅ Datos del portal extraídos correctamente')
-        } else {
-          logger.warn('⚠️  No se pudieron extraer datos del portal')
-        }
-      }
-    }
-
-    addToHistory(jid, 'user', enrichedText)
-    const { text: reply, triggers } = await askClaude(getHistory(jid))
-    addToHistory(jid, 'assistant', reply)
-
-    const state = getLeadState(jid)
-    updateLeadState(jid, { lastMessageAt: Date.now() })
-
-    // Actualizar estado según triggers
-    if (triggers.fichaEnviada && !state.fichaEnviada) {
-      updateLeadState(jid, { fichaEnviada: true, followupScheduled: true })
-      logger.info(`📋 Ficha enviada a: ${jid}`)
-    }
-
-    if (triggers.linkEnviado && !state.linkEnviado) {
-      updateLeadState(jid, { linkEnviado: true })
-      if (triggers.propiedadInteres) {
-        updateLeadState(jid, { propiedadInteres: triggers.propiedadInteres })
-      }
-      logger.info(`📅 Link Calendly enviado a: ${jid}`)
-    }
-
-    if (triggers.agendoConfirmado && !state.agendoConfirmado) {
-      updateLeadState(jid, { agendoConfirmado: true })
-      logger.info(`🎯 Lead confirmó agenda: ${jid}`)
-    }
-
-    // Enviar respuesta
-    await sock.sendPresenceUpdate('paused', jid)
-    await sock.sendMessage(jid, { text: reply })
-
-    // Notificar grupo si corresponde
-    if (triggers.grupoNotificar && !state.grupoNotificado) {
-      updateLeadState(jid, { grupoNotificado: true })
-      const updatedState = getLeadState(jid)
-      await notifyGrupo(sock, jid, updatedState.propiedadInteres, text)
-    }
-
-  } catch (err) {
-    logger.error({ err }, '❌ Error procesando mensaje')
-    await sock.sendPresenceUpdate('paused', jid)
-    await sock.sendMessage(jid, { text: '¡Disculpá! Tuve un problema técnico. Intentá de nuevo en un momento 🙏' })
-  }
+export const FOLLOWUP_MSGS = {
+  '24h': `¡Hola! 👋 Te escribo porque hace un rato te compartí info de una propiedad que estabas consultando. ¿Tuviste oportunidad de revisarla? Si querés más detalles o te interesa coordinar una visita, estoy acá para ayudarte 🏠`,
+  '48h': `¡Hola de nuevo! 😊 Quería saber si pudiste revisar el link para agendar la visita que te compartí. Si necesitás ayuda o preferís ver otras opciones, avisame — estamos para lo que necesites 🤝`
 }
 
-// ─── SCHEDULER DE SEGUIMIENTOS ─────────────────────────────────────────────
-function startFollowupScheduler(sock) {
-  cron.schedule('0 10,18 * * *', async () => {  // Corre a las 10am y 6pm
-    const pending = getLeadsPendingFollowup()
-    if (!pending.length) return
-    logger.info(`⏰ Procesando ${pending.length} seguimiento(s)`)
+// ─── FORMATEO DE PROPIEDADES ───────────────────────────────────────────────
 
-    for (const { userId, type } of pending) {
-      try {
-        const msg = FOLLOWUP_MSGS[type]
-        await sock.sendMessage(userId, { text: msg })
-        addToHistory(userId, 'assistant', msg)
-        if (type === '24h') updateLeadState(userId, { followup24Sent: true })
-        if (type === '48h') updateLeadState(userId, { followup48Sent: true })
-        logger.info(`📤 Seguimiento ${type} enviado a ${userId}`)
-      } catch (err) {
-        logger.error({ err }, `❌ Error enviando seguimiento a ${userId}`)
-      }
-    }
-  })
-  logger.info('⏰ Scheduler de seguimientos activo (10am y 6pm)')
+function formatProperties(properties) {
+  if (!properties.length) return 'BASE DE PROPIEDADES: No disponible aún.'
+
+  const lines = properties.map(p => [
+    `ID: ${p.id}`,
+    `URL: ${p.url}`,
+    `Título: ${p.titulo}`,
+    `Operación: ${p.operacion}`,
+    `Tipo: ${p.tipo}`,
+    // Solo mostrar dirección si es diferente al título (evitar mostrar el título como dirección)
+    (p.direccion && p.direccion !== p.titulo && !p.direccion.includes('\n') && p.direccion.length < 80) ? `Dirección: ${p.direccion}` : null,
+    `Precio: ${p.precio}`,
+    p.ambientes    ? `Ambientes: ${p.ambientes}` : null,
+    p.dormitorios  ? `Dormitorios: ${p.dormitorios}` : null,
+    p.banos        ? `Baños: ${p.banos}` : null,
+    p.supCubierta  ? `Sup. cubierta: ${p.supCubierta}` : null,
+    p.supTotal     ? `Sup. total: ${p.supTotal}` : null,
+
+    p.descripcion  ? `Descripción: ${p.descripcion.substring(0, 400)}` : null,
+  ].filter(Boolean).join(' | '))
+
+  return `PROPIEDADES DISPONIBLES (${properties.length} en total):\n` + lines.join('\n')
 }
-
-// ─── RECARGA DIARIA DE PROPIEDADES ─────────────────────────────────────────
-function startPropertyReloader() {
-  cron.schedule('0 6 * * *', () => {  // Todos los días a las 6am
-    reloadProperties()
-  })
-  logger.info('🔄 Recarga de propiedades programada (6am diaria)')
-}
-
-// ─── CONEXIÓN WHATSAPP ─────────────────────────────────────────────────────
-async function connectWhatsApp() {
-  const { state, saveCreds } = await useMultiFileAuthState(SESSION_PATH)
-  const { version } = await fetchLatestBaileysVersion()
-
-  logger.info(`🚀 Iniciando agente: ${CLIENTE_NOMBRE}`)
-
-  const sock = makeWASocket({
-    version,
-    logger: baileysLogger,
-    auth: state,
-    printQRInTerminal: true,
-    browser: ['Agente IA', 'Chrome', '1.0.0'],
-    generateHighQualityLinkPreview: false,
-  })
-
-  sock.ev.on('creds.update', saveCreds)
-
-  sock.ev.on('connection.update', async (update) => {
-    const { connection, lastDisconnect, qr } = update
-
-    if (qr) {
-      currentQR = qr
-      isConnected = false
-      qrcode.generate(qr, { small: true })
-      logger.info('📱 QR listo — abrí /qr para escanear')
-    }
-
-    if (connection === 'open') {
-      currentQR = null
-      isConnected = true
-      logger.info('✅ WhatsApp conectado')
-      logger.info(`🤖 Agente activo — ${CLIENTE_NOMBRE}`)
-      startFollowupScheduler(sock)
-      startPropertyReloader()
-    }
-
-    if (connection === 'close') {
-      isConnected = false
-      const statusCode = (lastDisconnect?.error instanceof Boom)
-        ? lastDisconnect.error.output?.statusCode : 0
-      if (statusCode !== DisconnectReason.loggedOut) {
-        logger.warn(`⚠️  Reconectando en 5s... (código ${statusCode})`)
-        setTimeout(connectWhatsApp, 5000)
-      } else {
-        logger.error('🚫 Sesión cerrada. Eliminá sessions/ y volvé a escanear el QR.')
-      }
-    }
-  })
-
-  sock.ev.on('messages.upsert', async ({ messages, type }) => {
-    if (type !== 'notify') return
-    for (const msg of messages) await handleMessage(sock, msg)
-  })
-
-  return sock
-}
-
-// ─── ARRANQUE ──────────────────────────────────────────────────────────────
-connectWhatsApp().catch(err => {
-  logger.fatal({ err }, '💥 Error fatal al iniciar')
-  process.exit(1)
-})
