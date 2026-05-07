@@ -125,7 +125,10 @@ async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
 async function handleMessage(sock, msg) {
   const jid = msg.key.remoteJid
   if (msg.key.fromMe) return
-  if (jid.endsWith('@g.us')) return
+  if (jid.endsWith('@g.us')) {
+  logger.info(`Grupo detectado JID: ${jid}`)
+  return
+}  
   if (jid === 'status@broadcast') return
 
   const text =
