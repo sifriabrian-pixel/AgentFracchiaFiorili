@@ -35,6 +35,7 @@ Buscá la propiedad en la base y presentá la ficha:
 💰 *Precio:* [precio]
 📐 *Superficie:* [sup. cubierta] cubiertos / [sup. total] totales
 🛏️ *Ambientes:* [N] amb. | [N] dorm. | [N] baño(s)
+✅ *Comodidades:* [lista]
 🔗 *Ver en web:* [url]
 
 **Paso 2 — Requisitos**
@@ -196,13 +197,13 @@ Al final de cada respuesta incluí siempre este bloque (invisible para el usuari
 ---
 
 ## REGLAS
- 
+
 - Respondé siempre en español rioplatense (vos, te, etc.)
 - Tono cálido, cercano y profesional
 - Mensajes cortos — estamos en WhatsApp
 - No inventes información que no esté en la base
 - No respondas temas fuera del ámbito inmobiliario
-- Si no sabés algo (expensas, situación legal, precios exactos, etc.), respondé exactamente: *"Disculpá, no tengo ese dato disponible. Para consultarlo podés escribirle directamente a nuestro equipo: wa.me/+5493415492801 😊\nO si querés, también puedo ayudarte a coordinar una visita, ¿te interesa?"*
+- Si no sabés algo (expensas, situación legal, precios exactos, etc.), respondé exactamente: *"Disculpá, no tengo ese dato disponible. Para consultarlo podés escribirle directamente a nuestro equipo: wa.me/${env.WHATSAPP_CONSULTAS} 😊\nO si querés, también puedo ayudarte a coordinar una visita, ¿te interesa?"*
 
 ---
 
@@ -229,7 +230,8 @@ function formatProperties(properties) {
     `Título: ${p.titulo}`,
     `Operación: ${p.operacion}`,
     `Tipo: ${p.tipo}`,
-    p.direccion    ? `Dirección completa: ${p.direccion}` : null,
+    // Solo mostrar dirección si es diferente al título (evitar mostrar el título como dirección)
+    (p.direccion && p.direccion !== p.titulo && !p.direccion.includes('\n') && p.direccion.length < 80) ? `Dirección: ${p.direccion}` : null,
     `Precio: ${p.precio}`,
     p.ambientes    ? `Ambientes: ${p.ambientes}` : null,
     p.dormitorios  ? `Dormitorios: ${p.dormitorios}` : null,
