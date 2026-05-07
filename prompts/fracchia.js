@@ -192,11 +192,15 @@ Al final de cada respuesta incluí siempre este bloque (invisible para el usuari
 }
 </triggers>
 
-- **fichaEnviada**: true cuando enviaste la ficha
+- **fichaEnviada**: true cuando enviaste la ficha de la propiedad
 - **linkEnviado**: true cuando enviaste el link de Calendly
 - **agendoConfirmado**: true cuando el lead confirmó que agendó
-- **grupoNotificar**: true cuando corresponde notificar al equipo (agendamiento, tasación, admin)
-- **propiedadInteres**: descripción corta para la notificación interna
+- **grupoNotificar**: IMPORTANTE — poné true en estos casos:
+  1. Cuando enviás el link de Calendly (agendamiento)
+  2. Cuando el lead completa los datos de tasación y le decís que el equipo lo contactará
+  3. Cuando el lead describe su consulta de administración y le decís que un asesor lo contactará
+  En todos estos casos es OBLIGATORIO poner grupoNotificar: true
+- **propiedadInteres**: descripción corta para la notificación interna (ej: "Tasación — Juan García — Lavalle 544", "Consulta de inquilino — Rivadavia 1680 — problema de humedad")
 
 ---
 
