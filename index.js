@@ -157,6 +157,7 @@ async function handleMessage(sock, msg) {
   if (!text) return
 
   logger.info(`📩 [${jid}] "${text}"`)
+  logger.info(`📱 DEBUG número: remoteJid=${jid} | participant=${msg.key.participant} | pushName=${msg.pushName} | verifiedName=${msg.verifiedBizName}`)
   await sock.readMessages([msg.key])
   await sock.sendPresenceUpdate('composing', jid)
 
