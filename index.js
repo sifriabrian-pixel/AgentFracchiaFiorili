@@ -85,7 +85,7 @@ server.listen(PORT, () => logger.info(`🌐 Servidor QR en puerto ${PORT} → /q
 
 
 // ─── NOTIFICACIÓN AL GRUPO Y ASESOR ───────────────────────────────────────
-async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
+async function notifyGrupo(sock, userId, propiedadInteres, replyText, pushName) {
   const numero = userId.replace('@s.whatsapp.net', '').replace('@lid', '').replace('@g.us', '')
   // Detectar tipo de notificación según propiedadInteres
   const esInquilino = propiedadInteres?.toLowerCase().includes('consulta de inquilino')
@@ -105,6 +105,7 @@ async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
 
   const msg =
     `${titulo}\n\n` +
+    `👤 *Contacto:* ${pushName || 'Desconocido'}\n` +
     `📱 *WhatsApp:* wa.me/${numero}\n` +
     `🏠 *Propiedad/Consulta:* ${propiedadInteres || 'No especificada'}\n\n` +
     `💬 *Último mensaje del cliente:*\n${replyText}\n\n` +
@@ -215,7 +216,7 @@ async function handleMessage(sock, msg) {
     if (triggers.grupoNotificar && !state.grupoNotificado) {
       updateLeadState(jid, { grupoNotificado: true })
       const updatedState = getLeadState(jid)
-      await notifyGrupo(sock, phoneNumber, updatedState.propiedadInteres, text)
+      await notifyGrupo(sock, phoneNumber, updatedState.propiedadInteres, text, msg.pushName)
     }
 
   } catch (err) {
