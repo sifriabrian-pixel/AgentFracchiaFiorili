@@ -140,10 +140,14 @@ async function notifyGrupo(sock, userId, propiedadInteres, replyText) {
 // ─── HANDLER PRINCIPAL ─────────────────────────────────────────────────────
 async function handleMessage(sock, msg) {
   const jid = msg.key.remoteJid
-  // Obtener número real de teléfono del mensaje
-  const phoneNumber = msg.key.participant?.replace('@s.whatsapp.net', '') ||
-                      jid.replace('@s.whatsapp.net', '').replace('@lid', '') ||
-                      msg.pushName || jid
+  // Obtener número real — intentar resolver LID a número real
+  let phoneNumber = jid.replace('@s.whatsapp.net', '').replace('@lid', '')
+  try {
+    if (jid.endsWith('@lid')) {
+      const contact = await sock.onWhatsApp(jid.replace('@lid', '') + '@s.whatsapp.net')
+      if (contact?.[0]?.jid) phoneNumber = contact[0].jid.replace('@s.whatsapp.net', '')
+    }
+  } catch { /* usar el número tal cual */ }
   if (msg.key.fromMe) return
   if (jid.endsWith('@g.us')) return
   if (jid === 'status@broadcast') return
@@ -157,7 +161,6 @@ async function handleMessage(sock, msg) {
   if (!text) return
 
   logger.info(`📩 [${jid}] "${text}"`)
-  logger.info(`📱 DEBUG número: remoteJid=${jid} | participant=${msg.key.participant} | pushName=${msg.pushName} | verifiedName=${msg.verifiedBizName}`)
   await sock.readMessages([msg.key])
   await sock.sendPresenceUpdate('composing', jid)
 
