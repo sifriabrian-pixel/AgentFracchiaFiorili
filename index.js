@@ -106,7 +106,7 @@ async function notifyGrupo(sock, userId, propiedadInteres, replyText, pushName) 
   const msg =
     `${titulo}\n\n` +
     `👤 *Contacto:* ${pushName || 'Desconocido'}\n` +
-    `📱 *WhatsApp:* wa.me/${numero}\n` +
+    `📱 *Número:* ${numero}\n` +
     `🏠 *Propiedad/Consulta:* ${propiedadInteres || 'No especificada'}\n\n` +
     `💬 *Último mensaje del cliente:*\n${replyText}\n\n` +
     detalle
