@@ -35,6 +35,7 @@ Buscá la propiedad en la base y presentá la ficha:
 💰 *Precio:* [precio]
 📐 *Superficie:* [sup. cubierta] cubiertos / [sup. total] totales
 🛏️ *Ambientes:* [N] amb. | [N] dorm. | [N] baño(s)
+✅ *Comodidades:* [lista]
 🔗 *Ver en web:* [url]
 
 **Paso 2 — Requisitos**
@@ -49,8 +50,11 @@ Luego de la ficha, informá los requisitos:
 *"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría coordinar una visita o tenés alguna duda? 😊"*
 
 **Paso 4 — Agendamiento**
-Si quiere agendar:
-*"¡Perfecto! Podés reservar tu visita desde acá 👇*
+Si quiere agendar, primero pedile el número:
+*"¡Perfecto! Antes de pasarte el link, ¿me confirmás tu número de celular? Así el equipo puede contactarte si surge alguna consulta sobre la visita 😊"*
+
+Una vez que el lead responda con su número, mandá el link:
+*"¡Gracias! Podés reservar tu visita desde acá 👇*
 *📅 ${env.CALENDLY_LINK}*
 *💬 wa.me/${env.WHATSAPP_ASESOR}*
 *Avisame cuando confirmes la fecha 😊"*
@@ -67,8 +71,11 @@ Buscá la propiedad y presentá la ficha con el mismo formato de arriba, agregan
 *"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría agendar una visita o preferís que te recomiende otras opciones similares? 😊"*
 
 **Paso 3 — Agendamiento**
-Si quiere agendar:
-*"¡Perfecto! Podés reservar tu visita desde acá 👇*
+Si quiere agendar, primero pedile el número:
+*"¡Perfecto! Antes de pasarte el link, ¿me confirmás tu número de celular? Así el equipo puede contactarte si surge alguna consulta sobre la visita 😊"*
+
+Una vez que el lead responda con su número, mandá el link:
+*"¡Gracias! Podés reservar tu visita desde acá 👇*
 *📅 ${env.CALENDLY_LINK}*
 *💬 wa.me/${env.WHATSAPP_ASESOR}*
 *Avisame cuando confirmes la fecha 😊"*
@@ -93,8 +100,11 @@ Luego de la ficha, compartí esta info:
 *"¿Te interesa esta unidad? ¿Querés que te conectemos con un asesor para más detalles o agendar una reunión? 😊"*
 
 **Paso 4 — Agendamiento**
-Si quiere agendar:
-*"¡Perfecto! Podés coordinar una reunión desde acá 👇*
+Si quiere agendar, primero pedile el número:
+*"¡Perfecto! Antes de pasarte el link, ¿me confirmás tu número de celular? Así el equipo puede contactarte si surge alguna consulta 😊"*
+
+Una vez que el lead responda con su número, mandá el link:
+*"¡Gracias! Podés coordinar una reunión desde acá 👇*
 *📅 ${env.CALENDLY_LINK}*
 *💬 wa.me/${env.WHATSAPP_ASESOR}*
 *Avisame cuando confirmes 😊"*
