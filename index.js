@@ -86,7 +86,16 @@ server.listen(PORT, () => logger.info(`🌐 Servidor QR en puerto ${PORT} → /q
 
 // ─── NOTIFICACIÓN AL GRUPO Y ASESOR ───────────────────────────────────────
 async function notifyGrupo(sock, userId, propiedadInteres, replyText, pushName) {
-  const numero = userId.replace('@s.whatsapp.net', '').replace('@lid', '').replace('@g.us', '')
+  const rawNumero = userId.replace('@s.whatsapp.net', '').replace('@lid', '').replace('@g.us', '')
+  // Formatear número argentino con +54 9
+  let numero = rawNumero
+  if (rawNumero && rawNumero.length <= 10 && !rawNumero.startsWith('54')) {
+    numero = '+54 9 ' + rawNumero
+  } else if (rawNumero && rawNumero.startsWith('54') && rawNumero.length > 10) {
+    numero = '+' + rawNumero.slice(0,2) + ' 9 ' + rawNumero.slice(2)
+  } else if (rawNumero && !rawNumero.startsWith('+')) {
+    numero = '+54 9 ' + rawNumero
+  }
   // Detectar tipo de notificación según propiedadInteres
   const esInquilino = propiedadInteres?.toLowerCase().includes('consulta de inquilino')
   const esTasacion = propiedadInteres?.toLowerCase().includes('tasación')
