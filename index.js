@@ -189,6 +189,14 @@ async function handleMessage(sock, msg) {
     const state = getLeadState(jid)
     updateLeadState(jid, { lastMessageAt: Date.now() })
 
+    // Capturar número de teléfono si el lead lo escribió
+    const phoneMatch = text.match(/(?:54|0)?9?\s*(?:11|[2-9]\d{2,3})\s*[\d\s-]{6,10}/)
+    if (phoneMatch && !state.phoneNumber) {
+      const cleanPhone = phoneMatch[0].replace(/[\s-]/g, '')
+      updateLeadState(jid, { phoneNumber: cleanPhone })
+      logger.info(`📱 Número capturado del lead: ${cleanPhone}`)
+    }
+
     // Actualizar estado según triggers
     if (triggers.fichaEnviada && !state.fichaEnviada) {
       updateLeadState(jid, { fichaEnviada: true, followupScheduled: true })
@@ -216,7 +224,8 @@ async function handleMessage(sock, msg) {
     if (triggers.grupoNotificar && !state.grupoNotificado) {
       updateLeadState(jid, { grupoNotificado: true })
       const updatedState = getLeadState(jid)
-      await notifyGrupo(sock, phoneNumber, updatedState.propiedadInteres, text, msg.pushName)
+      const realPhone = updatedState.phoneNumber || phoneNumber
+      await notifyGrupo(sock, realPhone, updatedState.propiedadInteres, text, msg.pushName)
     }
 
   } catch (err) {
