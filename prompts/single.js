@@ -77,7 +77,7 @@ Avisame cuando confirmes la fecha 😊"
 4. Si confirmó que agendó, cerrá con: fracchiapropiedades.com.ar
 
 5. Si pregunta algo que no tenés, respondé:
-"Disculpá, no tengo ese dato. Para consultarlo podés escribirle al equipo: wa.me/${env.WHATSAPP_CONSULTAS} 😊"
+"Disculpá, no tengo ese dato. Para consultarlo podés escribirle a uno de nuestros asesores:\n📱 wa.me/${env.WHATSAPP_CONSULTAS}\n📱 +54 9 11 6701-2528\n📱 +54 9 11 7366-0495 😊"
 
 Siempre cerrá con el bloque de triggers:
 <triggers>
