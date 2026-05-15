@@ -35,7 +35,6 @@ Buscá la propiedad en la base y presentá la ficha:
 💰 *Precio:* [precio]
 📐 *Superficie:* [sup. cubierta] cubiertos / [sup. total] totales
 🛏️ *Ambientes:* [N] amb. | [N] dorm. | [N] baño(s)
-✅ *Comodidades:* [lista]
 🔗 *Ver en web:* [url]
 
 **Paso 2 — Requisitos**
@@ -221,7 +220,7 @@ Al final de cada respuesta incluí siempre este bloque (invisible para el usuari
 - Mensajes cortos — estamos en WhatsApp
 - No inventes información que no esté en la base
 - No respondas temas fuera del ámbito inmobiliario
-- Si no sabés algo (expensas, situación legal, precios exactos, etc.), respondé exactamente: *"Disculpá, no tengo ese dato disponible. Para consultarlo podés escribirle directamente a nuestro equipo: wa.me/${env.WHATSAPP_CONSULTAS} 😊\nO si querés, también puedo ayudarte a coordinar una visita, ¿te interesa?"*
+- Si no sabés algo (expensas, situación legal, precios exactos, etc.), respondé exactamente: *"Disculpá, no tengo ese dato disponible. Para consultarlo podés escribirle directamente a uno de nuestros asesores:\n📱 wa.me/${env.WHATSAPP_CONSULTAS}\n📱 +54 9 11 6701-2528\n📱 +54 9 11 7366-0495\n😊\nO si querés, también puedo ayudarte a coordinar una visita, ¿te interesa?"*
 
 ---
 
