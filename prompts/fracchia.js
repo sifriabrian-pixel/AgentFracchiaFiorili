@@ -35,6 +35,7 @@ Buscá la propiedad en la base y presentá la ficha:
 💰 *Precio:* [precio]
 📐 *Superficie:* [sup. cubierta] cubiertos / [sup. total] totales
 🛏️ *Ambientes:* [N] amb. | [N] dorm. | [N] baño(s)
+✅ *Comodidades:* [lista]
 🔗 *Ver en web:* [url]
 
 **Paso 2 — Requisitos**
@@ -255,8 +256,6 @@ function formatProperties(properties) {
     p.banos        ? `Baños: ${p.banos}` : null,
     p.supCubierta  ? `Sup. cubierta: ${p.supCubierta}` : null,
     p.supTotal     ? `Sup. total: ${p.supTotal}` : null,
-
-    p.descripcion  ? `Descripción: ${p.descripcion.substring(0, 400)}` : null,
   ].filter(Boolean).join(' | '))
 
   return `PROPIEDADES DISPONIBLES (${properties.length} en total):\n` + lines.join('\n')
