@@ -4,7 +4,7 @@
 const conversations = new Map() // jid -> [{role, content}]
 const leadStates    = new Map() // jid -> { ...estado }
 
-const MAX_HISTORY = 20 // mensajes máximos por conversación
+const MAX_HISTORY = 6 // mensajes máximos por conversación
 
 // ─── HISTORIAL ─────────────────────────────────────────────────────────────
 
