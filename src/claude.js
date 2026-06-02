@@ -1,5 +1,5 @@
 // src/claude.js
-// Integración con la API de Claude
+// Integración con la API de Claude — con prompt caching
 
 import Anthropic from '@anthropic-ai/sdk'
 import fs from 'fs'
@@ -23,13 +23,11 @@ function loadProperties() {
   }
 }
 
-// Extraer ID de propiedad de un link de la web propia
 function extractPropertyId(text) {
   const match = text.match(/fracchiapropiedades\.com\.ar\/propiedad\/(\d+)/)
   return match ? match[1] : null
 }
 
-// Buscar propiedad por ID exacto
 function findPropertyById(id, properties) {
   return properties.find(p => p.id === id) || null
 }
@@ -57,9 +55,9 @@ function cleanText(text) {
 
 function getEnvVars() {
   return {
-    CALENDLY_LINK:      process.env.CALENDLY_LINK      || '[PENDIENTE — configurar CALENDLY_LINK en Railway]',
-    WHATSAPP_ASESOR:    process.env.WHATSAPP_ASESOR    || '[PENDIENTE — configurar WHATSAPP_ASESOR en Railway]',
-    WHATSAPP_CONSULTAS: process.env.WHATSAPP_CONSULTAS || '[PENDIENTE — configurar WHATSAPP_CONSULTAS en Railway]',
+    CALENDLY_LINK:      process.env.CALENDLY_LINK      || '[PENDIENTE]',
+    WHATSAPP_ASESOR:    process.env.WHATSAPP_ASESOR    || '[PENDIENTE]',
+    WHATSAPP_CONSULTAS: process.env.WHATSAPP_CONSULTAS || '[PENDIENTE]',
   }
 }
 
@@ -68,13 +66,10 @@ let cachedProperties = null
 export async function askClaude(history) {
   if (!cachedProperties) cachedProperties = loadProperties()
 
-  // Detectar si el último mensaje del usuario tiene un link de la web propia
   const lastUserMsg = [...history].reverse().find(m => m.role === 'user')
   const propId = lastUserMsg ? extractPropertyId(lastUserMsg.content) : null
   const matchedProperty = propId ? findPropertyById(propId, cachedProperties) : null
 
-  // Si encontramos la propiedad por ID, pasamos solo esa al prompt
-  // Si no, pasamos toda la base (para búsquedas generales)
   let systemPrompt
   if (matchedProperty) {
     console.log(`🎯 Propiedad encontrada por ID ${propId}: ${matchedProperty.titulo}`)
@@ -86,13 +81,26 @@ export async function askClaude(history) {
   const response = await client.messages.create({
     model:      'claude-sonnet-4-6',
     max_tokens: 1024,
-    system:     systemPrompt,
-    messages:   history,
+    // Prompt caching — el system prompt se cachea y se cobra 90% menos en llamadas repetidas
+    system: [
+      {
+        type: 'text',
+        text: systemPrompt,
+        cache_control: { type: 'ephemeral' }
+      }
+    ],
+    messages: history,
   })
 
   const rawText = response.content[0]?.text || 'Disculpá, tuve un problema técnico. Intentá de nuevo 🙏'
   const triggers = parseTriggers(rawText)
   const text     = cleanText(rawText)
+
+  // Log de uso de cache
+  const usage = response.usage
+  if (usage?.cache_read_input_tokens > 0) {
+    console.log(`💾 Cache hit: ${usage.cache_read_input_tokens} tokens desde cache`)
+  }
 
   return { text, triggers }
 }
