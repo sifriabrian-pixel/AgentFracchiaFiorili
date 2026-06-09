@@ -55,9 +55,10 @@ function cleanText(text) {
 
 function getEnvVars() {
   return {
-    CALENDLY_LINK:      process.env.CALENDLY_LINK      || '[PENDIENTE]',
-    WHATSAPP_ASESOR:    process.env.WHATSAPP_ASESOR    || '[PENDIENTE]',
-    WHATSAPP_CONSULTAS: process.env.WHATSAPP_CONSULTAS || '[PENDIENTE]',
+    CALENDLY_LINK:           process.env.CALENDLY_LINK           || '[PENDIENTE]',
+    WHATSAPP_ASESOR_VENTA:   process.env.WHATSAPP_ASESOR_VENTA   || '5491156396534',
+    WHATSAPP_ASESOR_ALQUILER: process.env.WHATSAPP_ASESOR_ALQUILER || '5491167012528',
+    WHATSAPP_CONSULTAS:      process.env.WHATSAPP_CONSULTAS      || '[PENDIENTE]',
   }
 }
 
