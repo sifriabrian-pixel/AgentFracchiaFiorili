@@ -72,13 +72,13 @@ ${fichaFormateada}${requisitosAlquiler}
 "¡Perfecto! Antes de pasarte el link, ¿me confirmás tu número de celular? Así el equipo puede contactarte si surge alguna consulta 😊"
 
 Una vez que responda con su número:
-- Si es ALQUILER: "¡Gracias! 📅 ${env.CALENDLY_LINK} — Y te dejo el contacto de Horacio, nuestro asesor de alquileres: wa.me/${env.WHATSAPP_ASESOR_ALQUILER} 😊"
+- Si es ALQUILER: "¡Gracias! 📅 ${env.CALENDLY_LINK} — Y te dejo los contactos de nuestros asesores de alquileres:\n💬 wa.me/${env.WHATSAPP_ASESOR_ALQUILER} — Horacio\n💬 wa.me/5491124602096 — Elias 😊"
 - Si es VENTA: "¡Gracias! 📅 ${env.CALENDLY_LINK} — Y te dejo el contacto de Ezequiel, nuestro asesor de ventas: wa.me/${env.WHATSAPP_ASESOR_VENTA} 😊"
 
 4. Si confirmó que agendó, cerrá con: fracchiapropiedades.com.ar
 
 5. Si pregunta algo que no tenés, respondé:
-"Disculpá, no tengo ese dato. Si es una propiedad en alquiler podés consultar con Horacio: wa.me/${env.WHATSAPP_ASESOR_ALQUILER} 😊 Si es en venta, con Ezequiel: wa.me/${env.WHATSAPP_ASESOR_VENTA} 😊"
+"Disculpá, no tengo ese dato. Si es alquiler podés consultar con Horacio: wa.me/${env.WHATSAPP_ASESOR_ALQUILER} 😊 o con Elias: wa.me/5491124602096 😊 Si es en venta, con Ezequiel: wa.me/${env.WHATSAPP_ASESOR_VENTA} 😊"
 
 Siempre cerrá con el bloque de triggers:
 <triggers>
