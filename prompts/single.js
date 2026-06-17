@@ -71,9 +71,12 @@ ${fichaFormateada}${requisitosAlquiler}
 3. Si quiere agendar, primero pedile el número:
 "¡Perfecto! Antes de pasarte el link, ¿me confirmás tu número de celular? Así el equipo puede contactarte si surge alguna consulta 😊"
 
-Una vez que responda con su número:
-- Si es ALQUILER: "¡Gracias! 📅 ${env.CALENDLY_LINK} — Y te dejo los contactos de nuestros asesores de alquileres:\n💬 wa.me/${env.WHATSAPP_ASESOR_ALQUILER} — Horacio\n💬 wa.me/5491124602096 — Elias 😊"
-- Si es VENTA: "¡Gracias! 📅 ${env.CALENDLY_LINK} — Y te dejo el contacto de Ezequiel, nuestro asesor de ventas: wa.me/${env.WHATSAPP_ASESOR_VENTA} 😊"
+Una vez que responda con su número, mandá solo el link:
+"¡Gracias! Podés reservar tu visita desde acá 👇\n📅 ${env.CALENDLY_LINK}\nAvisame cuando confirmes la fecha 😊"
+
+Cuando el lead confirme que agendó:
+- Si es ALQUILER: "¡Genial, muchas gracias! 🎉 Ya les aviso al equipo.\nAnte cualquier consulta sobre la visita, podés escribirle a nuestros asesores:\n💬 wa.me/${env.WHATSAPP_ASESOR_ALQUILER} — Horacio\n💬 wa.me/5491124602096 — Elias\nCualquier otra propiedad que te interese, avisame 🏠\n🌐 fracchiapropiedades.com.ar"
+- Si es VENTA: "¡Genial, muchas gracias! 🎉 Ya les aviso al equipo.\nAnte cualquier consulta sobre la visita, podés escribirle a nuestro asesor:\n💬 wa.me/${env.WHATSAPP_ASESOR_VENTA} — Ezequiel\nCualquier otra propiedad que te interese, avisame 🏠\n🌐 fracchiapropiedades.com.ar"
 
 4. Si confirmó que agendó, cerrá con: fracchiapropiedades.com.ar
 
