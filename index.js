@@ -13,6 +13,7 @@ import http from 'http'
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
 import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup } from './src/memory.js'
+import { incrementStat, getStats, formatStatsHtml } from './src/stats.js'
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
 const GRUPO_JID      = process.env.GRUPO_WHATSAPP_JID   // JID del grupo de asesores
@@ -171,6 +172,7 @@ async function handleMessage(sock, msg) {
   if (!text) return
 
   logger.info(`📩 [${jid}] "${text}"`)
+  if (!getLeadState(jid).firstContactAt) incrementStat('leadsAtendidos')
   await sock.readMessages([msg.key])
   await sock.sendPresenceUpdate('composing', jid)
 
@@ -209,11 +211,13 @@ async function handleMessage(sock, msg) {
     // Actualizar estado según triggers
     if (triggers.fichaEnviada && !state.fichaEnviada) {
       updateLeadState(jid, { fichaEnviada: true, followupScheduled: true })
+      incrementStat('fichasEnviadas')
       logger.info(`📋 Ficha enviada a: ${jid}`)
     }
 
     if (triggers.linkEnviado && !state.linkEnviado) {
       updateLeadState(jid, { linkEnviado: true })
+      incrementStat('linksAgenda')
       if (triggers.propiedadInteres) {
         updateLeadState(jid, { propiedadInteres: triggers.propiedadInteres })
       }
@@ -222,6 +226,7 @@ async function handleMessage(sock, msg) {
 
     if (triggers.agendoConfirmado && !state.agendoConfirmado) {
       updateLeadState(jid, { agendoConfirmado: true })
+      incrementStat('agendasConfirmadas')
       logger.info(`🎯 Lead confirmó agenda: ${jid}`)
     }
 
@@ -234,6 +239,8 @@ async function handleMessage(sock, msg) {
       updateLeadState(jid, { grupoNotificado: true })
       const updatedState = getLeadState(jid)
       const realPhone = updatedState.phoneNumber || phoneNumber
+      if (updatedState.propiedadInteres?.toLowerCase().includes('tasación')) incrementStat('tasacionesSolicitadas')
+      if (updatedState.propiedadInteres?.toLowerCase().includes('consulta de inquilino')) incrementStat('consultasAdmin')
       await notifyGrupo(sock, realPhone, updatedState.propiedadInteres, text, msg.pushName)
     }
 
