@@ -33,7 +33,13 @@ let isConnected = false
 
 // ─── SERVIDOR WEB QR ───────────────────────────────────────────────────────
 const server = http.createServer(async (req, res) => {
-  if (req.url === '/qr') {
+if (req.url === '/stats') {
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
+  res.end(formatStatsHtml(getStats()))
+  return
+}
+
+if (req.url === '/qr') {
     if (isConnected) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
       res.end(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Agente Activo</title>
