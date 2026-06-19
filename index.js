@@ -9,12 +9,6 @@ import qrcode from 'qrcode-terminal'
 import QRCode from 'qrcode'
 import cron from 'node-cron'
 import http from 'http'
-const MAX_FOLLOWUP_ATTEMPTS = 3        // después de 3 fallos, se descarta el lead
-const DELAY_BETWEEN_SENDS_MS = 2000    // 2s entre cada mensaje
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
 
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
@@ -26,6 +20,14 @@ const GRUPO_JID      = process.env.GRUPO_WHATSAPP_JID   // JID del grupo de ases
 const SESSION_PATH   = process.env.SESSION_PATH || './sessions'
 const PORT           = process.env.PORT || 3000
 const CLIENTE_NOMBRE = 'Fracchia-Fiorioli Propiedades'
+
+// Config del scheduler de seguimientos (única declaración — no duplicar)
+const MAX_FOLLOWUP_ATTEMPTS = 3        // después de 3 fallos, se descarta el lead
+const DELAY_BETWEEN_SENDS_MS = 2000    // 2s entre cada mensaje — ajustable
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 const baileysLogger = pino({ level: 'silent' })
 const logger = pino(pino.transport({
@@ -264,22 +266,11 @@ async function handleMessage(sock, msg) {
 }
 
 // ─── SCHEDULER DE SEGUIMIENTOS ─────────────────────────────────────────────
-// Fix: throttling entre envíos + manejo de fallos para no reintentar infinito
-//
-// Cambios respecto al original:
+// Throttling entre envíos + manejo de fallos para no reintentar infinito:
 // 1. sleep() entre cada sendMessage (evita bombardear el socket → "Connection Closed")
-// 2. Contador de intentos fallidos por lead (después de N fallos, se marca como
-//    "no enviable" y se deja de reintentar — para no generar el mismo error cada
-//    corrida de cron por días)
-// 3. Logging agregado: cuántos enviados / cuántos fallidos por corrida
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-const MAX_FOLLOWUP_ATTEMPTS = 3        // después de 3 fallos, se descarta el lead
-const DELAY_BETWEEN_SENDS_MS = 2000    // 2s entre cada mensaje — ajustable
-
+// 2. Contador de intentos fallidos por lead — tras MAX_FOLLOWUP_ATTEMPTS se
+//    descarta y se deja de reintentar (no genera el mismo error cada corrida)
+// 3. Logging de resumen por corrida: enviados / fallidos / descartados
 function startFollowupScheduler(sock) {
   cron.schedule('0 10,18 * * *', async () => {  // Corre a las 10am y 6pm
     const pending = getLeadsPendingFollowup()
@@ -322,9 +313,6 @@ function startFollowupScheduler(sock) {
     }
 
     logger.info(`⏰ Corrida finalizada — enviados: ${enviados}, fallidos: ${fallidos}, descartados: ${descartados}`)
-  })
-  logger.info('⏰ Scheduler de seguimientos activo (10am y 6pm)')
-}
   })
   logger.info('⏰ Scheduler de seguimientos activo (10am y 6pm)')
 }
