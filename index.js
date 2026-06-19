@@ -9,6 +9,12 @@ import qrcode from 'qrcode-terminal'
 import QRCode from 'qrcode'
 import cron from 'node-cron'
 import http from 'http'
+const MAX_FOLLOWUP_ATTEMPTS = 3        // después de 3 fallos, se descarta el lead
+const DELAY_BETWEEN_SENDS_MS = 2000    // 2s entre cada mensaje
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
@@ -258,24 +264,67 @@ async function handleMessage(sock, msg) {
 }
 
 // ─── SCHEDULER DE SEGUIMIENTOS ─────────────────────────────────────────────
+// Fix: throttling entre envíos + manejo de fallos para no reintentar infinito
+//
+// Cambios respecto al original:
+// 1. sleep() entre cada sendMessage (evita bombardear el socket → "Connection Closed")
+// 2. Contador de intentos fallidos por lead (después de N fallos, se marca como
+//    "no enviable" y se deja de reintentar — para no generar el mismo error cada
+//    corrida de cron por días)
+// 3. Logging agregado: cuántos enviados / cuántos fallidos por corrida
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+const MAX_FOLLOWUP_ATTEMPTS = 3        // después de 3 fallos, se descarta el lead
+const DELAY_BETWEEN_SENDS_MS = 2000    // 2s entre cada mensaje — ajustable
+
 function startFollowupScheduler(sock) {
   cron.schedule('0 10,18 * * *', async () => {  // Corre a las 10am y 6pm
     const pending = getLeadsPendingFollowup()
     if (!pending.length) return
+
     logger.info(`⏰ Procesando ${pending.length} seguimiento(s)`)
+
+    let enviados = 0
+    let fallidos = 0
+    let descartados = 0
 
     for (const { userId, type } of pending) {
       try {
         const msg = FOLLOWUP_MSGS[type]
         await sock.sendMessage(userId, { text: msg })
         addToHistory(userId, 'assistant', msg)
-        if (type === '24h') updateLeadState(userId, { followup24Sent: true })
-        if (type === '48h') updateLeadState(userId, { followup48Sent: true })
+        if (type === '24h') updateLeadState(userId, { followup24Sent: true, followupAttempts: 0 })
+        if (type === '48h') updateLeadState(userId, { followup48Sent: true, followupAttempts: 0 })
         logger.info(`📤 Seguimiento ${type} enviado a ${userId}`)
+        enviados++
       } catch (err) {
-        logger.error({ err }, `❌ Error enviando seguimiento a ${userId}`)
+        fallidos++
+        const attempts = (getLeadState(userId)?.followupAttempts || 0) + 1
+
+        if (attempts >= MAX_FOLLOWUP_ATTEMPTS) {
+          // Dejar de reintentar este lead — se marca como enviado igual para
+          // que no vuelva a aparecer en getLeadsPendingFollowup()
+          if (type === '24h') updateLeadState(userId, { followup24Sent: true, followupFailed: true, followupAttempts: attempts })
+          if (type === '48h') updateLeadState(userId, { followup48Sent: true, followupFailed: true, followupAttempts: attempts })
+          logger.error({ err }, `🛑 Seguimiento ${type} a ${userId} descartado tras ${attempts} intentos fallidos`)
+          descartados++
+        } else {
+          updateLeadState(userId, { followupAttempts: attempts })
+          logger.error({ err }, `❌ Error enviando seguimiento a ${userId} (intento ${attempts}/${MAX_FOLLOWUP_ATTEMPTS})`)
+        }
       }
+
+      // Throttle: esperar entre cada envío para no saturar el socket de Baileys
+      await sleep(DELAY_BETWEEN_SENDS_MS)
     }
+
+    logger.info(`⏰ Corrida finalizada — enviados: ${enviados}, fallidos: ${fallidos}, descartados: ${descartados}`)
+  })
+  logger.info('⏰ Scheduler de seguimientos activo (10am y 6pm)')
+}
   })
   logger.info('⏰ Scheduler de seguimientos activo (10am y 6pm)')
 }
