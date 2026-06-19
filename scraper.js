@@ -76,11 +76,37 @@ async function fetchProperty(page, id) {
 
       // Extraer dirección junto al ícono de location
       // Formato en la web: "Calle 123 - Localidad"
+      //
+      // FIX: querySelectorAll('img[src*="icon_location"]') sin acotar busca en
+      // TODO el documento — incluye el ícono del header de la ficha (correcto)
+      // y el ícono del footer de sucursal ("Yrigoyen 221, Monte Grande...").
+      // El for...of rompía en el primer match válido por orden de DOM, no por
+      // relevancia, mezclando la dirección de otra fuente con la propiedad actual.
+      //
+      // Solución: excluir explícitamente el <footer> y cualquier contenedor de
+      // "Propiedades Relacionadas" antes de aceptar un match.
       let direccion = null
       let zona = null
 
+      const footer = document.querySelector('footer')
+      const relacionadasHeading = [...document.querySelectorAll('h2,h3,h4,div,section')].find(el => {
+        const t = el.innerText?.trim().toLowerCase()
+        return t === 'propiedades relacionadas' || t === 'datos propiedades relacionadas'
+      })
+      // Si encontramos el heading de relacionadas, todo lo que esté después
+      // de él en el documento (mismo padre o hermano siguiente) se excluye.
+      const relacionadasContainer = relacionadasHeading?.closest('section, div[class*="relacionad"]') || relacionadasHeading
+
+      const isInsideExcluded = (node) => {
+        if (footer && footer.contains(node)) return true
+        if (relacionadasContainer && relacionadasContainer.contains(node)) return true
+        return false
+      }
+
       const locationImgs = document.querySelectorAll('img[src*="icon_location"]')
       for (const img of locationImgs) {
+        if (isInsideExcluded(img)) continue  // saltear footer / relacionadas
+
         const parent = img.parentElement
         const t = parent?.innerText?.trim().replace(/\s+/g, ' ')
         // Validar que tenga formato de dirección: texto + número (no características)
