@@ -44,6 +44,10 @@ const DEFAULT_STATE = {
   propiedadInteres:   null,
 }
 
+export function leadExists(jid) {
+  return leadStates.has(jid)
+}
+
 export function getLeadState(jid) {
   if (!leadStates.has(jid)) {
     leadStates.set(jid, {

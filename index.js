@@ -12,7 +12,7 @@ import http from 'http'
 
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
-import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup } from './src/memory.js'
+import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup, leadExists } from './src/memory.js'
 import { incrementStat, getStats, formatStatsHtml } from './src/stats.js'
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
@@ -186,7 +186,7 @@ async function handleMessage(sock, msg) {
   if (!text) return
 
   logger.info(`📩 [${jid}] "${text}"`)
-  if (!getLeadState(jid).firstContactAt) incrementStat('leadsAtendidos')
+  if (!leadExists(jid)) incrementStat('leadsAtendidos')
   await sock.readMessages([msg.key])
   await sock.sendPresenceUpdate('composing', jid)
 
