@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-06-12T12:50:41.769Z",
-  "total": 112,
+  "lastUpdated": "2026-06-22T12:09:45.937Z",
+  "total": 113,
   "properties": [
     {
       "id": "655460",
@@ -9,7 +9,8 @@
       "precio": "USD 12.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Lote 13 X 26 en Venta. Monte Grande. Anticipo y cuotas!",
+      "direccion": "Panama 2300",
+      "zona": "Canning",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -20,7 +21,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:46:55.880Z"
+      "scrapedAt": "2026-06-22T12:05:59.781Z"
     },
     {
       "id": "465426",
@@ -29,7 +30,8 @@
       "precio": "USD 13.900",
       "operacion": "Venta",
       "tipo": "Campos",
-      "direccion": "Campo virgen de 36 hectareas - Cañuelas",
+      "direccion": "Ruta 3, km 51",
+      "zona": "Alejandro Petión",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -38,7 +40,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:46:57.818Z"
+      "scrapedAt": "2026-06-22T12:06:01.748Z"
     },
     {
       "id": "662384",
@@ -47,20 +49,19 @@
       "precio": "USD 15.000",
       "operacion": "Venta",
       "tipo": "Cocheras",
-      "direccion": "Rojas 61 - Monte Grande",
+      "direccion": "Rojas 61",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:46:59.762Z"
+      "scrapedAt": "2026-06-22T12:06:03.614Z"
     },
     {
       "id": "349420",
@@ -69,7 +70,8 @@
       "precio": "USD 29.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690, Monte Grande",
+      "direccion": null,
+      "zona": null,
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -78,7 +80,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:01.842Z"
+      "scrapedAt": "2026-06-22T12:06:05.790Z"
     },
     {
       "id": "584250",
@@ -87,23 +89,20 @@
       "precio": "USD 35.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Departamentos 3 ambientes en MAR DEL TUYU - Cochera y patio",
+      "direccion": "Calle 71 250",
+      "zona": "Mar del Tuyú",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "52m²",
       "supTotal": "70m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:03.860Z"
+      "scrapedAt": "2026-06-22T12:06:07.727Z"
     },
     {
       "id": "512214",
@@ -112,7 +111,8 @@
       "precio": "USD 35.800",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690, Monte Grande",
+      "direccion": null,
+      "zona": null,
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -121,7 +121,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:05.904Z"
+      "scrapedAt": "2026-06-22T12:06:09.727Z"
     },
     {
       "id": "512297",
@@ -130,20 +130,19 @@
       "precio": "USD 37.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Arana 595 - Monte Grande",
+      "direccion": "Arana 595",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-06-12T12:47:07.961Z"
+      "scrapedAt": "2026-06-22T12:06:11.704Z"
     },
     {
       "id": "641327",
@@ -152,18 +151,17 @@
       "precio": "USD 38.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690 - Monte Grande",
+      "direccion": "Rivadavia 1690",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "323m²",
-      "comodidades": [
-        "pileta"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:09.898Z"
+      "scrapedAt": "2026-06-22T12:06:13.689Z"
     },
     {
       "id": "652537",
@@ -172,18 +170,17 @@
       "precio": "USD 41.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690, Monte Grande",
+      "direccion": "Castro Chavez 410",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "293m²",
-      "comodidades": [
-        "pileta"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:11.856Z"
+      "scrapedAt": "2026-06-22T12:06:15.690Z"
     },
     {
       "id": "543298",
@@ -192,20 +189,19 @@
       "precio": "USD 42.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690, Monte Grande",
+      "direccion": null,
+      "zona": null,
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "pileta"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:13.831Z"
+      "scrapedAt": "2026-06-22T12:06:17.747Z"
     },
     {
       "id": "410214",
@@ -214,23 +210,20 @@
       "precio": "USD 42.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Departamento 3 Ambientes En Barrio Coca-Cola",
+      "direccion": "R. Santamarina 949",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": null,
       "supCubierta": "60m²",
       "supTotal": "60m²",
-      "comodidades": [
-        "cochera",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:15.811Z"
+      "scrapedAt": "2026-06-22T12:06:19.694Z"
     },
     {
       "id": "247624",
@@ -239,46 +232,20 @@
       "precio": "USD 42.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Evita 890 (ex-Jacarandá) - El Jaguel",
+      "direccion": "Evita 890 (ex-Jacarandá)",
+      "zona": "El Jaguel",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "33m²",
       "supTotal": "36m²",
-      "comodidades": [
-        "cochera",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:17.761Z"
-    },
-    {
-      "id": "627532",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/627532",
-      "titulo": "Casa 4 Ambientes En Venta - El Jagüel - Patio Con Pileta",
-      "precio": "USD 45.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Casa 4 ambientes en venta - El Jagüel - Patio con pileta",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "1",
-      "supCubierta": "96m²",
-      "supTotal": "254m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:19.759Z"
+      "scrapedAt": "2026-06-22T12:06:21.708Z"
     },
     {
       "id": "526648",
@@ -287,23 +254,19 @@
       "precio": "USD 45.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690, Monte Grande",
+      "direccion": null,
+      "zona": null,
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "702m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:21.781Z"
+      "scrapedAt": "2026-06-22T12:06:23.564Z"
     },
     {
       "id": "516872",
@@ -312,22 +275,20 @@
       "precio": "USD 45.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Evita 890 (ex-Jacarandá), El Jaguel",
+      "direccion": "San Juan 3046",
+      "zona": "San Bernardo",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "44m²",
       "supTotal": "44m²",
-      "comodidades": [
-        "cochera",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:23.771Z"
+      "scrapedAt": "2026-06-22T12:06:25.307Z"
     },
     {
       "id": "709487",
@@ -336,21 +297,20 @@
       "precio": "USD 47.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Rivadavia 1690, Monte Grande",
+      "direccion": "Estanislao de Campo 447",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "370m²",
-      "comodidades": [
-        "pileta"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:25.731Z"
+      "scrapedAt": "2026-06-22T12:06:27.135Z"
     },
     {
       "id": "673224",
@@ -359,26 +319,20 @@
       "precio": "USD 51.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Evita 890 (ex-Jacarandá), El Jaguel",
+      "direccion": "Maximo Paz 258",
+      "zona": "Monte Grande",
       "ambientes": "1",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "31m²",
       "supTotal": "66m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:27.726Z"
+      "scrapedAt": "2026-06-22T12:06:28.894Z"
     },
     {
       "id": "555258",
@@ -387,20 +341,17 @@
       "precio": "USD 52.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa en venta sobre lote 10 x 21. El Jaguel",
+      "direccion": "Saavedra 3541",
+      "zona": "El Jaguel",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "81m²",
       "supTotal": "215m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:29.709Z"
+      "scrapedAt": "2026-06-22T12:06:30.709Z"
     },
     {
       "id": "290948",
@@ -409,19 +360,17 @@
       "precio": "USD 55.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Jewet 286, Monte Grande",
+      "direccion": "Las Talitas nº397 esquina Echeverría",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "90m²",
       "supTotal": "223m²",
-      "comodidades": [
-        "cochera",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:31.759Z"
+      "scrapedAt": "2026-06-22T12:06:32.681Z"
     },
     {
       "id": "474241",
@@ -430,24 +379,21 @@
       "precio": "USD 57.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Insua 229 - Monte Grande",
+      "direccion": "Insua 229",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "78m²",
       "supTotal": "128m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "Departamento PH dos dormitorios con patio y terraza - Venta APTO CREDITO - Monte Grande",
-      "scrapedAt": "2026-06-12T12:47:33.719Z"
+      "scrapedAt": "2026-06-22T12:06:34.710Z"
     },
     {
       "id": "575093",
@@ -456,18 +402,17 @@
       "precio": "USD 58.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Jewet 286 - Monte Grande",
+      "direccion": "Jewet 286",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": null,
       "supTotal": "200m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:35.669Z"
+      "scrapedAt": "2026-06-22T12:06:36.592Z"
     },
     {
       "id": "662476",
@@ -476,27 +421,21 @@
       "precio": "USD 58.500",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Sin patio\n\n1 cochera\n\nCon pileta\n\nCon jardín",
+      "direccion": "Maximo Paz 258",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "45m²",
       "supTotal": "53m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:37.614Z"
+      "scrapedAt": "2026-06-22T12:06:38.631Z"
     },
     {
       "id": "684723",
@@ -505,21 +444,19 @@
       "precio": "USD 59.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Lote de 2000 mts² en Venta Sobre Camino del Ñandubaysal.",
+      "direccion": null,
+      "zona": null,
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "1120m²",
-      "comodidades": [
-        "pileta",
-        "solarium"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:39.705Z"
+      "scrapedAt": "2026-06-22T12:06:40.548Z"
     },
     {
       "id": "708675",
@@ -528,22 +465,19 @@
       "precio": "USD 60.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Lote de 2000 mts² en Venta Sobre Camino del Ñandubaysal.",
+      "direccion": "Camino del Ñandubaysal 4500",
+      "zona": "Gualeguaychú",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "2000m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:41.661Z"
+      "scrapedAt": "2026-06-22T12:06:42.573Z"
     },
     {
       "id": "652914",
@@ -552,19 +486,17 @@
       "precio": "USD 62.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Chacabuco 920 - Monte Grande",
+      "direccion": "Chacabuco 920",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "3",
       "banos": "1",
       "supCubierta": "74m²",
       "supTotal": "235m²",
-      "comodidades": [
-        "cochera",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:43.616Z"
+      "scrapedAt": "2026-06-22T12:06:44.676Z"
     },
     {
       "id": "655486",
@@ -573,22 +505,21 @@
       "precio": "USD 65.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Arana 111 - Monte Grande",
+      "direccion": "Arana 111",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "58m²",
       "supTotal": "58m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:45.578Z"
+      "scrapedAt": "2026-06-22T12:06:46.922Z"
     },
     {
       "id": "647238",
@@ -597,26 +528,21 @@
       "precio": "USD 65.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Saavedra 224 - Monte Grande",
+      "direccion": "Saavedra 224",
+      "zona": "Monte Grande",
       "ambientes": "1",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "28m²",
       "supTotal": "32m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:47.661Z"
+      "scrapedAt": "2026-06-22T12:06:48.927Z"
     },
     {
       "id": "594495",
@@ -625,22 +551,17 @@
       "precio": "USD 65.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa 3 Ambientes Con Cochera En Venta- Monte Grande",
+      "direccion": "Dean Funes 230",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "160m²",
       "supTotal": "215m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín",
-        "patio",
-        "calefacción"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:49.593Z"
+      "scrapedAt": "2026-06-22T12:06:50.992Z"
     },
     {
       "id": "459879",
@@ -649,23 +570,21 @@
       "precio": "USD 65.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Robertson 141 - Monte Grande",
+      "direccion": "Robertson 141",
+      "zona": "Monte Grande",
       "ambientes": "1",
       "dormitorios": null,
       "banos": null,
       "supCubierta": "33m²",
       "supTotal": "33m²",
-      "comodidades": [
-        "cochera",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:51.529Z"
+      "scrapedAt": "2026-06-22T12:06:52.914Z"
     },
     {
       "id": "665648",
@@ -674,27 +593,21 @@
       "precio": "USD 65.500",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Sin patio\n\n1 cochera\n\nCon pileta\n\nCon jardín",
+      "direccion": "Maximo Paz 258",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "45m²",
       "supTotal": "53m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:53.524Z"
+      "scrapedAt": "2026-06-22T12:06:54.905Z"
     },
     {
       "id": "678117",
@@ -703,24 +616,21 @@
       "precio": "USD 67.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Robertson 141, Monte Grande",
+      "direccion": "General Rodriguez 1051",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "50m²",
       "supTotal": "50m²",
-      "comodidades": [
-        "cochera",
-        "balcón",
-        "calefacción"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:55.527Z"
+      "scrapedAt": "2026-06-22T12:06:56.619Z"
     },
     {
       "id": "542852",
@@ -729,22 +639,21 @@
       "precio": "USD 69.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Comodidades\n\n1 cochera",
+      "direccion": "Vicente Lopez 987",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "38m²",
       "supTotal": "42m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:47:57.510Z"
+      "scrapedAt": "2026-06-22T12:06:58.619Z"
     },
     {
       "id": "334249",
@@ -753,24 +662,20 @@
       "precio": "USD 75.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Rodriguez 679 - Monte Grande",
+      "direccion": "Rodriguez 679",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": null,
       "supTotal": "45m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "calefacción",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas"
       ],
       "descripcion": "DEPARTAMENTO 2 AMBIENTES CON COCHERA - ESCUCHA OFERTA - APTO CREDITO - MONTE GRANDE CENTRO",
-      "scrapedAt": "2026-06-12T12:47:59.478Z"
+      "scrapedAt": "2026-06-22T12:07:00.464Z"
     },
     {
       "id": "678106",
@@ -779,24 +684,20 @@
       "precio": "USD 79.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Departamento 2 Ambientes de Categoría en Venta - Ezeiza",
+      "direccion": "Lorenza Senavilla 344",
+      "zona": "Ezeiza",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "50m²",
       "supTotal": "50m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas"
       ],
       "descripcion": "DEPARTAMENTO 2 AMBIENTES CON COCHERA - ESCUCHA OFERTA - APTO CREDITO - MONTE GRANDE CENTRO",
-      "scrapedAt": "2026-06-12T12:48:01.528Z"
+      "scrapedAt": "2026-06-22T12:07:02.307Z"
     },
     {
       "id": "652514",
@@ -805,21 +706,17 @@
       "precio": "USD 83.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Rivadavia 1330 - Monte Grande",
+      "direccion": "Rivadavia 1330",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "102m²",
       "supTotal": "300m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:03.890Z"
+      "scrapedAt": "2026-06-22T12:07:04.103Z"
     },
     {
       "id": "678113",
@@ -828,24 +725,20 @@
       "precio": "USD 83.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Departamento 2 Ambientes de Categoría en Venta - Ezeiza",
+      "direccion": "Lorenza Senavilla 344",
+      "zona": "Ezeiza",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "50m²",
       "supTotal": "50m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas"
       ],
       "descripcion": "DEPARTAMENTO 2 AMBIENTES CON COCHERA - ESCUCHA OFERTA - APTO CREDITO - MONTE GRANDE CENTRO",
-      "scrapedAt": "2026-06-12T12:48:05.852Z"
+      "scrapedAt": "2026-06-22T12:07:06.034Z"
     },
     {
       "id": "714641",
@@ -854,21 +747,17 @@
       "precio": "USD 85.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Pellegrini 255 - Monte Grande",
+      "direccion": "Pellegrini 255",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "110m²",
       "supTotal": "450m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:07.870Z"
+      "scrapedAt": "2026-06-22T12:07:07.805Z"
     },
     {
       "id": "604032",
@@ -877,21 +766,17 @@
       "precio": "USD 86.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa 4 ambientes amplia con Jardin en Monte Grande - Venta",
+      "direccion": "Chimondegui 1024",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "100m²",
       "supTotal": "576m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:09.883Z"
+      "scrapedAt": "2026-06-22T12:07:09.676Z"
     },
     {
       "id": "452466",
@@ -900,7 +785,8 @@
       "precio": "USD 86.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Espectacular lote de 2326 m2 en Fincas del Alba - Canning",
+      "direccion": "Ruta 52, km 9",
+      "zona": "Canning",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -911,7 +797,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:11.846Z"
+      "scrapedAt": "2026-06-22T12:07:11.629Z"
     },
     {
       "id": "289183",
@@ -920,18 +806,17 @@
       "precio": "USD 88.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Recondo 1172 - Monte Grande",
+      "direccion": "Recondo 1172",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "1",
       "supCubierta": null,
       "supTotal": "330m²",
-      "comodidades": [
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:13.859Z"
+      "scrapedAt": "2026-06-22T12:07:13.704Z"
     },
     {
       "id": "448686",
@@ -940,20 +825,17 @@
       "precio": "USD 90.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Recondo 1172, Monte Grande",
+      "direccion": "Eugenio Rebizo 286",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "90m²",
       "supTotal": "145m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:15.995Z"
+      "scrapedAt": "2026-06-22T12:07:15.669Z"
     },
     {
       "id": "546869",
@@ -962,21 +844,17 @@
       "precio": "USD 90.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Con patio\n\n2 cocheras\n\nCon jardín",
+      "direccion": "Teniente Ruiz 1207",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "1",
       "supCubierta": "117m²",
       "supTotal": "221m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:17.960Z"
+      "scrapedAt": "2026-06-22T12:07:17.647Z"
     },
     {
       "id": "530017",
@@ -985,7 +863,8 @@
       "precio": "USD 90.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Benavidez 220 - Monte Grande",
+      "direccion": "Benavidez 220",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -996,7 +875,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:19.948Z"
+      "scrapedAt": "2026-06-22T12:07:19.544Z"
     },
     {
       "id": "644533",
@@ -1005,24 +884,19 @@
       "precio": "USD 99.000",
       "operacion": "Venta",
       "tipo": "Dúplex/Tríplex",
-      "direccion": "Lavalle 544 - Monte Grande",
+      "direccion": "Lavalle 544",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "104m²",
       "supTotal": "140m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Duplex 4 Ambientes En Venta cochera y jardin APTO CREDITO - Lomas De Zamora - OPORTUNIDAD",
-      "scrapedAt": "2026-06-12T12:48:22.243Z"
+      "scrapedAt": "2026-06-22T12:07:21.847Z"
     },
     {
       "id": "518063",
@@ -1031,7 +905,8 @@
       "precio": "USD 99.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Moreno 1004 - Luis Guillón",
+      "direccion": "Moreno 1004",
+      "zona": "Luis Guillón",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "1",
@@ -1040,7 +915,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:24.200Z"
+      "scrapedAt": "2026-06-22T12:07:23.873Z"
     },
     {
       "id": "568422",
@@ -1049,21 +924,19 @@
       "precio": "USD 104.500",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Santa fé 405 - Monte Grande",
+      "direccion": "Santa fé 405",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "125m²",
       "supTotal": "720m²",
-      "comodidades": [
-        "cochera",
-        "jardín"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:26.306Z"
+      "scrapedAt": "2026-06-22T12:07:25.943Z"
     },
     {
       "id": "714239",
@@ -1072,21 +945,17 @@
       "precio": "USD 105.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Santa fé 405, Monte Grande",
+      "direccion": "Av. Pedro Dreyer 3539",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "2",
       "supCubierta": "1222m²",
       "supTotal": "176m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:28.333Z"
+      "scrapedAt": "2026-06-22T12:07:27.956Z"
     },
     {
       "id": "614863",
@@ -1095,23 +964,20 @@
       "precio": "USD 109.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Italiani 184 - Monte Grande",
+      "direccion": "Italiani 184",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "75m²",
       "supTotal": "75m²",
-      "comodidades": [
-        "cochera",
-        "balcón",
-        "calefacción"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas"
       ],
       "descripcion": "DEPARTAMENTO 2 AMBIENTES CON COCHERA - ESCUCHA OFERTA - APTO CREDITO - MONTE GRANDE CENTRO",
-      "scrapedAt": "2026-06-12T12:48:30.359Z"
+      "scrapedAt": "2026-06-22T12:07:30.311Z"
     },
     {
       "id": "557701",
@@ -1120,21 +986,20 @@
       "precio": "USD 110.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Rotta 231 - Monte Grande",
+      "direccion": "Rotta 231",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "65m²",
       "supTotal": "71m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas"
       ],
       "descripcion": "DEPARTAMENTO 2 AMBIENTES CON COCHERA - ESCUCHA OFERTA - APTO CREDITO - MONTE GRANDE CENTRO",
-      "scrapedAt": "2026-06-12T12:48:32.335Z"
+      "scrapedAt": "2026-06-22T12:07:32.225Z"
     },
     {
       "id": "556274",
@@ -1143,21 +1008,17 @@
       "precio": "USD 110.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Con patio\n\n1 cochera\n\nCon jardín",
+      "direccion": "Juan Hernandez 579",
+      "zona": "El Jaguel",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": null,
       "supTotal": "300m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:34.363Z"
+      "scrapedAt": "2026-06-22T12:07:34.056Z"
     },
     {
       "id": "584436",
@@ -1166,21 +1027,19 @@
       "precio": "USD 120.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa de 4 DORMITORIOS en Venta - Monte Grande",
+      "direccion": "Manuel Wieman 722",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "1",
       "supCubierta": "111m²",
       "supTotal": "300m²",
-      "comodidades": [
-        "cochera",
-        "parrilla"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-06-12T12:48:36.417Z"
+      "scrapedAt": "2026-06-22T12:07:35.934Z"
     },
     {
       "id": "519139",
@@ -1189,21 +1048,19 @@
       "precio": "USD 120.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa 4 ambientes en Venta en Monte Grande",
+      "direccion": "Lavalle 927",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "130m²",
       "supTotal": "408m²",
-      "comodidades": [
-        "cochera",
-        "parrilla"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-06-12T12:48:38.571Z"
+      "scrapedAt": "2026-06-22T12:07:37.875Z"
     },
     {
       "id": "365820",
@@ -1212,19 +1069,17 @@
       "precio": "USD 120.000",
       "operacion": "Venta",
       "tipo": "Campos",
-      "direccion": "Campo virgen de 36 hectareas - Cañuelas",
+      "direccion": "Jose M. Paz 440",
+      "zona": "Alejandro Petión",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "150m²",
       "supTotal": "3354m²",
-      "comodidades": [
-        "pileta",
-        "parrilla"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:40.385Z"
+      "scrapedAt": "2026-06-22T12:07:39.773Z"
     },
     {
       "id": "362895",
@@ -1233,22 +1088,20 @@
       "precio": "USD 129.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casas\n\n3 ambientes\n\nSup. total 740m2",
+      "direccion": "Obdulio Hernandez Castro 2369",
+      "zona": "Ranchos",
       "ambientes": "3",
       "dormitorios": "3",
       "banos": null,
       "supCubierta": null,
       "supTotal": "3m²",
-      "comodidades": [
-        "cochera",
-        "calefacción"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Acepta permuta"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-06-12T12:48:42.625Z"
+      "scrapedAt": "2026-06-22T12:07:41.809Z"
     },
     {
       "id": "373429",
@@ -1257,22 +1110,20 @@
       "precio": "USD 130.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Lavalle 1378 - Monte Grande",
+      "direccion": "Lavalle 1378",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "1",
       "supCubierta": null,
       "supTotal": "181m²",
-      "comodidades": [
-        "cochera",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Acepta permuta"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-06-12T12:48:44.488Z"
+      "scrapedAt": "2026-06-22T12:07:43.856Z"
     },
     {
       "id": "499131",
@@ -1281,21 +1132,19 @@
       "precio": "USD 135.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Miles 1346 - Luis Guillón",
+      "direccion": "Miles 1346",
+      "zona": "Luis Guillón",
       "ambientes": "4",
       "dormitorios": "5",
       "banos": "3",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:46.520Z"
+      "scrapedAt": "2026-06-22T12:07:45.889Z"
     },
     {
       "id": "371412",
@@ -1304,22 +1153,19 @@
       "precio": "USD 136.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Saavedra 437 - Monte Grande",
+      "direccion": "Saavedra 437",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": null,
       "banos": null,
       "supCubierta": "200m²",
       "supTotal": "500m²",
-      "comodidades": [
-        "cochera",
-        "calefacción",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:48.575Z"
+      "scrapedAt": "2026-06-22T12:07:47.865Z"
     },
     {
       "id": "667058",
@@ -1328,23 +1174,19 @@
       "precio": "USD 136.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Saavedra 437, Monte Grande",
+      "direccion": "Cornelio Saavedra 437",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "2",
       "supCubierta": "200m²",
       "supTotal": "500m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "calefacción",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:50.584Z"
+      "scrapedAt": "2026-06-22T12:07:49.872Z"
     },
     {
       "id": "593042",
@@ -1353,24 +1195,19 @@
       "precio": "USD 138.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa en venta sobre lote 854m2. La Union, Ezeiza",
+      "direccion": "Los Cardos 1162",
+      "zona": "La Unión",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "3",
       "supCubierta": "230m²",
       "supTotal": "854m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:52.717Z"
+      "scrapedAt": "2026-06-22T12:07:51.881Z"
     },
     {
       "id": "705227",
@@ -1379,24 +1216,19 @@
       "precio": "USD 140.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa 3 Ambientes con Cochera en Venta - Monte Grande Centro",
+      "direccion": "Rivadavia 175",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "130m²",
       "supTotal": "400m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:54.719Z"
+      "scrapedAt": "2026-06-22T12:07:54.023Z"
     },
     {
       "id": "525548",
@@ -1405,25 +1237,21 @@
       "precio": "USD 145.000",
       "operacion": "Venta",
       "tipo": "Dúplex/Tríplex",
-      "direccion": "Almafuerte 433 - Lomas de Zamora",
+      "direccion": "Almafuerte 433",
+      "zona": "Lomas de Zamora",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "100m²",
       "supTotal": "200m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "Duplex 4 Ambientes En Venta cochera y jardin APTO CREDITO - Lomas De Zamora - OPORTUNIDAD",
-      "scrapedAt": "2026-06-12T12:48:56.806Z"
+      "scrapedAt": "2026-06-22T12:07:56.058Z"
     },
     {
       "id": "539259",
@@ -1432,24 +1260,20 @@
       "precio": "USD 150.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casa 4 Ambientes En Venta - Luis Guillon",
+      "direccion": "Tte. Benjamín Matienzo 829",
+      "zona": "Luis Guillón",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "1",
       "supCubierta": "230m²",
       "supTotal": "230m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:48:58.858Z"
+      "scrapedAt": "2026-06-22T12:07:58.146Z"
     },
     {
       "id": "651521",
@@ -1458,25 +1282,21 @@
       "precio": "USD 150.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Con patio\n\n10 cocheras\n\nSin pileta\n\nCon jardín",
+      "direccion": "Mariano Alegre 435",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "748m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:00.854Z"
+      "scrapedAt": "2026-06-22T12:08:00.144Z"
     },
     {
       "id": "579720",
@@ -1485,25 +1305,20 @@
       "precio": "USD 150.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Alem 88, La Unión",
+      "direccion": "Diagonal Estrada 397",
+      "zona": "San Bernardo",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "3",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:02.884Z"
+      "scrapedAt": "2026-06-22T12:08:02.144Z"
     },
     {
       "id": "520906",
@@ -1512,7 +1327,8 @@
       "precio": "USD 150.000",
       "operacion": "Venta",
       "tipo": null,
-      "direccion": "Alem 672 - Monte Grande",
+      "direccion": "Alem 672",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": null,
       "banos": null,
@@ -1521,7 +1337,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:04.817Z"
+      "scrapedAt": "2026-06-22T12:08:04.386Z"
     },
     {
       "id": "519118",
@@ -1530,24 +1346,20 @@
       "precio": "USD 150.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Alem 88 - La Unión",
+      "direccion": "Alem 88",
+      "zona": "La Unión",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "1",
       "supCubierta": "170m²",
       "supTotal": "240m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:06.876Z"
+      "scrapedAt": "2026-06-22T12:08:06.403Z"
     },
     {
       "id": "482386",
@@ -1556,22 +1368,21 @@
       "precio": "USD 150.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Farina 539 - Monte Grande",
+      "direccion": "Farina 539",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "750m²",
-      "comodidades": [
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:08.863Z"
+      "scrapedAt": "2026-06-22T12:08:08.392Z"
     },
     {
       "id": "540925",
@@ -1580,23 +1391,21 @@
       "precio": "USD 160.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Pellegrini 1696 - Monte Grande",
+      "direccion": "Pellegrini 1696",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": null,
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "parrilla",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:10.859Z"
+      "scrapedAt": "2026-06-22T12:08:10.523Z"
     },
     {
       "id": "537515",
@@ -1605,24 +1414,21 @@
       "precio": "USD 160.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Origone 1217 - Monte Grande",
+      "direccion": "Origone 1217",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "3",
       "supCubierta": "156m²",
       "supTotal": "300m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:12.824Z"
+      "scrapedAt": "2026-06-22T12:08:12.646Z"
     },
     {
       "id": "384154",
@@ -1631,24 +1437,21 @@
       "precio": "USD 160.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Ocantos 680 - Monte Grande",
+      "direccion": "Ocantos 680",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "4",
       "supCubierta": "200m²",
       "supTotal": "200m²",
-      "comodidades": [
-        "cochera",
-        "parrilla",
-        "jardín"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:14.785Z"
+      "scrapedAt": "2026-06-22T12:08:14.567Z"
     },
     {
       "id": "542926",
@@ -1657,25 +1460,21 @@
       "precio": "USD 165.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Con patio\n\n2 cocheras\n\nCon pileta\n\nCon jardín",
+      "direccion": "Santa Fe 463",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "3",
       "supCubierta": "150m²",
       "supTotal": "300m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:17.076Z"
+      "scrapedAt": "2026-06-22T12:08:17.662Z"
     },
     {
       "id": "463809",
@@ -1684,40 +1483,17 @@
       "precio": "USD 169.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Regio departamento 3 ambientes de categoría en Monte Grande",
+      "direccion": "Rodriguez 551",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "2",
       "supCubierta": "70m²",
       "supTotal": "75m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:19.069Z"
-    },
-    {
-      "id": "533927",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/533927",
-      "titulo": "Galpon En Venta Sobre Av. Dreyer Lote 10 X 32. Monte Grande",
-      "precio": "USD 170.000",
-      "operacion": "Venta",
-      "tipo": "Locales",
-      "direccion": "Maipu 692, Canning",
-      "ambientes": null,
-      "dormitorios": null,
-      "banos": "2",
-      "supCubierta": "340m²",
-      "supTotal": "340m²",
-      "comodidades": [
-        "cochera"
-      ],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-06-12T12:49:21.011Z"
+      "scrapedAt": "2026-06-22T12:08:19.652Z"
     },
     {
       "id": "479338",
@@ -1726,24 +1502,20 @@
       "precio": "USD 179.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Lavalle 954 - Monte Grande",
+      "direccion": "Lavalle 954",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "1",
       "supCubierta": null,
       "supTotal": "500m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:22.922Z"
+      "scrapedAt": "2026-06-22T12:08:21.624Z"
     },
     {
       "id": "526646",
@@ -1752,25 +1524,20 @@
       "precio": "USD 179.900",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Con patio\n\n2 cocheras\n\nSin pileta\n\nCon jardín",
+      "direccion": null,
+      "zona": null,
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "2",
       "supCubierta": "227m²",
       "supTotal": "641m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:24.941Z"
+      "scrapedAt": "2026-06-22T12:08:23.621Z"
     },
     {
       "id": "695177",
@@ -1779,25 +1546,20 @@
       "precio": "USD 185.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Uruguay 65 - Monte Grande",
+      "direccion": "Uruguay 65",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "3",
       "supCubierta": "180m²",
       "supTotal": "375m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:26.950Z"
+      "scrapedAt": "2026-06-22T12:08:25.657Z"
     },
     {
       "id": "423612",
@@ -1806,23 +1568,19 @@
       "precio": "USD 190.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Ruta 205 Km 54,4 - Monte Grande",
+      "direccion": "Ruta 205 Km 54,4",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "140m²",
       "supTotal": "600m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:49:29.036Z"
+      "scrapedAt": "2026-06-22T12:08:27.615Z"
     },
     {
       "id": "564734",
@@ -1831,23 +1589,19 @@
       "precio": "USD 210.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Comodidades\n\n2 cocheras\n\nCon jardín\n\nCon parrilla",
+      "direccion": null,
+      "zona": null,
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "2",
       "supCubierta": "130m²",
       "supTotal": "460m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-06-12T12:49:31.255Z"
+      "scrapedAt": "2026-06-22T12:08:29.694Z"
     },
     {
       "id": "464122",
@@ -1856,23 +1610,19 @@
       "precio": "USD 210.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Colon 620 - Monte Grande",
+      "direccion": "Colon 620",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "3",
       "supCubierta": null,
       "supTotal": "300m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-06-12T12:49:33.212Z"
+      "scrapedAt": "2026-06-22T12:08:31.715Z"
     },
     {
       "id": "516866",
@@ -1881,23 +1631,19 @@
       "precio": "USD 220.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Colon 620, Monte Grande",
+      "direccion": "Julio Roca 146",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "150m²",
       "supTotal": "600m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-06-12T12:49:35.322Z"
+      "scrapedAt": "2026-06-22T12:08:33.786Z"
     },
     {
       "id": "658731",
@@ -1906,24 +1652,19 @@
       "precio": "USD 245.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Con patio\n\n3 cocheras\n\nCon pileta\n\nCon jardín",
+      "direccion": "San Martin 76",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "2",
       "supCubierta": "180m²",
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-06-12T12:49:37.353Z"
+      "scrapedAt": "2026-06-22T12:08:35.869Z"
     },
     {
       "id": "525107",
@@ -1932,20 +1673,19 @@
       "precio": "USD 250.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Comodidades\n\n7 cocheras",
+      "direccion": "Dardo Rocha 972",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": "1",
       "supCubierta": "257m²",
       "supTotal": "338m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-06-12T12:49:39.275Z"
+      "scrapedAt": "2026-06-22T12:08:37.842Z"
     },
     {
       "id": "372322",
@@ -1954,23 +1694,19 @@
       "precio": "USD 250.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Ocantos 832 - Monte Grande",
+      "direccion": "Ocantos 832",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "2",
       "supCubierta": null,
       "supTotal": "600m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-06-12T12:49:41.291Z"
+      "scrapedAt": "2026-06-22T12:08:39.872Z"
     },
     {
       "id": "556996",
@@ -1979,21 +1715,17 @@
       "precio": "USD 260.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Maipu 692 - Canning",
+      "direccion": "Maipu 692",
+      "zona": "Canning",
       "ambientes": "4",
       "dormitorios": "2",
       "banos": "4",
       "supCubierta": "200m²",
       "supTotal": "234m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-06-12T12:49:43.260Z"
+      "scrapedAt": "2026-06-22T12:08:41.968Z"
     },
     {
       "id": "590522",
@@ -2002,20 +1734,19 @@
       "precio": "USD 270.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Arana 442 - Monte Grande",
+      "direccion": "Arana 442",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": "919m²",
       "supTotal": "919m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-06-12T12:49:45.341Z"
+      "scrapedAt": "2026-06-22T12:08:43.786Z"
     },
     {
       "id": "447415",
@@ -2024,20 +1755,19 @@
       "precio": "USD 290.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Locales\n\n2 baños\n\nSup. cubierta 460m2\n\nSup. total 460m2",
+      "direccion": "Boulevard Buenos Aires 572",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": "2",
       "supCubierta": "460m²",
       "supTotal": "460m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-06-12T12:49:47.589Z"
+      "scrapedAt": "2026-06-22T12:08:45.564Z"
     },
     {
       "id": "499935",
@@ -2046,24 +1776,19 @@
       "precio": "USD 300.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Comodidades\n\n4 cocheras",
+      "direccion": "Castro Chavez 435",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "2",
       "supCubierta": null,
       "supTotal": "407m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "calefacción"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-06-12T12:49:49.645Z"
+      "scrapedAt": "2026-06-22T12:08:47.401Z"
     },
     {
       "id": "482044",
@@ -2072,19 +1797,17 @@
       "precio": "USD 350.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Maipu 692, Canning",
+      "direccion": "Avenida de Mayo 2100",
+      "zona": "Ramos Mejía",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "4",
       "supCubierta": "400m²",
       "supTotal": "221m²",
-      "comodidades": [
-        "parrilla",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-06-12T12:49:51.654Z"
+      "scrapedAt": "2026-06-22T12:08:49.173Z"
     },
     {
       "id": "441942",
@@ -2093,21 +1816,20 @@
       "precio": "USD 350.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Fader 829, Luis Guillón",
+      "direccion": null,
+      "zona": null,
       "ambientes": "4",
       "dormitorios": "5",
       "banos": "4",
       "supCubierta": "320m²",
       "supTotal": "1500m²",
-      "comodidades": [
-        "cochera"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-06-12T12:49:53.884Z"
+      "scrapedAt": "2026-06-22T12:08:51.101Z"
     },
     {
       "id": "406334",
@@ -2116,16 +1838,19 @@
       "precio": "USD 350.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Ambiente de 10 x 8 aprox para depósito con doble entrada.",
+      "direccion": "Av Fair 328",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": "370m²",
       "supTotal": "370m²",
       "comodidades": [],
-      "financiacion": [],
-      "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-06-12T12:49:55.860Z"
+      "financiacion": [
+        "Apto Crédito"
+      ],
+      "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
+      "scrapedAt": "2026-06-22T12:08:53.125Z"
     },
     {
       "id": "499354",
@@ -2134,24 +1859,20 @@
       "precio": "USD 370.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Casas\n\nmás de 4 ambientes\n\n5 dormitorios\n\n4 baños",
+      "direccion": null,
+      "zona": null,
       "ambientes": "4",
       "dormitorios": "4",
       "banos": "4",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-06-12T12:49:57.819Z"
+      "scrapedAt": "2026-06-22T12:08:55.077Z"
     },
     {
       "id": "612999",
@@ -2160,24 +1881,20 @@
       "precio": "USD 389.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Fader 829 - Luis Guillón",
+      "direccion": "Fader 829",
+      "zona": "Luis Guillón",
       "ambientes": "4",
       "dormitorios": "5",
       "banos": "4",
       "supCubierta": "480m²",
       "supTotal": "720m²",
-      "comodidades": [
-        "pileta",
-        "parrilla",
-        "balcón",
-        "calefacción"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-06-12T12:49:59.924Z"
+      "scrapedAt": "2026-06-22T12:08:57.152Z"
     },
     {
       "id": "482389",
@@ -2186,22 +1903,21 @@
       "precio": "USD 400.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Farina 539 - Monte Grande",
+      "direccion": "Farina 539",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
       "supCubierta": null,
       "supTotal": "1750m²",
-      "comodidades": [
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:01.894Z"
+      "scrapedAt": "2026-06-22T12:08:59.157Z"
     },
     {
       "id": "662387",
@@ -2210,7 +1926,8 @@
       "precio": "USD 499.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
-      "direccion": "Campo virgen de 36 hectareas - Cañuelas",
+      "direccion": "Ruta 3, Km 51",
+      "zona": "Alejandro Petión",
       "ambientes": null,
       "dormitorios": null,
       "banos": null,
@@ -2223,7 +1940,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:03.898Z"
+      "scrapedAt": "2026-06-22T12:09:01.187Z"
     },
     {
       "id": "565125",
@@ -2232,7 +1949,8 @@
       "precio": "USD 350.000",
       "operacion": "Venta",
       "tipo": "Locales",
-      "direccion": "Locales\n\n2 baños\n\nSup. cubierta 120m2\n\nSup. total 120m2",
+      "direccion": null,
+      "zona": null,
       "ambientes": null,
       "dormitorios": null,
       "banos": "2",
@@ -2241,7 +1959,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-06-12T12:50:05.884Z"
+      "scrapedAt": "2026-06-22T12:09:03.032Z"
     },
     {
       "id": "605335",
@@ -2250,22 +1968,17 @@
       "precio": "$ 330.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Azcuenaga 1114, Monte Grande",
+      "direccion": "El Ceibo 290",
+      "zona": "El Jaguel",
       "ambientes": "1",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "28m²",
       "supTotal": "30m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "patio",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:08.123Z"
+      "scrapedAt": "2026-06-22T12:09:05.101Z"
     },
     {
       "id": "701371",
@@ -2274,20 +1987,17 @@
       "precio": "$ 350.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Departamentos\n\n2 ambientes\n\n1 dormitorio\n\n1 baño",
+      "direccion": "Gral Rodriguez 2922",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "2",
       "banos": "2",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "pileta",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:10.022Z"
+      "scrapedAt": "2026-06-22T12:09:07.068Z"
     },
     {
       "id": "699651",
@@ -2296,23 +2006,17 @@
       "precio": "$ 390.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Azcuenaga 1114 - Monte Grande",
+      "direccion": "Azcuenaga 1114",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "42m²",
       "supTotal": "42m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:11.992Z"
+      "scrapedAt": "2026-06-22T12:09:09.035Z"
     },
     {
       "id": "224397",
@@ -2321,22 +2025,36 @@
       "precio": "$ 420.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Gaddini 81 - Tristán Suárez",
+      "direccion": "Gaddini 81",
+      "zona": "Tristán Suárez",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "46m²",
       "supTotal": "50m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "patio",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "Departamento 2 ambientes bajas expensas - cómodo en excelente ubicación - Monte Grande",
-      "scrapedAt": "2026-06-12T12:50:14.013Z"
+      "descripcion": "",
+      "scrapedAt": "2026-06-22T12:09:11.380Z"
+    },
+    {
+      "id": "605338",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/605338",
+      "titulo": "Departamento 2 Ambientes En Alquiler. Frente A La Estación De El Jaguel",
+      "precio": "$ 430.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "El Ceibo 290",
+      "zona": "El Jaguel",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "50m²",
+      "supTotal": "50m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-06-22T12:09:13.459Z"
     },
     {
       "id": "709090",
@@ -2345,24 +2063,17 @@
       "precio": "$ 450.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Avellaneda 275 - Monte Grande",
+      "direccion": "Avellaneda 275",
+      "zona": "Monte Grande",
       "ambientes": "1",
       "dormitorios": null,
       "banos": "1",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "parrilla",
-        "jardín",
-        "patio",
-        "balcón",
-        "solarium"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "Departamento 2 ambientes bajas expensas - cómodo en excelente ubicación - Monte Grande",
-      "scrapedAt": "2026-06-12T12:50:16.089Z"
+      "scrapedAt": "2026-06-22T12:09:15.553Z"
     },
     {
       "id": "696471",
@@ -2371,21 +2082,17 @@
       "precio": "$ 490.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Lavalle 871 - Monte Grande",
+      "direccion": "Lavalle 871",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "40m²",
       "supTotal": "42m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "Departamento 2 ambientes bajas expensas - cómodo en excelente ubicación - Monte Grande",
-      "scrapedAt": "2026-06-12T12:50:18.103Z"
+      "scrapedAt": "2026-06-22T12:09:17.460Z"
     },
     {
       "id": "269920",
@@ -2394,21 +2101,17 @@
       "precio": "$ 490.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rivadavia 581 - Monte Grande",
+      "direccion": "Rivadavia 581",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "37m²",
       "supTotal": "37m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "Departamento 2 ambientes bajas expensas - cómodo en excelente ubicación - Monte Grande",
-      "scrapedAt": "2026-06-12T12:50:20.037Z"
+      "scrapedAt": "2026-06-22T12:09:19.430Z"
     },
     {
       "id": "552799",
@@ -2417,20 +2120,36 @@
       "precio": "$ 490.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Ocantos 150 - Monte Grande",
+      "direccion": "Ocantos 150",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "50m²",
       "supTotal": "50m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [],
       "descripcion": "Departamento 2 ambientes bajas expensas - cómodo en excelente ubicación - Monte Grande",
-      "scrapedAt": "2026-06-12T12:50:22.058Z"
+      "scrapedAt": "2026-06-22T12:09:21.633Z"
+    },
+    {
+      "id": "519036",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/519036",
+      "titulo": "Departamento 2 Ambientes Con Cochera - Alquiler - Monte Grande",
+      "precio": "$ 520.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "Chimondegui 168",
+      "zona": "Monte Grande",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "42m²",
+      "supTotal": "42m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-06-22T12:09:23.660Z"
     },
     {
       "id": "714644",
@@ -2439,22 +2158,17 @@
       "precio": "$ 520.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rivadavia 581 - Monte Grande",
+      "direccion": "Rivadavia 581",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "35m²",
       "supTotal": "35m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "Departamento 2 ambientes bajas expensas - cómodo en excelente ubicación - Monte Grande",
-      "scrapedAt": "2026-06-12T12:50:24.113Z"
+      "descripcion": "",
+      "scrapedAt": "2026-06-22T12:09:25.671Z"
     },
     {
       "id": "701070",
@@ -2463,21 +2177,36 @@
       "precio": "$ 550.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rivadavia 581, Monte Grande",
+      "direccion": "General Rodriguez 70",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "patio",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:26.122Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:27.636Z"
+    },
+    {
+      "id": "715643",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/715643",
+      "titulo": "Departamentos 2 Ambientes Con Balcon Equipado En Centro De Monte Grande - Alquiler",
+      "precio": "$ 600.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "General Rodriguez 657",
+      "zona": "Monte Grande",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "45m²",
+      "supTotal": "48m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:29.901Z"
     },
     {
       "id": "343389",
@@ -2486,21 +2215,17 @@
       "precio": "$ 600.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Gaddini 81 - Tristán Suárez",
+      "direccion": "Gaddini 81",
+      "zona": "Tristán Suárez",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "75m²",
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "patio",
-        "balcón",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:28.102Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:31.871Z"
     },
     {
       "id": "411120",
@@ -2509,21 +2234,17 @@
       "precio": "$ 600.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rivadavia 1680 - Monte Grande",
+      "direccion": "Rivadavia 1680",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "2",
       "supCubierta": "75m²",
       "supTotal": "75m²",
-      "comodidades": [
-        "cochera",
-        "jardín",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:30.086Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:33.902Z"
     },
     {
       "id": "714625",
@@ -2532,20 +2253,17 @@
       "precio": "$ 650.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rivadavia 1680, Monte Grande",
+      "direccion": "Vicente Lopez 987",
+      "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
       "supCubierta": "40m²",
       "supTotal": "44m²",
-      "comodidades": [
-        "cochera",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:32.010Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:36.050Z"
     },
     {
       "id": "594184",
@@ -2554,20 +2272,17 @@
       "precio": "$ 720.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Alem 174 - Monte Grande",
+      "direccion": "Alem 174",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": "52m²",
       "supTotal": "57m²",
-      "comodidades": [
-        "cochera",
-        "patio",
-        "acepta mascotas"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:33.968Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:38.035Z"
     },
     {
       "id": "714634",
@@ -2576,21 +2291,17 @@
       "precio": "$ 850.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Departamento 3 Ambientes en Alquiler en Monte Grande",
+      "direccion": "Rojas 158",
+      "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
       "supCubierta": null,
       "supTotal": null,
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:36.215Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:40.138Z"
     },
     {
       "id": "714904",
@@ -2599,22 +2310,17 @@
       "precio": "$ 1.100.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Duplex 3 dormitorios en alquiler en Monte Grande",
+      "direccion": "Gral Lavalle 544",
+      "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
       "supCubierta": "80m²",
       "supTotal": "100m²",
-      "comodidades": [
-        "cochera",
-        "pileta",
-        "jardín",
-        "patio",
-        "balcón"
-      ],
+      "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-06-12T12:50:38.469Z"
+      "descripcion": "Departamentos 2 ambientes con balcon equipado en centro de Monte Grande - Alquiler",
+      "scrapedAt": "2026-06-22T12:09:42.137Z"
     },
     {
       "id": "533357",
@@ -2623,7 +2329,8 @@
       "precio": "$ 2.700.000",
       "operacion": "Alquiler",
       "tipo": "Locales",
-      "direccion": "Local 240m2 sobre Av. Santamarina. Monte Grande",
+      "direccion": "Enrique Santamarina 311",
+      "zona": "Monte Grande",
       "ambientes": null,
       "dormitorios": null,
       "banos": "2",
@@ -2632,7 +2339,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-06-12T12:50:40.477Z"
+      "scrapedAt": "2026-06-22T12:09:44.403Z"
     }
   ]
 }
