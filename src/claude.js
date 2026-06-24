@@ -32,6 +32,57 @@ function findPropertyById(id, properties) {
   return properties.find(p => p.id === id) || null
 }
 
+// Abreviaciones comunes en direcciones argentinas — se expanden antes de comparar
+// para que "Av. San Martín" matchee con "Avenida San Martin" y viceversa.
+const ABREVIATIONS = [
+  [/\bav\.?\b/g, 'avenida'],
+  [/\bavda\.?\b/g, 'avenida'],
+  [/\bgral\.?\b/g, 'general'],
+  [/\bcnel\.?\b/g, 'coronel'],
+  [/\btte\.?\b/g, 'teniente'],
+  [/\bdr\.?\b/g, 'doctor'],
+  [/\bdra\.?\b/g, 'doctora'],
+  [/\bing\.?\b/g, 'ingeniero'],
+  [/\bpte\.?\b/g, 'presidente'],
+  [/\bsgto\.?\b/g, 'sargento'],
+  [/\bbv\.?\b/g, 'bulevar'],
+]
+
+function normalizeAddress(str) {
+  let s = str
+    .toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '') // sin tildes
+    .replace(/[.,]/g, ' ')
+  for (const [pattern, full] of ABREVIATIONS) s = s.replace(pattern, full)
+  return s.replace(/\s+/g, ' ').trim()
+}
+
+// Busca, dentro del texto libre del lead, una propiedad cuya dirección
+// (calle + número) aparezca mencionada. Devuelve match solo si es único —
+// si hay 0 o varias coincidencias, se descarta (ambiguo) y se usa el flujo normal.
+function findPropertyByAddressInText(text, properties) {
+  const normText = normalizeAddress(text)
+  const matches = []
+
+  for (const p of properties) {
+    if (!p.direccion) continue
+    const normDireccion = normalizeAddress(p.direccion)
+    const m = normDireccion.match(/^(.*?)\s*(\d+)$/)
+    if (!m) continue
+
+    const calle = m[1].trim()
+    const numero = m[2]
+    if (calle.length < 3) continue // evitar direcciones demasiado cortas/ambiguas
+
+    const numeroRegex = new RegExp(`\\b${numero}\\b`)
+    if (normText.includes(calle) && numeroRegex.test(normText)) {
+      matches.push(p)
+    }
+  }
+
+  return matches.length === 1 ? matches[0] : null
+}
+
 function parseTriggers(text) {
   const defaults = {
     fichaEnviada:     false,
@@ -69,11 +120,19 @@ export async function askClaude(history) {
 
   const lastUserMsg = [...history].reverse().find(m => m.role === 'user')
   const propId = lastUserMsg ? extractPropertyId(lastUserMsg.content) : null
-  const matchedProperty = propId ? findPropertyById(propId, cachedProperties) : null
+  let matchedProperty = propId ? findPropertyById(propId, cachedProperties) : null
+  let matchedBy = matchedProperty ? 'ID' : null
+
+  // Fallback: cuando no hay ID (ej. el lead confirmó la dirección a mano tras
+  // un link externo que no pudimos leer), buscamos por dirección en el texto.
+  if (!matchedProperty && lastUserMsg) {
+    matchedProperty = findPropertyByAddressInText(lastUserMsg.content, cachedProperties)
+    if (matchedProperty) matchedBy = 'dirección'
+  }
 
   let systemPrompt
   if (matchedProperty) {
-    console.log(`🎯 Propiedad encontrada por ID ${propId}: ${matchedProperty.titulo}`)
+    console.log(`🎯 Propiedad encontrada por ${matchedBy}: ${matchedProperty.titulo}`)
     systemPrompt = buildSinglePropertyPrompt(matchedProperty, getEnvVars())
   } else {
     systemPrompt = buildSystemPrompt(cachedProperties, getEnvVars())
