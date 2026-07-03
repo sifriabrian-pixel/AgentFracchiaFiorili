@@ -35,9 +35,10 @@ const logger = pino(pino.transport({
   options: { colorize: true, translateTime: 'HH:MM:ss', ignore: 'pid,hostname' }
 }))
 
-// ─── ESTADO QR ─────────────────────────────────────────────────────────────
-let currentQR   = null
-let isConnected = false
+// ─── ESTADO QR / SCHEDULER ─────────────────────────────────────────────────
+let currentQR      = null
+let isConnected    = false
+let followupTask   = null  // referencia al cron activo — se cancela antes de registrar uno nuevo
 
 // ─── SERVIDOR WEB QR ───────────────────────────────────────────────────────
 const server = http.createServer(async (req, res) => {
@@ -275,7 +276,11 @@ async function handleMessage(sock, msg) {
 //    descarta y se deja de reintentar (no genera el mismo error cada corrida)
 // 3. Logging de resumen por corrida: enviados / fallidos / descartados
 function startFollowupScheduler(sock) {
-  cron.schedule('0 10,18 * * *', async () => {  // Corre a las 10am y 6pm
+  if (followupTask) {
+    followupTask.stop()
+    logger.info('⏰ Scheduler anterior detenido antes de registrar el nuevo')
+  }
+  followupTask = cron.schedule('0 10,18 * * *', async () => {  // Corre a las 10am y 6pm
     if (!isConnected) {
       logger.warn('⏰ Scheduler: WhatsApp desconectado — se omite esta corrida')
       return
