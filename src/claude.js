@@ -138,19 +138,35 @@ export async function askClaude(history) {
     systemPrompt = buildSystemPrompt(cachedProperties, getEnvVars())
   }
 
-  const response = await client.messages.create({
-    model:      'claude-sonnet-4-6',
-    max_tokens: 1024,
-    // Prompt caching — el system prompt se cachea y se cobra 90% menos en llamadas repetidas
-    system: [
-      {
-        type: 'text',
-        text: systemPrompt,
-        cache_control: { type: 'ephemeral' }
+  const MAX_RETRIES = 2
+  const RETRY_DELAY_MS = 1500
+  let response
+  for (let attempt = 1; attempt <= MAX_RETRIES + 1; attempt++) {
+    try {
+      response = await client.messages.create({
+        model:      'claude-sonnet-4-6',
+        max_tokens: 1024,
+        // Prompt caching — el system prompt se cachea y se cobra 90% menos en llamadas repetidas
+        system: [
+          {
+            type: 'text',
+            text: systemPrompt,
+            cache_control: { type: 'ephemeral' }
+          }
+        ],
+        messages: history,
+      })
+      break // éxito — salir del loop
+    } catch (err) {
+      const isNetworkError = err.code === 'ERR_STREAM_PREMATURE_CLOSE' || err.name === 'FetchError'
+      if (isNetworkError && attempt <= MAX_RETRIES) {
+        console.warn(`⚠️  Anthropic API error de red (intento ${attempt}/${MAX_RETRIES + 1}), reintentando en ${RETRY_DELAY_MS}ms...`)
+        await new Promise(r => setTimeout(r, RETRY_DELAY_MS))
+      } else {
+        throw err // error no recuperable o agotamos reintentos
       }
-    ],
-    messages: history,
-  })
+    }
+  }
 
   const rawText = response.content[0]?.text || 'Disculpá, tuve un problema técnico. Intentá de nuevo 🙏'
   const triggers = parseTriggers(rawText)
