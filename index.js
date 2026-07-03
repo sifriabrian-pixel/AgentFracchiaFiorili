@@ -273,6 +273,11 @@ async function handleMessage(sock, msg) {
 // 3. Logging de resumen por corrida: enviados / fallidos / descartados
 function startFollowupScheduler(sock) {
   cron.schedule('0 10,18 * * *', async () => {  // Corre a las 10am y 6pm
+    if (!isConnected) {
+      logger.warn('⏰ Scheduler: WhatsApp desconectado — se omite esta corrida')
+      return
+    }
+
     const pending = getLeadsPendingFollowup()
     if (!pending.length) return
 
