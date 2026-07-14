@@ -138,7 +138,12 @@ async function fetchProperty(page, id) {
       const bodyText = document.body.innerText.toLowerCase()
 
       const financiacion = []
-      if (bodyText.includes('apto crédito')) financiacion.push('Apto Crédito')
+      // Chequear hipotecario primero (más específico) antes que el genérico
+      if (bodyText.includes('apto crédito hipotecario') || bodyText.includes('apto credito hipotecario')) {
+        financiacion.push('Apto Crédito Hipotecario')
+      } else if (bodyText.includes('apto crédito') || bodyText.includes('apto credito')) {
+        financiacion.push('Apto Crédito')
+      }
       if (bodyText.includes('anticipo y cuotas')) financiacion.push('Anticipo y cuotas')
       if (bodyText.includes('acepta permuta')) financiacion.push('Acepta permuta')
 

@@ -9,6 +9,7 @@ import qrcode from 'qrcode-terminal'
 import QRCode from 'qrcode'
 import cron from 'node-cron'
 import http from 'http'
+import { spawn } from 'child_process'
 
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
@@ -330,12 +331,32 @@ function startFollowupScheduler(sock) {
   logger.info('⏰ Scheduler de seguimientos activo (10am y 6pm)')
 }
 
+// ─── SCRAPER SEMANAL DE PROPIEDADES ────────────────────────────────────────
+function runScraper() {
+  logger.info('🕷️  Iniciando scraper semanal de propiedades...')
+  const child = spawn('node', ['scraper.js'], { stdio: 'inherit' })
+  child.on('close', (code) => {
+    if (code === 0) {
+      reloadProperties()
+      logger.info('✅ Scraper completado — propiedades actualizadas')
+    } else {
+      logger.error(`❌ Scraper terminó con código ${code}`)
+    }
+  })
+  child.on('error', (err) => {
+    logger.error({ err }, '❌ Error al iniciar el scraper')
+  })
+}
+
 // ─── RECARGA DIARIA DE PROPIEDADES ─────────────────────────────────────────
 function startPropertyReloader() {
-  cron.schedule('0 6 * * *', () => {  // Todos los días a las 6am
+  cron.schedule('0 9 * * 1', () => {  // Lunes 9am — scraper completo
+    runScraper()
+  })
+  cron.schedule('0 6 * * *', () => {  // Todos los días a las 6am — reload en memoria
     reloadProperties()
   })
-  logger.info('🔄 Recarga de propiedades programada (6am diaria)')
+  logger.info('🔄 Scraper programado (lunes 9am) · Recarga diaria (6am)')
 }
 
 // ─── CONEXIÓN WHATSAPP ─────────────────────────────────────────────────────
