@@ -37,8 +37,11 @@ export function buildSinglePropertyPrompt(prop, env) {
     ? '🛏️ *Ambientes:* ' + prop.ambientes + ' amb.' + (prop.dormitorios ? ' | ' + prop.dormitorios + ' dorm.' : '') + (prop.banos ? ' | ' + prop.banos + ' baño(s)' : '')
     : null
 
-  const financiacionLinea = prop.financiacion?.length
-    ? '💳 *Financiación:* ' + prop.financiacion.join(', ')
+  const creditoOpciones = (prop.financiacion || []).filter(f =>
+    f === 'Apto Crédito' || f === 'Apto Crédito Hipotecario'
+  )
+  const financiacionLinea = creditoOpciones.length
+    ? '💳 *Financiación:* ' + creditoOpciones.join(', ')
     : null
 
   const fichaFormateada = [
