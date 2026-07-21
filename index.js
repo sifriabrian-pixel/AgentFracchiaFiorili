@@ -345,7 +345,8 @@ function runScraper() {
     }
   })
   child.on('error', (err) => {
-    logger.error({ err }, '❌ Error al iniciar el scraper')
+    // En Railway, puppeteer no está disponible — el scraper se corre localmente
+    logger.warn('⚠️  Scraper no disponible en este entorno (correr localmente y pushear properties.json)')
   })
 }
 
