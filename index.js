@@ -40,6 +40,7 @@ const logger = pino(pino.transport({
 let currentQR      = null
 let isConnected    = false
 let followupTask   = null  // referencia al cron activo — se cancela antes de registrar uno nuevo
+let reloaderStarted = false // guard: startPropertyReloader solo se ejecuta una vez
 
 // ─── SERVIDOR WEB QR ───────────────────────────────────────────────────────
 const server = http.createServer(async (req, res) => {
@@ -350,6 +351,8 @@ function runScraper() {
 
 // ─── RECARGA DIARIA DE PROPIEDADES ─────────────────────────────────────────
 function startPropertyReloader() {
+  if (reloaderStarted) return  // prevenir duplicados en reconexiones
+  reloaderStarted = true
   cron.schedule('0 9 * * 1', () => {  // Lunes 9am — scraper completo
     runScraper()
   })
