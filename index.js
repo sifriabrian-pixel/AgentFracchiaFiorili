@@ -414,8 +414,12 @@ async function connectWhatsApp() {
   })
 
   sock.ev.on('messages.upsert', async ({ messages, type }) => {
-    if (type !== 'notify') return
-    for (const msg of messages) await handleMessage(sock, msg)
+    if (type !== 'notify' && type !== 'append') return
+    const cutoff = Math.floor(Date.now() / 1000) - 48 * 60 * 60 // ignorar mensajes de más de 48hs
+    for (const msg of messages) {
+      if ((msg.messageTimestamp || 0) < cutoff) continue
+      await handleMessage(sock, msg)
+    }
   })
 
   return sock
