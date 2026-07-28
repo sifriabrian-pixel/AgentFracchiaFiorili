@@ -69,7 +69,11 @@ INSTRUCCIONES:
 
 ${fichaFormateada}${requisitosAlquiler}
 
-2. Luego preguntá: "¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría coordinar una visita o tenés alguna duda? 😊"
+2. Luego preguntá:
+${prop.operacion === 'Venta'
+  ? `"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría coordinar una visita o tenés alguna duda? 😊\n\nSi preferís hablar directamente con uno de nuestros asesores:\n💬 Ezequiel — wa.me/${env.WHATSAPP_ASESOR_VENTA}\n💬 Horacio — wa.me/${env.WHATSAPP_ASESOR_ALQUILER}\n💬 Elias — wa.me/5491124602096"`
+  : `"¿Esta propiedad se ajusta a lo que estás buscando? ¿Te gustaría coordinar una visita o tenés alguna duda? 😊"`
+}
 
 3. Si quiere agendar, primero pedile el número:
 "¡Perfecto! Antes de pasarte el link, ¿me confirmás tu número de celular? Así el equipo puede contactarte si surge alguna consulta 😊"
