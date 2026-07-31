@@ -9,6 +9,8 @@ import qrcode from 'qrcode-terminal'
 import QRCode from 'qrcode'
 import cron from 'node-cron'
 import http from 'http'
+import fs from 'fs'
+import path from 'path'
 import { spawn } from 'child_process'
 
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
@@ -37,10 +39,12 @@ const logger = pino(pino.transport({
 }))
 
 // ─── ESTADO QR / SCHEDULER ─────────────────────────────────────────────────
-let currentQR      = null
-let isConnected    = false
-let followupTask   = null  // referencia al cron activo — se cancela antes de registrar uno nuevo
-let reloaderStarted = false // guard: startPropertyReloader solo se ejecuta una vez
+let currentQR        = null
+let isConnected      = false
+let followupTask     = null  // referencia al cron activo — se cancela antes de registrar uno nuevo
+let reloaderStarted  = false // guard: startPropertyReloader solo se ejecuta una vez
+let reconnectCount   = 0     // contador de reconexiones fallidas consecutivas
+const MAX_RECONNECTS = 6     // tras 6 fallos seguidos Railway reinicia el proceso
 
 // ─── SERVIDOR WEB QR ───────────────────────────────────────────────────────
 const server = http.createServer(async (req, res) => {
@@ -394,6 +398,7 @@ async function connectWhatsApp() {
     if (connection === 'open') {
       currentQR = null
       isConnected = true
+      reconnectCount = 0
       logger.info('✅ WhatsApp conectado')
       logger.info(`🤖 Agente activo — ${CLIENTE_NOMBRE}`)
       startFollowupScheduler(sock)
@@ -404,12 +409,29 @@ async function connectWhatsApp() {
       isConnected = false
       const statusCode = (lastDisconnect?.error instanceof Boom)
         ? lastDisconnect.error.output?.statusCode : 0
-      if (statusCode !== DisconnectReason.loggedOut) {
-        logger.warn(`⚠️  Reconectando en 5s... (código ${statusCode})`)
-        setTimeout(connectWhatsApp, 5000)
-      } else {
-        logger.error('🚫 Sesión cerrada. Eliminá sessions/ y volvé a escanear el QR.')
+
+      if (statusCode === DisconnectReason.loggedOut) {
+        // Sesión revocada: limpiar archivos y salir → Railway reinicia y muestra QR
+        logger.error('🚫 Sesión cerrada (401). Limpiando sesión y reiniciando proceso...')
+        try {
+          const files = fs.readdirSync(SESSION_PATH)
+          files.forEach(f => { try { fs.unlinkSync(path.join(SESSION_PATH, f)) } catch {} })
+          logger.info('🗑️  Sesión eliminada — Railway mostrará el QR al reiniciar')
+        } catch {}
+        setTimeout(() => process.exit(1), 2000)
+        return
       }
+
+      reconnectCount++
+      if (reconnectCount >= MAX_RECONNECTS) {
+        logger.error(`❌ ${MAX_RECONNECTS} reconexiones fallidas consecutivas. Reiniciando proceso...`)
+        setTimeout(() => process.exit(1), 2000)
+        return
+      }
+
+      const delay = Math.min(5000 * reconnectCount, 30000) // 5s, 10s, 15s... máx 30s
+      logger.warn(`⚠️  Reconectando en ${delay / 1000}s... (código ${statusCode}, intento ${reconnectCount}/${MAX_RECONNECTS})`)
+      setTimeout(connectWhatsApp, delay)
     }
   })
 
