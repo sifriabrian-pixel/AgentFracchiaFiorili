@@ -4,7 +4,8 @@
 import fs from 'fs'
 import path from 'path'
 
-const STATS_PATH = path.join(process.env.SESSION_PATH || './sessions', 'stats.json')
+// Guardado con nombre propio dentro del volumen — separado de los archivos de sesión de WhatsApp
+const STATS_PATH = path.join(process.env.SESSION_PATH || './sessions', 'fracchia-stats.json')
 
 const STAT_KEYS = ['leadsAtendidos', 'fichasEnviadas', 'linksAgenda', 'agendasConfirmadas', 'tasacionesSolicitadas', 'consultasAdmin']
 
