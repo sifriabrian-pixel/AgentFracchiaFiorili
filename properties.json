@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-14T18:30:19.182Z",
-  "total": 116,
+  "lastUpdated": "2026-08-11T12:25:36.489Z",
+  "total": 114,
   "properties": [
     {
       "id": "655460",
@@ -21,7 +21,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:25:53.101Z"
+      "scrapedAt": "2026-08-11T12:19:07.508Z"
     },
     {
       "id": "465426",
@@ -40,7 +40,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:25:54.943Z"
+      "scrapedAt": "2026-08-11T12:19:11.189Z"
     },
     {
       "id": "662384",
@@ -61,7 +61,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:25:56.796Z"
+      "scrapedAt": "2026-08-11T12:19:14.305Z"
     },
     {
       "id": "349420",
@@ -82,7 +82,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:25:58.619Z"
+      "scrapedAt": "2026-08-11T12:19:16.923Z"
     },
     {
       "id": "584250",
@@ -104,7 +104,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:00.459Z"
+      "scrapedAt": "2026-08-11T12:19:19.933Z"
     },
     {
       "id": "512214",
@@ -123,7 +123,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:02.392Z"
+      "scrapedAt": "2026-08-11T12:19:23.432Z"
     },
     {
       "id": "512297",
@@ -144,7 +144,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-07-14T18:26:04.376Z"
+      "scrapedAt": "2026-08-11T12:19:26.622Z"
     },
     {
       "id": "641327",
@@ -163,7 +163,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:06.224Z"
+      "scrapedAt": "2026-08-11T12:19:29.946Z"
     },
     {
       "id": "652537",
@@ -182,7 +182,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:08.078Z"
+      "scrapedAt": "2026-08-11T12:19:33.056Z"
     },
     {
       "id": "543298",
@@ -203,7 +203,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:09.914Z"
+      "scrapedAt": "2026-08-11T12:19:36.256Z"
     },
     {
       "id": "410214",
@@ -225,7 +225,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:11.902Z"
+      "scrapedAt": "2026-08-11T12:19:39.294Z"
     },
     {
       "id": "247624",
@@ -247,7 +247,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:13.980Z"
+      "scrapedAt": "2026-08-11T12:19:42.239Z"
     },
     {
       "id": "526648",
@@ -268,7 +268,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:15.846Z"
+      "scrapedAt": "2026-08-11T12:19:45.171Z"
     },
     {
       "id": "516872",
@@ -291,7 +291,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:17.705Z"
+      "scrapedAt": "2026-08-11T12:19:48.892Z"
     },
     {
       "id": "709487",
@@ -313,7 +313,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:19.585Z"
+      "scrapedAt": "2026-08-11T12:19:52.832Z"
     },
     {
       "id": "673224",
@@ -336,7 +336,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:21.431Z"
+      "scrapedAt": "2026-08-11T12:19:56.106Z"
     },
     {
       "id": "555258",
@@ -355,7 +355,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:23.318Z"
+      "scrapedAt": "2026-08-11T12:19:59.493Z"
     },
     {
       "id": "665131",
@@ -378,7 +378,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:25.457Z"
+      "scrapedAt": "2026-08-11T12:20:02.834Z"
     },
     {
       "id": "290948",
@@ -395,11 +395,9 @@
       "supCubierta": "90m²",
       "supTotal": "223m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "Casa APTO CREDITO 3 ambientes con cochera grande y hermoso jardin - Venta Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:27.896Z"
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:20:06.106Z"
     },
     {
       "id": "474241",
@@ -422,7 +420,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Departamento PH dos dormitorios con patio y terraza - Venta APTO CREDITO - Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:30.076Z"
+      "scrapedAt": "2026-08-11T12:20:09.025Z"
     },
     {
       "id": "575093",
@@ -439,11 +437,9 @@
       "supCubierta": null,
       "supTotal": "200m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "Casa APTO CREDITO 3 ambientes con cochera grande y hermoso jardin - Venta Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:32.528Z"
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:20:12.308Z"
     },
     {
       "id": "662476",
@@ -466,7 +462,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:34.683Z"
+      "scrapedAt": "2026-08-11T12:20:15.618Z"
     },
     {
       "id": "594495",
@@ -483,11 +479,9 @@
       "supCubierta": "160m²",
       "supTotal": "215m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "Casa APTO CREDITO 3 ambientes con cochera grande y hermoso jardin - Venta Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:37.050Z"
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:20:19.138Z"
     },
     {
       "id": "684723",
@@ -508,7 +502,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:39.233Z"
+      "scrapedAt": "2026-08-11T12:20:22.302Z"
     },
     {
       "id": "708675",
@@ -529,28 +523,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:41.439Z"
-    },
-    {
-      "id": "720007",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/720007",
-      "titulo": "Casa Apto Credito 3 Ambientes Con Cochera Grande Y Hermoso Jardin - Venta Monte Grande",
-      "precio": "USD 62.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Adolfo Alsina 345",
-      "zona": "Monte Grande",
-      "ambientes": "3",
-      "dormitorios": "2",
-      "banos": "1",
-      "supCubierta": "95m²",
-      "supTotal": "432m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito Hipotecario"
-      ],
-      "descripcion": "Casa APTO CREDITO 3 ambientes con cochera grande y hermoso jardin - Venta Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:43.645Z"
+      "scrapedAt": "2026-08-11T12:20:25.535Z"
     },
     {
       "id": "652914",
@@ -567,11 +540,32 @@
       "supCubierta": "74m²",
       "supTotal": "235m²",
       "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:20:28.446Z"
+    },
+    {
+      "id": "724763",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724763",
+      "titulo": "Departamento Mono Ambiente Premium Con Cochera En Venta - A Estrenar - Monte Grande",
+      "precio": "USD 65.000",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Dorrego 453",
+      "zona": "Monte Grande",
+      "ambientes": "1",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "26m²",
+      "supTotal": "7m²",
+      "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
-      "descripcion": "Casa APTO CREDITO 3 ambientes con cochera grande y hermoso jardin - Venta Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:45.996Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-08-11T12:20:31.434Z"
     },
     {
       "id": "655486",
@@ -593,8 +587,8 @@
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:48.298Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-08-11T12:20:34.416Z"
     },
     {
       "id": "647238",
@@ -616,8 +610,8 @@
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:50.513Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-08-11T12:20:37.517Z"
     },
     {
       "id": "459879",
@@ -639,8 +633,8 @@
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:52.630Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-08-11T12:20:41.028Z"
     },
     {
       "id": "665648",
@@ -662,8 +656,8 @@
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:54.887Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-08-11T12:20:43.875Z"
     },
     {
       "id": "678117",
@@ -685,8 +679,8 @@
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:26:57.186Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-08-11T12:20:47.769Z"
     },
     {
       "id": "542852",
@@ -709,7 +703,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Departamento 2 Ambientes con cochera cubierta en Venta APTO CREDITO - Monte Grande",
-      "scrapedAt": "2026-07-14T18:26:59.487Z"
+      "scrapedAt": "2026-08-11T12:20:51.125Z"
     },
     {
       "id": "720688",
@@ -731,7 +725,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:01.640Z"
+      "scrapedAt": "2026-08-11T12:20:54.530Z"
     },
     {
       "id": "334249",
@@ -753,7 +747,28 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:03.906Z"
+      "scrapedAt": "2026-08-11T12:20:57.636Z"
+    },
+    {
+      "id": "452466",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/452466",
+      "titulo": "Financiacion Privada!! Lote 2326 M2 En Venta Fincas Del Alba - Canning",
+      "precio": "USD 76.000",
+      "operacion": "Venta",
+      "tipo": "Lotes / Terrenos",
+      "direccion": "Ruta 52, km 9",
+      "zona": "Canning",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": null,
+      "supTotal": "2326m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:21:00.680Z"
     },
     {
       "id": "720672",
@@ -775,7 +790,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:06.530Z"
+      "scrapedAt": "2026-08-11T12:21:03.608Z"
     },
     {
       "id": "678106",
@@ -797,7 +812,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:08.926Z"
+      "scrapedAt": "2026-08-11T12:21:06.701Z"
     },
     {
       "id": "652514",
@@ -816,7 +831,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:11.245Z"
+      "scrapedAt": "2026-08-11T12:21:09.497Z"
     },
     {
       "id": "678113",
@@ -838,7 +853,7 @@
         "Anticipo y cuotas"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:13.621Z"
+      "scrapedAt": "2026-08-11T12:21:12.710Z"
     },
     {
       "id": "714641",
@@ -857,7 +872,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:15.943Z"
+      "scrapedAt": "2026-08-11T12:21:16.066Z"
     },
     {
       "id": "604032",
@@ -876,28 +891,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:18.344Z"
-    },
-    {
-      "id": "452466",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/452466",
-      "titulo": "Espectacular Lote De 2326 M2 En Fincas Del Alba - Canning",
-      "precio": "USD 86.000",
-      "operacion": "Venta",
-      "tipo": "Lotes / Terrenos",
-      "direccion": "Ruta 52, km 9",
-      "zona": "Canning",
-      "ambientes": null,
-      "dormitorios": null,
-      "banos": null,
-      "supCubierta": null,
-      "supTotal": "2326m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:20.583Z"
+      "scrapedAt": "2026-08-11T12:21:19.207Z"
     },
     {
       "id": "289183",
@@ -916,7 +910,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:22.840Z"
+      "scrapedAt": "2026-08-11T12:21:22.086Z"
     },
     {
       "id": "448686",
@@ -935,26 +929,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:25.080Z"
-    },
-    {
-      "id": "546869",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/546869",
-      "titulo": "Casa 4 Ambientes En Venta - Luis Guillon",
-      "precio": "USD 90.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Teniente Ruiz 1207",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "1",
-      "supCubierta": "117m²",
-      "supTotal": "221m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:27.387Z"
+      "scrapedAt": "2026-08-11T12:21:25.109Z"
     },
     {
       "id": "530017",
@@ -975,7 +950,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:29.666Z"
+      "scrapedAt": "2026-08-11T12:21:28.490Z"
     },
     {
       "id": "718309",
@@ -996,28 +971,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:31.887Z"
-    },
-    {
-      "id": "644533",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/644533",
-      "titulo": "Duplex 3 Dormitorios En Venta Apto Credito - Monte Grande Centro",
-      "precio": "USD 99.000",
-      "operacion": "Venta",
-      "tipo": "Dúplex/Tríplex",
-      "direccion": "Lavalle 544",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "2",
-      "supCubierta": "104m²",
-      "supTotal": "140m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "Duplex 4 Ambientes En Venta cochera y jardin APTO CREDITO - Lomas De Zamora - OPORTUNIDAD",
-      "scrapedAt": "2026-07-14T18:27:34.103Z"
+      "scrapedAt": "2026-08-11T12:21:31.969Z"
     },
     {
       "id": "518063",
@@ -1038,7 +992,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:36.716Z"
+      "scrapedAt": "2026-08-11T12:21:34.569Z"
     },
     {
       "id": "568422",
@@ -1059,7 +1013,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:38.878Z"
+      "scrapedAt": "2026-08-11T12:21:37.954Z"
     },
     {
       "id": "714239",
@@ -1080,7 +1034,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:41.376Z"
+      "scrapedAt": "2026-08-11T12:21:41.225Z"
     },
     {
       "id": "614863",
@@ -1101,7 +1055,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:43.823Z"
+      "scrapedAt": "2026-08-11T12:21:44.183Z"
     },
     {
       "id": "557701",
@@ -1122,7 +1076,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-07-14T18:27:46.241Z"
+      "scrapedAt": "2026-08-11T12:21:47.280Z"
     },
     {
       "id": "556274",
@@ -1141,7 +1095,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:48.816Z"
+      "scrapedAt": "2026-08-11T12:21:50.848Z"
     },
     {
       "id": "584436",
@@ -1162,7 +1116,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-07-14T18:27:51.422Z"
+      "scrapedAt": "2026-08-11T12:21:54.427Z"
     },
     {
       "id": "519139",
@@ -1183,7 +1137,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-07-14T18:27:53.949Z"
+      "scrapedAt": "2026-08-11T12:21:57.915Z"
     },
     {
       "id": "365820",
@@ -1202,7 +1156,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:27:56.251Z"
+      "scrapedAt": "2026-08-11T12:22:01.593Z"
     },
     {
       "id": "362895",
@@ -1224,7 +1178,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-07-14T18:27:58.277Z"
+      "scrapedAt": "2026-08-11T12:22:05.266Z"
     },
     {
       "id": "373429",
@@ -1246,7 +1200,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-07-14T18:28:00.580Z"
+      "scrapedAt": "2026-08-11T12:22:08.499Z"
     },
     {
       "id": "718595",
@@ -1268,7 +1222,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:03.027Z"
+      "scrapedAt": "2026-08-11T12:22:11.712Z"
     },
     {
       "id": "499131",
@@ -1290,7 +1244,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:05.372Z"
+      "scrapedAt": "2026-08-11T12:22:14.925Z"
     },
     {
       "id": "371412",
@@ -1312,7 +1266,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:07.634Z"
+      "scrapedAt": "2026-08-11T12:22:18.333Z"
     },
     {
       "id": "667058",
@@ -1334,7 +1288,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:09.736Z"
+      "scrapedAt": "2026-08-11T12:22:21.714Z"
     },
     {
       "id": "593042",
@@ -1355,7 +1309,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:12.211Z"
+      "scrapedAt": "2026-08-11T12:22:25.940Z"
     },
     {
       "id": "705227",
@@ -1376,30 +1330,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:14.366Z"
-    },
-    {
-      "id": "525548",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/525548",
-      "titulo": "Duplex 4 Ambientes En Venta Cochera Y Jardin Apto Credito - Lomas De Zamora - Oportunidad",
-      "precio": "USD 145.000",
-      "operacion": "Venta",
-      "tipo": "Dúplex/Tríplex",
-      "direccion": "Almafuerte 433",
-      "zona": "Lomas de Zamora",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "2",
-      "supCubierta": "100m²",
-      "supTotal": "200m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "Duplex 4 Ambientes En Venta cochera y jardin APTO CREDITO - Lomas De Zamora - OPORTUNIDAD",
-      "scrapedAt": "2026-07-14T18:28:17.209Z"
+      "scrapedAt": "2026-08-11T12:22:30.247Z"
     },
     {
       "id": "539259",
@@ -1421,7 +1352,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:19.391Z"
+      "scrapedAt": "2026-08-11T12:22:34.165Z"
     },
     {
       "id": "651521",
@@ -1444,7 +1375,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:21.548Z"
+      "scrapedAt": "2026-08-11T12:22:37.512Z"
     },
     {
       "id": "579720",
@@ -1466,7 +1397,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:23.992Z"
+      "scrapedAt": "2026-08-11T12:22:40.438Z"
     },
     {
       "id": "520906",
@@ -1485,7 +1416,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:26.001Z"
+      "scrapedAt": "2026-08-11T12:22:43.532Z"
     },
     {
       "id": "519118",
@@ -1507,7 +1438,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:28.375Z"
+      "scrapedAt": "2026-08-11T12:22:46.686Z"
     },
     {
       "id": "482386",
@@ -1530,7 +1461,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:30.505Z"
+      "scrapedAt": "2026-08-11T12:22:49.871Z"
     },
     {
       "id": "540925",
@@ -1553,7 +1484,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:32.921Z"
+      "scrapedAt": "2026-08-11T12:22:53.328Z"
     },
     {
       "id": "537515",
@@ -1576,7 +1507,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:35.125Z"
+      "scrapedAt": "2026-08-11T12:22:56.992Z"
     },
     {
       "id": "384154",
@@ -1599,7 +1530,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:37.688Z"
+      "scrapedAt": "2026-08-11T12:23:00.496Z"
     },
     {
       "id": "542926",
@@ -1622,7 +1553,30 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:40.393Z"
+      "scrapedAt": "2026-08-11T12:23:04.667Z"
+    },
+    {
+      "id": "525548",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/525548",
+      "titulo": "Duplex 4 Ambientes En Venta Cochera Y Jardin Apto Credito - Lomas De Zamora - Oportunidad",
+      "precio": "USD 167.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Almafuerte 433",
+      "zona": "Lomas de Zamora",
+      "ambientes": "4",
+      "dormitorios": "3",
+      "banos": "2",
+      "supCubierta": "100m²",
+      "supTotal": "200m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "Duplex 4 Ambientes En Venta cochera y jardin APTO CREDITO - Lomas De Zamora - OPORTUNIDAD",
+      "scrapedAt": "2026-08-11T12:23:09.065Z"
     },
     {
       "id": "463809",
@@ -1643,7 +1597,7 @@
         "Apto Crédito Hipotecario"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:42.816Z"
+      "scrapedAt": "2026-08-11T12:23:13.126Z"
     },
     {
       "id": "479338",
@@ -1665,7 +1619,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:45.345Z"
+      "scrapedAt": "2026-08-11T12:23:16.757Z"
     },
     {
       "id": "526646",
@@ -1687,7 +1641,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:47.701Z"
+      "scrapedAt": "2026-08-11T12:23:20.084Z"
     },
     {
       "id": "695177",
@@ -1709,7 +1663,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:50.355Z"
+      "scrapedAt": "2026-08-11T12:23:22.961Z"
     },
     {
       "id": "423612",
@@ -1730,7 +1684,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:28:52.743Z"
+      "scrapedAt": "2026-08-11T12:23:26.184Z"
     },
     {
       "id": "564734",
@@ -1751,7 +1705,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-07-14T18:28:55.076Z"
+      "scrapedAt": "2026-08-11T12:23:29.578Z"
     },
     {
       "id": "464122",
@@ -1772,7 +1726,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-07-14T18:28:57.261Z"
+      "scrapedAt": "2026-08-11T12:23:33.123Z"
     },
     {
       "id": "516866",
@@ -1793,7 +1747,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-07-14T18:28:59.340Z"
+      "scrapedAt": "2026-08-11T12:23:36.859Z"
     },
     {
       "id": "658731",
@@ -1814,7 +1768,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-07-14T18:29:01.728Z"
+      "scrapedAt": "2026-08-11T12:23:40.471Z"
     },
     {
       "id": "525107",
@@ -1835,7 +1789,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-07-14T18:29:04.050Z"
+      "scrapedAt": "2026-08-11T12:23:43.630Z"
     },
     {
       "id": "372322",
@@ -1856,7 +1810,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-07-14T18:29:06.503Z"
+      "scrapedAt": "2026-08-11T12:23:46.946Z"
     },
     {
       "id": "556996",
@@ -1875,7 +1829,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-07-14T18:29:08.684Z"
+      "scrapedAt": "2026-08-11T12:23:50.335Z"
     },
     {
       "id": "590522",
@@ -1896,7 +1850,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-07-14T18:29:11.214Z"
+      "scrapedAt": "2026-08-11T12:23:53.932Z"
     },
     {
       "id": "447415",
@@ -1917,7 +1871,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-07-14T18:29:13.549Z"
+      "scrapedAt": "2026-08-11T12:23:57.360Z"
     },
     {
       "id": "499935",
@@ -1938,7 +1892,7 @@
         "Apto Crédito"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-07-14T18:29:16.024Z"
+      "scrapedAt": "2026-08-11T12:24:01.124Z"
     },
     {
       "id": "482044",
@@ -1957,7 +1911,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-07-14T18:29:18.501Z"
+      "scrapedAt": "2026-08-11T12:24:04.608Z"
     },
     {
       "id": "441942",
@@ -1979,7 +1933,7 @@
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-07-14T18:29:20.947Z"
+      "scrapedAt": "2026-08-11T12:24:08.388Z"
     },
     {
       "id": "406334",
@@ -2000,7 +1954,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-07-14T18:29:23.370Z"
+      "scrapedAt": "2026-08-11T12:24:12.401Z"
     },
     {
       "id": "499354",
@@ -2022,7 +1976,7 @@
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-07-14T18:29:25.789Z"
+      "scrapedAt": "2026-08-11T12:24:16.381Z"
     },
     {
       "id": "612999",
@@ -2044,7 +1998,7 @@
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-07-14T18:29:27.956Z"
+      "scrapedAt": "2026-08-11T12:24:20.770Z"
     },
     {
       "id": "482389",
@@ -2067,7 +2021,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:30.267Z"
+      "scrapedAt": "2026-08-11T12:24:24.418Z"
     },
     {
       "id": "662387",
@@ -2090,7 +2044,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:32.623Z"
+      "scrapedAt": "2026-08-11T12:24:27.616Z"
     },
     {
       "id": "565125",
@@ -2109,7 +2063,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-07-14T18:29:35.181Z"
+      "scrapedAt": "2026-08-11T12:24:31.274Z"
     },
     {
       "id": "605335",
@@ -2128,45 +2082,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:37.309Z"
-    },
-    {
-      "id": "701371",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/701371",
-      "titulo": "Departamento Tipo Ph En Alquiler. Monte Grande",
-      "precio": "$ 350.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Gral Rodriguez 2922",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "2",
-      "banos": "2",
-      "supCubierta": null,
-      "supTotal": null,
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:39.728Z"
-    },
-    {
-      "id": "589332",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/589332",
-      "titulo": "Departamento 2 Ambientes Con Patio Privado - Calle Evita - El Jagüel Centro",
-      "precio": "$ 380.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Evita 980",
-      "zona": "El Jaguel",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": null,
-      "supTotal": null,
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:42.083Z"
+      "scrapedAt": "2026-08-11T12:24:34.762Z"
     },
     {
       "id": "699651",
@@ -2185,7 +2101,26 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:44.687Z"
+      "scrapedAt": "2026-08-11T12:24:38.361Z"
+    },
+    {
+      "id": "589332",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/589332",
+      "titulo": "Departamento 2 Ambientes Con Patio Privado - Calle Evita - El Jagüel Centro",
+      "precio": "$ 400.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "Evita 980",
+      "zona": "El Jaguel",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": null,
+      "supTotal": null,
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:24:42.291Z"
     },
     {
       "id": "605338",
@@ -2204,7 +2139,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:47.091Z"
+      "scrapedAt": "2026-08-11T12:24:45.805Z"
     },
     {
       "id": "269920",
@@ -2223,7 +2158,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:49.468Z"
+      "scrapedAt": "2026-08-11T12:24:49.541Z"
     },
     {
       "id": "552799",
@@ -2242,13 +2177,13 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:52.248Z"
+      "scrapedAt": "2026-08-11T12:24:53.281Z"
     },
     {
       "id": "519036",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/519036",
       "titulo": "Departamento 2 Ambientes Con Cochera - Alquiler - Monte Grande",
-      "precio": "$ 520.000",
+      "precio": "$ 495.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
       "direccion": "Chimondegui 168",
@@ -2261,7 +2196,45 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:54.356Z"
+      "scrapedAt": "2026-08-11T12:24:57.563Z"
+    },
+    {
+      "id": "724742",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724742",
+      "titulo": "Departamento Monoambiente En Alquiler En Monte Grande",
+      "precio": "$ 520.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "Parish Robertson 141",
+      "zona": "Monte Grande",
+      "ambientes": "1",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "31m²",
+      "supTotal": "31m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:25:01.535Z"
+    },
+    {
+      "id": "724740",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724740",
+      "titulo": "Departamento Monoambiente En Alquiler En Monte Grande",
+      "precio": "$ 520.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "Vicente Lopez 672",
+      "zona": "Monte Grande",
+      "ambientes": "1",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "31m²",
+      "supTotal": "31m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-08-11T12:25:05.624Z"
     },
     {
       "id": "714644",
@@ -2280,64 +2253,45 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:57.047Z"
+      "scrapedAt": "2026-08-11T12:25:09.490Z"
     },
     {
-      "id": "271015",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/271015",
-      "titulo": "Departamento 2 Ambientes En Alquiler - Centro De Monte Grande",
+      "id": "343389",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/343389",
+      "titulo": "Departamento 3 Ambientes Centrico En Alquiler - Tristan Suarez Centro",
       "precio": "$ 550.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Hipolito Yrigoyen 24",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "50m²",
-      "supTotal": "54m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-07-14T18:29:59.406Z"
-    },
-    {
-      "id": "701070",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/701070",
-      "titulo": "Departamento 3 Ambientes En Alquiler - Centro De Monte Grande",
-      "precio": "$ 550.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "General Rodriguez 70",
-      "zona": "Monte Grande",
+      "direccion": "Gaddini 81",
+      "zona": "Tristán Suárez",
       "ambientes": "3",
       "dormitorios": "2",
       "banos": "1",
-      "supCubierta": null,
+      "supCubierta": "75m²",
       "supTotal": null,
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:30:01.914Z"
+      "scrapedAt": "2026-08-11T12:25:12.887Z"
     },
     {
-      "id": "647965",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/647965",
-      "titulo": "Departamento 2 Ambientes Con Cochera - Alquiler Monte Grande",
-      "precio": "$ 600.000",
+      "id": "718325",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/718325",
+      "titulo": "Departamento 2 Ambientes Con Cochera En Alquiler. Monte Grande",
+      "precio": "$ 590.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Lavalle 657",
+      "direccion": "Rotta 231",
       "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
-      "supCubierta": "41m²",
-      "supTotal": "44m²",
+      "supCubierta": "42m²",
+      "supTotal": "42m²",
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:30:04.494Z"
+      "scrapedAt": "2026-08-11T12:25:16.512Z"
     },
     {
       "id": "411120",
@@ -2356,26 +2310,26 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:30:07.065Z"
+      "scrapedAt": "2026-08-11T12:25:20.307Z"
     },
     {
-      "id": "718325",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/718325",
-      "titulo": "Departamento 2 Ambientes Con Cochera En Alquiler. Monte Grande",
-      "precio": "$ 650.000",
+      "id": "714061",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/714061",
+      "titulo": "Departamento 2 Ambientes Premium Con Cochera - Alquiler Monte Grande",
+      "precio": "$ 850.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rotta 231",
+      "direccion": "Dorrego 453",
       "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
-      "supCubierta": "42m²",
-      "supTotal": "42m²",
+      "supCubierta": "47m²",
+      "supTotal": "55m²",
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:30:09.842Z"
+      "scrapedAt": "2026-08-11T12:25:24.062Z"
     },
     {
       "id": "714634",
@@ -2394,7 +2348,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:30:12.914Z"
+      "scrapedAt": "2026-08-11T12:25:27.891Z"
     },
     {
       "id": "714904",
@@ -2413,7 +2367,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-07-14T18:30:15.338Z"
+      "scrapedAt": "2026-08-11T12:25:31.674Z"
     },
     {
       "id": "533357",
@@ -2432,7 +2386,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-07-14T18:30:18.226Z"
+      "scrapedAt": "2026-08-11T12:25:35.385Z"
     }
   ]
 }
