@@ -16,7 +16,7 @@ import { spawn } from 'child_process'
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
 import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup, leadExists } from './src/memory.js'
-import { incrementStat, getStats, formatStatsHtml, esFueraDeHorario } from './src/stats.js'
+import { incrementStat, incrementTipo, getStats, formatStatsHtml, esFueraDeHorario } from './src/stats.js'
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
 const GRUPO_JID      = process.env.GRUPO_WHATSAPP_JID   // JID del grupo de asesores
@@ -242,6 +242,10 @@ async function handleMessage(sock, msg) {
       if (op === 'Venta') incrementStat('consultasVenta')
       else if (op === 'Alquiler') incrementStat('consultasAlquiler')
       if (op) updateLeadState(jid, { operacion: op })
+      if (triggers.tipoProp) {
+        incrementTipo(triggers.tipoProp)
+        updateLeadState(jid, { tipoProp: triggers.tipoProp })
+      }
       logger.info(`📋 Ficha enviada a: ${jid}`)
     }
 

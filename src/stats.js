@@ -23,6 +23,7 @@ const DEFAULT_STATS = {
   mensajesEnviados:      0,
   mensajesLeidos:        0,
   leadsReactivados:      0,
+  tipoPropiedad:         {},  // { "Casas": 5, "Departamentos": 3, ... }
   inicioTracking:        new Date().toISOString(),
   ultimaActualizacion:   new Date().toISOString(),
   daily:                 {},
@@ -49,7 +50,7 @@ function loadStats() {
   try {
     const raw = fs.readFileSync(STATS_PATH, 'utf8')
     const parsed = JSON.parse(raw)
-    return { ...DEFAULT_STATS, ...parsed, daily: parsed.daily || {} }
+    return { ...DEFAULT_STATS, ...parsed, daily: parsed.daily || {}, tipoPropiedad: parsed.tipoPropiedad || {} }
   } catch {
     return { ...DEFAULT_STATS }
   }
@@ -62,6 +63,14 @@ function saveStats(stats) {
   } catch (err) {
     console.warn('⚠️  No se pudieron guardar las estadísticas:', err.message)
   }
+}
+
+export function incrementTipo(tipo) {
+  if (!tipo) return
+  const stats = loadStats()
+  if (!stats.tipoPropiedad) stats.tipoPropiedad = {}
+  stats.tipoPropiedad[tipo] = (stats.tipoPropiedad[tipo] || 0) + 1
+  saveStats(stats)
 }
 
 export function incrementStat(key) {
@@ -101,6 +110,7 @@ export function formatStatsHtml(stats) {
     mensajesLeidos:        stats.mensajesLeidos        || 0,
     leadsReactivados:      stats.leadsReactivados      || 0,
   })
+  const tipoPropJson = JSON.stringify(stats.tipoPropiedad || {})
   const allDates = Object.keys(stats.daily || {}).sort()
   const minDate  = allDates[0] || today()
   const maxDate  = today()
@@ -190,9 +200,9 @@ export function formatStatsHtml(stats) {
   <div class="periodo">
     <div class="btn-g">
       <button class="btn" onclick="preset('today')">Hoy</button>
-      <button class="btn" onclick="preset('week')">7 días</button>
+      <button class="btn on" onclick="preset('week')">7 días</button>
       <button class="btn" onclick="preset('month')">30 días</button>
-      <button class="btn on" onclick="preset('all')">Todo</button>
+      <button class="btn" onclick="preset('all')">Todo</button>
     </div>
     <div class="sep"></div>
     <div class="date-row">
@@ -254,6 +264,12 @@ export function formatStatsHtml(stats) {
   <!-- Valor del agente -->
   <div class="tiles" id="tiles-valor"></div>
 
+  <!-- Tipo de propiedad -->
+  <div class="card-s" style="margin-bottom:16px">
+    <h3>Por tipo de propiedad</h3>
+    <div id="barras-prop"></div>
+  </div>
+
   <!-- Desglose -->
   <div class="grid2">
     <div class="card-s">
@@ -274,7 +290,8 @@ export function formatStatsHtml(stats) {
 <script>
   const total = ${totalJson}
   const daily = ${dailyJson}
-  const KEYS  = ['leadsAtendidos','fichasEnviadas','linksAgenda','agendasConfirmadas','tasacionesSolicitadas','consultasAdmin','consultasVenta','consultasAlquiler','seguimientosEnviados']
+  const tipoProp = ${tipoPropJson}
+  const KEYS  = ['leadsAtendidos','fichasEnviadas','linksAgenda','agendasConfirmadas','tasacionesSolicitadas','consultasAdmin','consultasVenta','consultasAlquiler','seguimientosEnviados','fueraDeHorario','mensajesEnviados','mensajesLeidos','leadsReactivados']
 
   function fmt(d){ return d.toISOString().slice(0,10) }
   function hoy(){ return fmt(new Date()) }
@@ -477,6 +494,24 @@ export function formatStatsHtml(stats) {
     apply()
   }
 
+  // Barras tipo propiedad (datos históricos totales — no cambian por período)
+  function renderTipoProp(){
+    const filas=Object.entries(tipoProp).sort((a,b)=>b[1]-a[1])
+    if(!filas.length){
+      document.getElementById('barras-prop').innerHTML='<p style="font-size:12px;color:var(--txt3);padding:4px 0">Sin datos aún — se acumula a partir de ahora</p>'
+      return
+    }
+    renderBarras('barras-prop', filas.map(([l,v])=>({l,v})))
+  }
+  renderTipoProp()
+
+  // Arrancar en última semana
+  ;(()=>{
+    const now=new Date()
+    const d=new Date(now); d.setDate(d.getDate()-6)
+    document.getElementById('from').value=fmt(d)
+    document.getElementById('to').value=fmt(now)
+  })()
   apply()
   setTimeout(()=>location.reload(),60000)
 </script>
