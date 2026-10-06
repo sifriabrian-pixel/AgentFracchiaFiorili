@@ -7,7 +7,7 @@ import path from 'path'
 // Guardado con nombre propio dentro del volumen — separado de los archivos de sesión de WhatsApp
 const STATS_PATH = path.join(process.env.SESSION_PATH || './sessions', 'fracchia-stats.json')
 
-const STAT_KEYS = ['leadsAtendidos', 'fichasEnviadas', 'linksAgenda', 'agendasConfirmadas', 'tasacionesSolicitadas', 'consultasAdmin', 'consultasVenta', 'consultasAlquiler', 'seguimientosEnviados', 'fueraDeHorario', 'mensajesEnviados', 'mensajesLeidos', 'leadsReactivados']
+const STAT_KEYS = ['leadsAtendidos', 'fichasEnviadas', 'linksAgenda', 'agendasConfirmadas', 'tasacionesSolicitadas', 'consultasAdmin', 'consultasVenta', 'consultasAlquiler', 'linksAgendaVenta', 'linksAgendaAlquiler', 'agendasVenta', 'agendasAlquiler', 'seguimientosEnviados', 'fueraDeHorario', 'mensajesEnviados', 'mensajesLeidos', 'leadsReactivados']
 
 const DEFAULT_STATS = {
   leadsAtendidos:        0,
@@ -18,6 +18,10 @@ const DEFAULT_STATS = {
   consultasAdmin:        0,
   consultasVenta:        0,
   consultasAlquiler:     0,
+  linksAgendaVenta:      0,
+  linksAgendaAlquiler:   0,
+  agendasVenta:          0,
+  agendasAlquiler:       0,
   seguimientosEnviados:  0,
   fueraDeHorario:        0,
   mensajesEnviados:      0,
@@ -104,6 +108,10 @@ export function formatStatsHtml(stats) {
     consultasAdmin:        stats.consultasAdmin        || 0,
     consultasVenta:        stats.consultasVenta        || 0,
     consultasAlquiler:     stats.consultasAlquiler     || 0,
+    linksAgendaVenta:      stats.linksAgendaVenta      || 0,
+    linksAgendaAlquiler:   stats.linksAgendaAlquiler   || 0,
+    agendasVenta:          stats.agendasVenta          || 0,
+    agendasAlquiler:       stats.agendasAlquiler       || 0,
     seguimientosEnviados:  stats.seguimientosEnviados  || 0,
     fueraDeHorario:        stats.fueraDeHorario        || 0,
     mensajesEnviados:      stats.mensajesEnviados      || 0,
@@ -163,7 +171,7 @@ export function formatStatsHtml(stats) {
     .mal{color:var(--rojo);background:var(--rojo-soft)}
     .igual{color:var(--igual);background:var(--igual-soft)}
     /* Funnel */
-    .funnel{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--line);margin-bottom:16px}
+    .funnel{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--line)}
     .funnel h2{font-size:13px;font-weight:600;margin-bottom:14px;color:var(--txt)}
     .f-pasos{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
     .f-paso{text-align:center;flex:1;min-width:80px}
@@ -249,17 +257,28 @@ export function formatStatsHtml(stats) {
     </div>
   </div>
 
-  <!-- Funnel -->
-  <div class="funnel">
-    <h2>Embudo de conversión</h2>
-    <div class="f-pasos">
-      <div class="f-paso"><div class="f-n" id="fn0">0</div><div class="f-lbl">Leads</div></div>
-      <div class="f-arr">→</div>
-      <div class="f-paso"><div class="f-n" id="fn1">0</div><div class="f-lbl">Fichas</div><div class="f-pct" id="fp1"></div></div>
-      <div class="f-arr">→</div>
-      <div class="f-paso"><div class="f-n" id="fn2">0</div><div class="f-lbl">Links agenda</div><div class="f-pct" id="fp2"></div></div>
-      <div class="f-arr">→</div>
-      <div class="f-paso"><div class="f-n" id="fn3">0</div><div class="f-lbl">Agendas</div><div class="f-pct" id="fp3"></div></div>
+  <!-- Embudos Venta / Alquiler -->
+  <div class="grid2" style="margin-bottom:16px">
+    <div class="funnel">
+      <h2>Embudo Venta</h2>
+      <div class="f-pasos">
+        <div class="f-paso"><div class="f-n" id="fv0">0</div><div class="f-lbl">Fichas</div></div>
+        <div class="f-arr">→</div>
+        <div class="f-paso"><div class="f-n" id="fv1">0</div><div class="f-lbl">Links agenda</div><div class="f-pct" id="fvp1"></div></div>
+        <div class="f-arr">→</div>
+        <div class="f-paso"><div class="f-n" id="fv2">0</div><div class="f-lbl">Agendas</div><div class="f-pct" id="fvp2"></div></div>
+      </div>
+      <div id="sinagenda-venta" style="margin-top:10px;font-size:12px;color:var(--rojo);font-weight:600"></div>
+    </div>
+    <div class="funnel">
+      <h2>Embudo Alquiler</h2>
+      <div class="f-pasos">
+        <div class="f-paso"><div class="f-n" id="fa0">0</div><div class="f-lbl">Fichas</div></div>
+        <div class="f-arr">→</div>
+        <div class="f-paso"><div class="f-n" id="fa1">0</div><div class="f-lbl">Links agenda</div><div class="f-pct" id="fap1"></div></div>
+        <div class="f-arr">→</div>
+        <div class="f-paso"><div class="f-n" id="fa2">0</div><div class="f-lbl">Agendas</div><div class="f-pct" id="fap2"></div></div>
+      </div>
     </div>
   </div>
 
@@ -303,7 +322,7 @@ export function formatStatsHtml(stats) {
   const total = ${totalJson}
   const daily = ${dailyJson}
   const tipoProp = ${tipoPropJson}
-  const KEYS  = ['leadsAtendidos','fichasEnviadas','linksAgenda','agendasConfirmadas','tasacionesSolicitadas','consultasAdmin','consultasVenta','consultasAlquiler','seguimientosEnviados','fueraDeHorario','mensajesEnviados','mensajesLeidos','leadsReactivados']
+  const KEYS  = ['leadsAtendidos','fichasEnviadas','linksAgenda','agendasConfirmadas','tasacionesSolicitadas','consultasAdmin','consultasVenta','consultasAlquiler','linksAgendaVenta','linksAgendaAlquiler','agendasVenta','agendasAlquiler','seguimientosEnviados','fueraDeHorario','mensajesEnviados','mensajesLeidos','leadsReactivados']
 
   function fmt(d){ return d.toISOString().slice(0,10) }
   function hoy(){ return fmt(new Date()) }
@@ -356,14 +375,20 @@ export function formatStatsHtml(stats) {
       document.getElementById('d'+i).innerHTML=sub.join(' ')
     })
 
-    // Funnel
-    const fn=[cur.leadsAtendidos,cur.fichasEnviadas,cur.linksAgenda,cur.agendasConfirmadas]
-    fn.forEach((v,i)=>{
-      document.getElementById('fn'+i).textContent=v||0
-      if(i>0){
-        const base=fn[i-1]
-        document.getElementById('fp'+i).textContent=base>0?Math.round(v/base*100)+'%':''
-      }
+    // Embudos Venta / Alquiler
+    const fv=[cur.consultasVenta||0,cur.linksAgendaVenta||0,cur.agendasVenta||0]
+    fv.forEach((v,i)=>{
+      document.getElementById('fv'+i).textContent=v
+      if(i>0){const base=fv[i-1];document.getElementById('fvp'+i).textContent=base>0?Math.round(v/base*100)+'%':''}
+    })
+    const sinAgenda=Math.max(0,(cur.consultasVenta||0)-(cur.agendasVenta||0))
+    const sinAgendaEl=document.getElementById('sinagenda-venta')
+    sinAgendaEl.textContent=sinAgenda>0?sinAgenda+' '+((sinAgenda===1)?'lead':'leads')+' sin confirmar agenda':''
+
+    const fa=[cur.consultasAlquiler||0,cur.linksAgendaAlquiler||0,cur.agendasAlquiler||0]
+    fa.forEach((v,i)=>{
+      document.getElementById('fa'+i).textContent=v
+      if(i>0){const base=fa[i-1];document.getElementById('fap'+i).textContent=base>0?Math.round(v/base*100)+'%':''}
     })
 
     // Gráfico
@@ -504,12 +529,12 @@ export function formatStatsHtml(stats) {
     apply()
   }
 
+  const LABEL_TIPO={'Locales':'Locales comerciales','Locales comerciales':'Locales comerciales'}
   // Tipo propiedad — muestra placeholders si no hay datos reales aún
   function renderTipoProp(){
     const filas=Object.entries(tipoProp).sort((a,b)=>b[1]-a[1])
     if(!filas.length){
-      const placeholders=[{l:'Departamentos',v:0},{l:'Casas',v:0},{l:'Lotes / Terrenos',v:0}]
-      const max=1
+      const placeholders=[{l:'Departamentos',v:0},{l:'Casas',v:0},{l:'Lotes / Terrenos',v:0},{l:'Locales comerciales',v:0}]
       document.getElementById('barras-prop').innerHTML=placeholders.map(f=>\`
         <div class="b-fila">
           <span class="b-lbl">\${f.l}</span>
@@ -518,7 +543,7 @@ export function formatStatsHtml(stats) {
         </div>\`).join('')+'<p style="font-size:11px;color:var(--txt3);margin-top:8px">Se acumula a partir de ahora</p>'
       return
     }
-    renderBarras('barras-prop', filas.map(([l,v])=>({l,v})))
+    renderBarras('barras-prop', filas.map(([l,v])=>({l:LABEL_TIPO[l]||l,v})))
   }
   renderTipoProp()
 

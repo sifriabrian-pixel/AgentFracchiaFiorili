@@ -229,7 +229,7 @@ Al final de cada respuesta incluí siempre este bloque (invisible para el usuari
 - **linkEnviado**: true cuando enviaste el link de Calendly
 - **agendoConfirmado**: true cuando el lead confirmó que agendó
 - **operacion**: completá con "Venta", "Alquiler", "Tasación" o "AlquilerActivo" según el tipo de consulta del lead. Poné null si no está claro todavía.
-- **tipoProp**: completá con el tipo de propiedad que consultó el lead: "Casas", "Departamentos", "Lotes / Terrenos", "Locales", "Cocheras" o "Campos". Poné null si no está claro.
+- **tipoProp**: completá con el tipo de propiedad que consultó el lead: "Casas", "Departamentos", "Lotes / Terrenos", "Locales comerciales", "Cocheras" o "Campos". Poné null si no está claro.
 - **grupoNotificar**: IMPORTANTE — poné true en estos casos:
   1. Cuando enviás el link de Calendly (agendamiento)
   2. Cuando el lead completa los datos de tasación y le decís que el equipo lo contactará

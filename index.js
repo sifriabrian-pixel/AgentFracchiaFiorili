@@ -252,15 +252,21 @@ async function handleMessage(sock, msg) {
     if (triggers.linkEnviado && !state.linkEnviado) {
       updateLeadState(jid, { linkEnviado: true })
       incrementStat('linksAgenda')
+      const opLink = triggers.operacion || state.operacion
+      if (opLink === 'Venta') incrementStat('linksAgendaVenta')
+      else if (opLink === 'Alquiler') incrementStat('linksAgendaAlquiler')
       if (triggers.propiedadInteres) {
         updateLeadState(jid, { propiedadInteres: triggers.propiedadInteres })
       }
-      logger.info(`📅 Link Calendly enviado a: ${jid}`)
+      logger.info(`📅 Link agenda enviado a: ${jid}`)
     }
 
     if (triggers.agendoConfirmado && !state.agendoConfirmado) {
       updateLeadState(jid, { agendoConfirmado: true })
       incrementStat('agendasConfirmadas')
+      const opAgenda = triggers.operacion || state.operacion
+      if (opAgenda === 'Venta') incrementStat('agendasVenta')
+      else if (opAgenda === 'Alquiler') incrementStat('agendasAlquiler')
       logger.info(`🎯 Lead confirmó agenda: ${jid}`)
     }
 
