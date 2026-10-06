@@ -7,7 +7,7 @@ import path from 'path'
 // Guardado con nombre propio dentro del volumen — separado de los archivos de sesión de WhatsApp
 const STATS_PATH = path.join(process.env.SESSION_PATH || './sessions', 'fracchia-stats.json')
 
-const STAT_KEYS = ['leadsAtendidos', 'fichasEnviadas', 'linksAgenda', 'agendasConfirmadas', 'tasacionesSolicitadas', 'consultasAdmin', 'consultasVenta', 'consultasAlquiler', 'seguimientosEnviados']
+const STAT_KEYS = ['leadsAtendidos', 'fichasEnviadas', 'linksAgenda', 'agendasConfirmadas', 'tasacionesSolicitadas', 'consultasAdmin', 'consultasVenta', 'consultasAlquiler', 'seguimientosEnviados', 'fueraDeHorario', 'mensajesEnviados', 'mensajesLeidos', 'leadsReactivados']
 
 const DEFAULT_STATS = {
   leadsAtendidos:        0,
@@ -19,13 +19,30 @@ const DEFAULT_STATS = {
   consultasVenta:        0,
   consultasAlquiler:     0,
   seguimientosEnviados:  0,
+  fueraDeHorario:        0,
+  mensajesEnviados:      0,
+  mensajesLeidos:        0,
+  leadsReactivados:      0,
   inicioTracking:        new Date().toISOString(),
   ultimaActualizacion:   new Date().toISOString(),
-  daily:                 {},  // { "2026-08-03": { leadsAtendidos: 2, ... } }
+  daily:                 {},
 }
 
 function today() {
-  return new Date().toISOString().slice(0, 10) // "YYYY-MM-DD"
+  return new Date().toISOString().slice(0, 10)
+}
+
+// Horario comercial Argentina (GMT-3): Lun-Vie 9-19, Sáb 9-13
+export function esFueraDeHorario(ts = Date.now()) {
+  const ar = new Date(ts).toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires', hour12: false })
+  // ar: "06/10/2026, 14:30:00"
+  const [, time] = ar.split(', ')
+  const [hh, mm] = (time || '').split(':').map(Number)
+  const mins = hh * 60 + mm
+  const dow = new Date(ts).toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires', weekday: 'short' })
+  if (dow === 'Sun') return true
+  if (dow === 'Sat') return mins < 9 * 60 || mins >= 13 * 60
+  return mins < 9 * 60 || mins >= 19 * 60
 }
 
 function loadStats() {
@@ -79,6 +96,10 @@ export function formatStatsHtml(stats) {
     consultasVenta:        stats.consultasVenta        || 0,
     consultasAlquiler:     stats.consultasAlquiler     || 0,
     seguimientosEnviados:  stats.seguimientosEnviados  || 0,
+    fueraDeHorario:        stats.fueraDeHorario        || 0,
+    mensajesEnviados:      stats.mensajesEnviados      || 0,
+    mensajesLeidos:        stats.mensajesLeidos        || 0,
+    leadsReactivados:      stats.leadsReactivados      || 0,
   })
   const allDates = Object.keys(stats.daily || {}).sort()
   const minDate  = allDates[0] || today()
@@ -145,6 +166,13 @@ export function formatStatsHtml(stats) {
     .b-bar{flex:1;background:var(--line);border-radius:4px;height:8px;overflow:hidden}
     .b-bar i{display:block;height:8px;background:var(--verde-l);border-radius:4px;transition:width .3s}
     .b-val{font-variant-numeric:tabular-nums;font-weight:700;color:var(--txt);min-width:20px;text-align:right}
+    /* Tiles valor agente */
+    .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+    @media(min-width:600px){.tiles{grid-template-columns:repeat(4,1fr)}}
+    .tile{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--line)}
+    .tile-l{font-size:11px;color:var(--txt3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+    .tile-v{font-size:24px;font-weight:800;color:var(--txt);font-variant-numeric:tabular-nums}
+    .tile-s{font-size:11px;color:var(--txt3);margin-top:4px}
     /* Footer */
     .footer{text-align:center;font-size:11px;color:var(--txt3);padding:12px 0}
   </style>
@@ -222,6 +250,9 @@ export function formatStatsHtml(stats) {
     </div>
     <svg class="chart" id="chart" viewBox="0 0 600 160" role="img" aria-label="Actividad diaria"></svg>
   </div>
+
+  <!-- Valor del agente -->
+  <div class="tiles" id="tiles-valor"></div>
 
   <!-- Desglose -->
   <div class="grid2">
@@ -308,6 +339,43 @@ export function formatStatsHtml(stats) {
 
     // Gráfico
     renderChart(from||null, to||null)
+
+    // Tiles valor del agente
+    const leads=cur.leadsAtendidos||0
+    const fh=cur.fueraDeHorario||0
+    const enviados=cur.mensajesEnviados||0
+    const leidos=cur.mensajesLeidos||0
+    const react=cur.leadsReactivados||0
+    const segu=cur.seguimientosEnviados||0
+    const tasaLectura=enviados>0?Math.round(leidos/enviados*100):null
+    const tasaReact=segu>0?Math.round(react/segu*100):null
+
+    // Delta de tiles si hay período previo
+    const pfh=prev?prev.fueraDeHorario||0:null
+    const ptl=prev&&prev.mensajesEnviados>0?Math.round((prev.mensajesLeidos||0)/prev.mensajesEnviados*100):null
+    const ptr=prev&&prev.seguimientosEnviados>0?Math.round((prev.leadsReactivados||0)/prev.seguimientosEnviados*100):null
+
+    document.getElementById('tiles-valor').innerHTML=\`
+      <div class="tile">
+        <div class="tile-l">Fuera de horario</div>
+        <div class="tile-v">\${fh}</div>
+        <div class="tile-s">\${leads>0?Math.round(fh/leads*100)+'% de los leads':''} \${pfh!=null?delta(fh,pfh):''}</div>
+      </div>
+      <div class="tile">
+        <div class="tile-l">Tasa de lectura</div>
+        <div class="tile-v">\${tasaLectura!=null?tasaLectura+'%':'—'}</div>
+        <div class="tile-s">Mensajes del agente leídos \${ptl!=null?delta(tasaLectura,ptl):''}</div>
+      </div>
+      <div class="tile">
+        <div class="tile-l">Reactivados</div>
+        <div class="tile-v">\${react}</div>
+        <div class="tile-s">De \${segu} seguimientos enviados</div>
+      </div>
+      <div class="tile">
+        <div class="tile-l">Tasa reactivación</div>
+        <div class="tile-v">\${tasaReact!=null?tasaReact+'%':'—'}</div>
+        <div class="tile-s">Respondieron tras seguimiento \${ptr!=null?delta(tasaReact,ptr):''}</div>
+      </div>\`
 
     // Barras tipo
     const bTipo=[

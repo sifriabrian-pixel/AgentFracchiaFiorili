@@ -16,7 +16,7 @@ import { spawn } from 'child_process'
 import { askClaude, reloadProperties, FOLLOWUP_MSGS } from './src/claude.js'
 import { isExternalPortalLink, extractUrlFromText, scrapePropertyLink } from './src/scrapeLink.js'
 import { getHistory, addToHistory, getLeadState, updateLeadState, getLeadsPendingFollowup, leadExists } from './src/memory.js'
-import { incrementStat, getStats, formatStatsHtml } from './src/stats.js'
+import { incrementStat, getStats, formatStatsHtml, esFueraDeHorario } from './src/stats.js'
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
 const GRUPO_JID      = process.env.GRUPO_WHATSAPP_JID   // JID del grupo de asesores
@@ -193,7 +193,9 @@ async function handleMessage(sock, msg) {
   if (!text) return
 
   logger.info(`📩 [${jid}] "${text}"`)
-  if (!leadExists(jid)) incrementStat('leadsAtendidos')
+  const esNuevoLead = !leadExists(jid)
+  if (esNuevoLead) incrementStat('leadsAtendidos')
+  if (esFueraDeHorario(Number(msg.messageTimestamp) * 1000 || Date.now())) incrementStat('fueraDeHorario')
   await sock.readMessages([msg.key])
   await sock.sendPresenceUpdate('composing', jid)
 
@@ -258,9 +260,16 @@ async function handleMessage(sock, msg) {
       logger.info(`🎯 Lead confirmó agenda: ${jid}`)
     }
 
+    // Reactivación: lead que había recibido followup y volvió a escribir
+    if ((state.followup24Sent || state.followup48Sent) && !state.reactivado) {
+      updateLeadState(jid, { reactivado: true })
+      incrementStat('leadsReactivados')
+    }
+
     // Enviar respuesta
     await sock.sendPresenceUpdate('paused', jid)
     await sock.sendMessage(jid, { text: reply })
+    incrementStat('mensajesEnviados')
 
     // Notificar grupo si corresponde
     if (triggers.grupoNotificar && !state.grupoNotificado) {
@@ -437,6 +446,15 @@ async function connectWhatsApp() {
       const delay = Math.min(5000 * reconnectCount, 30000) // 5s, 10s, 15s... máx 30s
       logger.warn(`⚠️  Reconectando en ${delay / 1000}s... (código ${statusCode}, intento ${reconnectCount}/${MAX_RECONNECTS})`)
       setTimeout(connectWhatsApp, delay)
+    }
+  })
+
+  // Tasa de lectura: cuando el lead lee un mensaje nuestro
+  sock.ev.on('messages.update', (updates) => {
+    for (const u of updates) {
+      if (u.key?.fromMe && u.update?.status === 4) {
+        incrementStat('mensajesLeidos')
+      }
     }
   })
 
