@@ -121,48 +121,59 @@ export function formatStatsHtml(stats) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Panel — Fracchia-Fiorioli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--verde:#075E54;--verde-l:#128C7E;--acento:#25D366;--bg:#f0f2f5;--card:#fff;--txt:#111;--txt2:#555;--txt3:#888;--line:#e4e8ef;--bien:#16a34a;--mal:#dc2626;--igual:#888;--bar1:#2762EA;--bar2:#E08A1E}
-    @media(prefers-color-scheme:dark){:root{--bg:#0d1117;--card:#161b22;--txt:#e6edf3;--txt2:#8b949e;--txt3:#6e7681;--line:#30363d}}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding:16px}
+    :root{
+      --navy:#0D1B2A;--blue:#2762EA;--blue-soft:#EEF3FE;
+      --naranja:#E08A1E;--naranja-soft:#FDF3E3;
+      --bg:#F3F5F9;--card:#FFFFFF;--txt:#0D1B2A;--txt2:#4A5568;--txt3:#8896A5;--line:#E4E8EF;
+      --verde:#16a34a;--verde-soft:#DCFCE7;
+      --rojo:#dc2626;--rojo-soft:#FEE2E2;
+      --igual:#8896A5;--igual-soft:#F1F5F9;
+      --bar1:#2762EA;--bar2:#E08A1E
+    }
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:860px;margin:0 auto}
-    /* Header */
-    .header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-    .header-t h1{font-size:18px;font-weight:700;color:var(--verde)}
-    .header-t p{font-size:12px;color:var(--txt3);margin-top:2px}
-    .badge{background:var(--acento);color:#fff;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;white-space:nowrap}
+    .top{background:var(--navy);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+    .marca{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px}
+    .marca span{color:#6C95F7}
+    .top-sub{font-size:11px;color:#8896A5;margin-top:1px}
+    .badge-top{background:rgba(39,98,234,.25);color:#6C95F7;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px}
     /* Selector período */
     .periodo{background:var(--card);border-radius:12px;padding:12px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border:1px solid var(--line)}
     .btn-g{display:flex;gap:6px;flex-wrap:wrap}
-    .btn{background:transparent;border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:12px;cursor:pointer;color:var(--txt2);transition:.15s}
-    .btn:hover{border-color:var(--verde);color:var(--verde)}
-    .btn.on{background:var(--verde);color:#fff;border-color:var(--verde)}
+    .btn{background:transparent;border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:12px;cursor:pointer;color:var(--txt2);font-family:'Poppins',sans-serif;transition:.15s}
+    .btn:hover{border-color:var(--blue);color:var(--blue)}
+    .btn.on{background:var(--blue);color:#fff;border-color:var(--blue)}
     .sep{width:1px;height:20px;background:var(--line)}
     .date-row{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--txt2)}
-    .date-row input{border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:12px;color:var(--txt);background:var(--card)}
+    .date-row input{border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:12px;color:var(--txt);background:var(--card);font-family:'Poppins',sans-serif}
     /* KPIs */
     .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
     @media(min-width:600px){.kpis{grid-template-columns:repeat(4,1fr)}}
     .kpi{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--line)}
-    .kpi-l{font-size:11px;color:var(--txt3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
-    .kpi-v{font-size:30px;font-weight:800;line-height:1;color:var(--verde);font-variant-numeric:tabular-nums}
-    .kpi-s{font-size:11px;color:var(--txt3);margin-top:5px;min-height:14px}
-    .delta{font-weight:700;margin-left:2px}
-    .bien{color:var(--bien)}.mal{color:var(--mal)}.igual{color:var(--igual)}
+    .kpi-l{font-size:11px;color:var(--txt3);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .kpi-v{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
+    .kpi-s{font-size:11px;color:var(--txt3);margin-top:6px;min-height:14px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+    .delta{display:inline-flex;align-items:center;font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;white-space:nowrap}
+    .bien{color:var(--verde);background:var(--verde-soft)}
+    .mal{color:var(--rojo);background:var(--rojo-soft)}
+    .igual{color:var(--igual);background:var(--igual-soft)}
     /* Funnel */
     .funnel{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--line);margin-bottom:16px}
-    .funnel h2{font-size:13px;font-weight:700;margin-bottom:12px;color:var(--txt)}
+    .funnel h2{font-size:13px;font-weight:600;margin-bottom:14px;color:var(--txt)}
     .f-pasos{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
     .f-paso{text-align:center;flex:1;min-width:80px}
-    .f-n{font-size:22px;font-weight:800;color:var(--verde);font-variant-numeric:tabular-nums}
-    .f-lbl{font-size:10px;color:var(--txt3);margin-top:2px}
-    .f-pct{font-size:11px;color:var(--acento);font-weight:700}
+    .f-n{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+    .f-lbl{font-size:10px;color:var(--txt3);margin-top:3px}
+    .f-pct{font-size:11px;color:var(--blue);font-weight:600;margin-top:2px}
     .f-arr{color:var(--line);font-size:18px;flex-shrink:0}
     /* Gráfico */
     .chart-card{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--line);margin-bottom:16px}
-    .chart-card h2{font-size:13px;font-weight:700;margin-bottom:8px}
+    .chart-card h2{font-size:13px;font-weight:600;margin-bottom:8px}
     .chart-leyenda{display:flex;gap:16px;font-size:11px;color:var(--txt2);margin-bottom:8px}
     .chart-leyenda i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
     svg.chart{width:100%;overflow:visible}
@@ -170,39 +181,40 @@ export function formatStatsHtml(stats) {
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
     @media(max-width:500px){.grid2{grid-template-columns:1fr}}
     .card-s{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--line)}
-    .card-s h3{font-size:12px;font-weight:700;color:var(--txt3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
-    .b-fila{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:12px}
+    .card-s h3{font-size:11px;font-weight:600;color:var(--txt3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+    .b-fila{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
     .b-lbl{flex:0 0 120px;color:var(--txt2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .b-bar{flex:1;background:var(--line);border-radius:4px;height:8px;overflow:hidden}
-    .b-bar i{display:block;height:8px;background:var(--verde-l);border-radius:4px;transition:width .3s}
-    .b-val{font-variant-numeric:tabular-nums;font-weight:700;color:var(--txt);min-width:20px;text-align:right}
+    .b-bar{flex:1;background:var(--line);border-radius:4px;height:7px;overflow:hidden}
+    .b-bar i{display:block;height:7px;background:var(--blue);border-radius:4px;transition:width .3s}
+    .b-val{font-family:'Montserrat',sans-serif;font-variant-numeric:tabular-nums;font-weight:700;color:var(--txt);min-width:20px;text-align:right;font-size:12px}
     /* Tiles valor agente */
     .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
     @media(min-width:600px){.tiles{grid-template-columns:repeat(4,1fr)}}
     .tile{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--line)}
-    .tile-l{font-size:11px;color:var(--txt3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
-    .tile-v{font-size:24px;font-weight:800;color:var(--txt);font-variant-numeric:tabular-nums}
-    .tile-s{font-size:11px;color:var(--txt3);margin-top:4px}
+    .tile-l{font-size:11px;color:var(--txt3);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .tile-v{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--txt);font-variant-numeric:tabular-nums}
+    .tile-s{font-size:11px;color:var(--txt3);margin-top:5px;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
     /* Footer */
-    .footer{text-align:center;font-size:11px;color:var(--txt3);padding:12px 0}
+    .footer{text-align:center;font-size:11px;color:var(--txt3);padding:16px 0}
+    .footer a{color:var(--blue)}
   </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="header">
-    <div class="header-t">
-      <h1>📊 Fracchia-Fiorioli Propiedades</h1>
-      <p>Actualizado: ${ultima}</p>
-    </div>
-    <span class="badge">🤖 Agente activo</span>
+<div class="top">
+  <div>
+    <div class="marca">Si<span>fer</span></div>
+    <div class="top-sub">Fracchia-Fiorioli Propiedades</div>
   </div>
+  <span class="badge-top">● Agente activo</span>
+</div>
 
+<div class="wrap">
   <div class="periodo">
     <div class="btn-g">
-      <button class="btn" onclick="preset('today')">Hoy</button>
-      <button class="btn on" onclick="preset('week')">7 días</button>
-      <button class="btn" onclick="preset('month')">30 días</button>
-      <button class="btn" onclick="preset('all')">Todo</button>
+      <button class="btn" onclick="preset('today',event)">Hoy</button>
+      <button class="btn on" onclick="preset('week',event)">7 días</button>
+      <button class="btn" onclick="preset('month',event)">30 días</button>
+      <button class="btn" onclick="preset('all',event)">Todo</button>
     </div>
     <div class="sep"></div>
     <div class="date-row">
@@ -283,7 +295,7 @@ export function formatStatsHtml(stats) {
   </div>
 
   <div class="footer">
-    <a href="" style="color:var(--acento)">↻ Refrescar</a>
+    Actualizado: ${ultima} · <a href="">↻ Refrescar</a>
   </div>
 </div>
 
@@ -312,7 +324,7 @@ export function formatStatsHtml(stats) {
     const d=Math.round((cur-prev)/prev*100)
     const cls=d>0?'bien':d<0?'mal':'igual'
     const sym=d>0?'▲':d<0?'▼':''
-    return \`<span class="delta \${cls}" title="vs período anterior (\${prev})">\${sym}\${Math.abs(d)}%</span>\`
+    return \`<span class="delta \${cls}">\${sym}\${Math.abs(d)}%</span>\`
   }
 
   function prevRange(from, to){
@@ -338,7 +350,7 @@ export function formatStatsHtml(stats) {
       const sub=[]
       if(i>0){
         const base=cur[kpiKeys[i-1]]
-        if(base>0)sub.push(pct(cur[k],base)+' de '+(['fichas','links','agendas'][i-1]||kpiKeys[i-1]))
+        if(base>0)sub.push('<span style="color:var(--txt3)">'+pct(cur[k],base)+'</span>')
       }
       if(prev)sub.push(delta(cur[k],prev[k]))
       document.getElementById('d'+i).innerHTML=sub.join(' ')
@@ -367,7 +379,6 @@ export function formatStatsHtml(stats) {
     const tasaLectura=enviados>0?Math.round(leidos/enviados*100):null
     const tasaReact=segu>0?Math.round(react/segu*100):null
 
-    // Delta de tiles si hay período previo
     const pfh=prev?prev.fueraDeHorario||0:null
     const ptl=prev&&prev.mensajesEnviados>0?Math.round((prev.mensajesLeidos||0)/prev.mensajesEnviados*100):null
     const ptr=prev&&prev.seguimientosEnviados>0?Math.round((prev.leadsReactivados||0)/prev.seguimientosEnviados*100):null
@@ -376,25 +387,25 @@ export function formatStatsHtml(stats) {
       <div class="tile">
         <div class="tile-l">Fuera de horario</div>
         <div class="tile-v">\${fh}</div>
-        <div class="tile-s">\${leads>0?Math.round(fh/leads*100)+'% de los leads':''} \${pfh!=null?delta(fh,pfh):''}</div>
+        <div class="tile-s">\${leads>0?'<span>'+Math.round(fh/leads*100)+'% de leads</span>':''}\${pfh!=null?delta(fh,pfh):''}</div>
       </div>
       <div class="tile">
         <div class="tile-l">Tasa de lectura</div>
         <div class="tile-v">\${tasaLectura!=null?tasaLectura+'%':'—'}</div>
-        <div class="tile-s">Mensajes del agente leídos \${ptl!=null?delta(tasaLectura,ptl):''}</div>
+        <div class="tile-s"><span>Msgs del agente leídos</span>\${ptl!=null?delta(tasaLectura,ptl):''}</div>
       </div>
       <div class="tile">
         <div class="tile-l">Reactivados</div>
         <div class="tile-v">\${react}</div>
-        <div class="tile-s">De \${segu} seguimientos enviados</div>
+        <div class="tile-s"><span>De \${segu} seguimientos</span></div>
       </div>
       <div class="tile">
         <div class="tile-l">Tasa reactivación</div>
         <div class="tile-v">\${tasaReact!=null?tasaReact+'%':'—'}</div>
-        <div class="tile-s">Respondieron tras seguimiento \${ptr!=null?delta(tasaReact,ptr):''}</div>
+        <div class="tile-s"><span>Respondieron tras seguimiento</span>\${ptr!=null?delta(tasaReact,ptr):''}</div>
       </div>\`
 
-    // Barras tipo
+    // Barras tipo consulta
     const bTipo=[
       {l:'Venta',v:cur.consultasVenta||0},
       {l:'Alquiler',v:cur.consultasAlquiler||0},
@@ -422,7 +433,6 @@ export function formatStatsHtml(stats) {
   function renderChart(from, to){
     const svg=document.getElementById('chart')
     const W=600,H=160,PL=28,PR=8,PT=10,PB=22
-    // Armar serie de días
     const dias=[]
     const allD=Object.keys(daily).sort()
     const ini=from||(allD[0]||hoy())
@@ -442,8 +452,8 @@ export function formatStatsHtml(stats) {
     let g=''; let gd=''
     for(let v=0;v<=tope;v+=paso){
       const yy=yf(v)
-      g+=\`<line x1="\${PL}" x2="\${W-PR}" y1="\${yy}" y2="\${yy}" stroke="#e4e8ef" stroke-width="1"/>
-        <text x="\${PL-4}" y="\${yy+3}" text-anchor="end" font-size="9" fill="#888">\${v}</text>\`
+      g+=\`<line x1="\${PL}" x2="\${W-PR}" y1="\${yy}" y2="\${yy}" stroke="#E4E8EF" stroke-width="1"/>
+        <text x="\${PL-4}" y="\${yy+3}" text-anchor="end" font-size="9" fill="#8896A5">\${v}</text>\`
     }
 
     const barra=(x,v,col)=>{
@@ -466,15 +476,15 @@ export function formatStatsHtml(stats) {
       const cx=PL+banda*i+banda/2
       const anchor=i===0?'start':i===dias.length-1?'end':'middle'
       const x=i===0?PL:i===dias.length-1?W-PR:cx
-      ejeX+=\`<text x="\${x}" y="\${H-6}" text-anchor="\${anchor}" font-size="9" fill="#888">\${dias[i].k.slice(5)}</text>\`
+      ejeX+=\`<text x="\${x}" y="\${H-6}" text-anchor="\${anchor}" font-size="9" fill="#8896A5">\${dias[i].k.slice(5)}</text>\`
     })
 
     svg.innerHTML=g+gd+ejeX
   }
 
-  function preset(p){
+  function preset(p, e){
     document.querySelectorAll('.btn').forEach(b=>b.classList.remove('on'))
-    event.target.classList.add('on')
+    e.target.classList.add('on')
     const now=new Date()
     if(p==='all'){
       document.getElementById('from').value=''
@@ -494,11 +504,18 @@ export function formatStatsHtml(stats) {
     apply()
   }
 
-  // Barras tipo propiedad (datos históricos totales — no cambian por período)
+  // Tipo propiedad — muestra placeholders si no hay datos reales aún
   function renderTipoProp(){
     const filas=Object.entries(tipoProp).sort((a,b)=>b[1]-a[1])
     if(!filas.length){
-      document.getElementById('barras-prop').innerHTML='<p style="font-size:12px;color:var(--txt3);padding:4px 0">Sin datos aún — se acumula a partir de ahora</p>'
+      const placeholders=[{l:'Departamentos',v:0},{l:'Casas',v:0},{l:'Lotes / Terrenos',v:0}]
+      const max=1
+      document.getElementById('barras-prop').innerHTML=placeholders.map(f=>\`
+        <div class="b-fila">
+          <span class="b-lbl">\${f.l}</span>
+          <div class="b-bar"><i style="width:0%"></i></div>
+          <span class="b-val" style="color:var(--txt3)">—</span>
+        </div>\`).join('')+'<p style="font-size:11px;color:var(--txt3);margin-top:8px">Se acumula a partir de ahora</p>'
       return
     }
     renderBarras('barras-prop', filas.map(([l,v])=>({l,v})))
