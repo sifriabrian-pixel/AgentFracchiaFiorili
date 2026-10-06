@@ -98,7 +98,8 @@ Siempre cerrá con el bloque de triggers:
   "linkEnviado": false,
   "agendoConfirmado": false,
   "grupoNotificar": false,
-  "propiedadInteres": "${(prop.titulo || '').substring(0, 50)}"
+  "propiedadInteres": "${(prop.titulo || '').substring(0, 50)}",
+  "operacion": "${prop.operacion === 'Venta' ? 'Venta' : prop.operacion === 'Alquiler' ? 'Alquiler' : ''}"
 }
 </triggers>
 

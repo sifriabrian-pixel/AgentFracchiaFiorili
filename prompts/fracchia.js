@@ -219,13 +219,15 @@ Al final de cada respuesta incluí siempre este bloque (invisible para el usuari
   "linkEnviado": false,
   "agendoConfirmado": false,
   "grupoNotificar": false,
-  "propiedadInteres": null
+  "propiedadInteres": null,
+  "operacion": null
 }
 </triggers>
 
 - **fichaEnviada**: true cuando enviaste la ficha de la propiedad
 - **linkEnviado**: true cuando enviaste el link de Calendly
 - **agendoConfirmado**: true cuando el lead confirmó que agendó
+- **operacion**: completá con "Venta", "Alquiler", "Tasación" o "AlquilerActivo" según el tipo de consulta del lead. Poné null si no está claro todavía.
 - **grupoNotificar**: IMPORTANTE — poné true en estos casos:
   1. Cuando enviás el link de Calendly (agendamiento)
   2. Cuando el lead completa los datos de tasación y le decís que el equipo lo contactará

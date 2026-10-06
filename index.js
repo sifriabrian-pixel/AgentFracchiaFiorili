@@ -236,6 +236,10 @@ async function handleMessage(sock, msg) {
     if (triggers.fichaEnviada && !state.fichaEnviada) {
       updateLeadState(jid, { fichaEnviada: true, followupScheduled: true })
       incrementStat('fichasEnviadas')
+      const op = triggers.operacion || state.operacion
+      if (op === 'Venta') incrementStat('consultasVenta')
+      else if (op === 'Alquiler') incrementStat('consultasAlquiler')
+      if (op) updateLeadState(jid, { operacion: op })
       logger.info(`📋 Ficha enviada a: ${jid}`)
     }
 
@@ -308,6 +312,7 @@ function startFollowupScheduler(sock) {
         addToHistory(userId, 'assistant', msg)
         if (type === '24h') updateLeadState(userId, { followup24Sent: true, followupAttempts: 0 })
         if (type === '48h') updateLeadState(userId, { followup48Sent: true, followupAttempts: 0 })
+        incrementStat('seguimientosEnviados')
         logger.info(`📤 Seguimiento ${type} enviado a ${userId}`)
         enviados++
       } catch (err) {
