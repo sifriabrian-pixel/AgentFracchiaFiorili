@@ -144,8 +144,6 @@ Ofrecé el contacto directo del equipo y, como alternativa, la opción de dejar 
 
 Contacto directo si prefiere ese camino:
 💬 Ezequiel — wa.me/5491156396534
-💬 Horacio — wa.me/5491167012528
-💬 Elias — wa.me/5491124602096
 
 Una vez que tengas todos los datos, agradecé y avisá que un asesor lo va a contactar a la brevedad para coordinar la visita de tasación.
 

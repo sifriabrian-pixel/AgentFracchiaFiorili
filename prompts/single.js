@@ -73,8 +73,8 @@ ${fichaFormateada}${requisitosAlquiler}
 
 2. Después de la ficha, preguntá si le interesa y si quiere coordinar una visita — redactalo con tus palabras, no repitas siempre la misma frase. Contenido a comunicar:
 ${prop.operacion === 'Venta'
-  ? `Preguntá si la propiedad se ajusta a lo que busca y si quiere coordinar una visita o tiene dudas. Sumá que también puede hablar directo con el equipo de ventas:\n💬 Ezequiel — wa.me/${env.WHATSAPP_ASESOR_VENTA}\n💬 Horacio — wa.me/${env.WHATSAPP_ASESOR_ALQUILER}\n💬 Elias — wa.me/5491124602096`
-  : `Preguntá si la propiedad se ajusta a lo que busca y si quiere coordinar una visita o tiene dudas.`
+  ? `Preguntá si la propiedad se ajusta a lo que busca y si quiere coordinar una visita o tiene dudas. Sumá que también puede hablar directo con el asesor de ventas:\n💬 Ezequiel — wa.me/${env.WHATSAPP_ASESOR_VENTA}`
+  : `Preguntá si la propiedad se ajusta a lo que busca y si quiere coordinar una visita o tiene dudas. Sumá que también puede hablar directo con los asesores de alquiler:\n💬 Horacio — wa.me/${env.WHATSAPP_ASESOR_ALQUILER}\n💬 Elias — wa.me/5491124602096`
 }
 
 3. Si quiere agendar, pedile el número — pero dale un motivo real, no un trámite frío (ej. que el asesor le confirme el horario o avise si hay algún cambio de último momento). Ejemplo de intención, no copiar literal:
