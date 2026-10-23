@@ -1,28 +1,7 @@
 {
-  "lastUpdated": "2026-08-11T12:25:36.489Z",
+  "lastUpdated": "2026-10-23T15:48:05.076Z",
   "total": 114,
   "properties": [
-    {
-      "id": "655460",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/655460",
-      "titulo": "Lote 13 X 26 En Venta. Monte Grande. Anticipo Y Cuotas!",
-      "precio": "USD 12.000",
-      "operacion": "Venta",
-      "tipo": "Lotes / Terrenos",
-      "direccion": "Panama 2300",
-      "zona": "Canning",
-      "ambientes": null,
-      "dormitorios": null,
-      "banos": null,
-      "supCubierta": null,
-      "supTotal": "333m²",
-      "comodidades": [],
-      "financiacion": [
-        "Anticipo y cuotas"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:07.508Z"
-    },
     {
       "id": "465426",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/465426",
@@ -40,7 +19,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:11.189Z"
+      "scrapedAt": "2026-10-23T15:43:01.150Z"
     },
     {
       "id": "662384",
@@ -61,7 +40,26 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:14.305Z"
+      "scrapedAt": "2026-10-23T15:43:03.280Z"
+    },
+    {
+      "id": "734398",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/734398",
+      "titulo": "Lote 13 X 17 En Venta. El Jaguel",
+      "precio": "USD 25.000",
+      "operacion": "Venta",
+      "tipo": "Lotes / Terrenos",
+      "direccion": "Cuba 690",
+      "zona": "El Jaguel",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": null,
+      "supTotal": "232m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:43:05.538Z"
     },
     {
       "id": "349420",
@@ -78,11 +76,50 @@
       "supCubierta": "1m²",
       "supTotal": "780m²",
       "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:43:07.847Z"
+    },
+    {
+      "id": "732686",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/732686",
+      "titulo": "Lote De Terreno En Venta - Escucha Oferta - Monte Grande",
+      "precio": "USD 34.000",
+      "operacion": "Venta",
+      "tipo": "Lotes / Terrenos",
+      "direccion": "Mariano Alegre 1682",
+      "zona": "Monte Grande",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": null,
+      "supTotal": "300m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:10.161Z"
+    },
+    {
+      "id": "731347",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/731347",
+      "titulo": "Departamento-Duplex 3 Ambientes Con Cochera---En Cuotas Financiado Por El Propietario",
+      "precio": "USD 35.000",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Rivadavia 1680",
+      "zona": "Monte Grande",
+      "ambientes": "3",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "72m²",
+      "supTotal": "90m²",
+      "comodidades": [],
       "financiacion": [
+        "Apto Crédito",
         "Anticipo y cuotas"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:16.923Z"
+      "descripcion": "Departamento-duplex 3 Ambientes Con Cochera---en Cuotas Financiado Por El Propietario",
+      "scrapedAt": "2026-10-23T15:43:12.341Z"
     },
     {
       "id": "584250",
@@ -100,11 +137,11 @@
       "supTotal": "70m²",
       "comodidades": [],
       "financiacion": [
-        "Anticipo y cuotas",
-        "Acepta permuta"
+        "Apto Crédito",
+        "Anticipo y cuotas"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:19.933Z"
+      "descripcion": "Departamento-duplex 3 Ambientes Con Cochera---en Cuotas Financiado Por El Propietario",
+      "scrapedAt": "2026-10-23T15:43:14.806Z"
     },
     {
       "id": "512214",
@@ -122,8 +159,30 @@
       "supTotal": "336m²",
       "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:23.432Z"
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:16.955Z"
+    },
+    {
+      "id": "655486",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/655486",
+      "titulo": "Anticipo Y Cuotas! Departamento 3 Ambientes En Venta - Apto Credito",
+      "precio": "USD 37.000",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Arana 111",
+      "zona": "Monte Grande",
+      "ambientes": "3",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "58m²",
+      "supTotal": "58m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas"
+      ],
+      "descripcion": "Departamento-duplex 3 Ambientes Con Cochera---en Cuotas Financiado Por El Propietario",
+      "scrapedAt": "2026-10-23T15:43:19.489Z"
     },
     {
       "id": "512297",
@@ -140,11 +199,9 @@
       "supCubierta": null,
       "supTotal": null,
       "comodidades": [],
-      "financiacion": [
-        "Acepta permuta"
-      ],
-      "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-08-11T12:19:26.622Z"
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:43:21.736Z"
     },
     {
       "id": "641327",
@@ -162,8 +219,27 @@
       "supTotal": "323m²",
       "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:29.946Z"
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:23.908Z"
+    },
+    {
+      "id": "733466",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/733466",
+      "titulo": "Financiación Particular. Lote 10 X 20 A Metros De Av Dreyer En Venta. Monte Grande",
+      "precio": "USD 40.000",
+      "operacion": "Venta",
+      "tipo": "Lotes / Terrenos",
+      "direccion": "Carlos Pellegrini 1571",
+      "zona": "Monte Grande",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": null,
+      "supTotal": "200m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:26.069Z"
     },
     {
       "id": "652537",
@@ -181,8 +257,8 @@
       "supTotal": "293m²",
       "comodidades": [],
       "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:33.056Z"
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:28.758Z"
     },
     {
       "id": "543298",
@@ -199,11 +275,9 @@
       "supCubierta": null,
       "supTotal": null,
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:36.256Z"
+      "financiacion": [],
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:31.089Z"
     },
     {
       "id": "410214",
@@ -221,17 +295,17 @@
       "supTotal": "60m²",
       "comodidades": [],
       "financiacion": [
-        "Anticipo y cuotas",
-        "Acepta permuta"
+        "Apto Crédito",
+        "Anticipo y cuotas"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:39.294Z"
+      "descripcion": "Departamento-duplex 3 Ambientes Con Cochera---en Cuotas Financiado Por El Propietario",
+      "scrapedAt": "2026-10-23T15:43:33.477Z"
     },
     {
       "id": "247624",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/247624",
       "titulo": "Departamento 2 Ambientes En Venta - El Jagüel",
-      "precio": "USD 42.000",
+      "precio": "USD 45.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
       "direccion": "Evita 890 (ex-Jacarandá)",
@@ -243,11 +317,30 @@
       "supTotal": "36m²",
       "comodidades": [],
       "financiacion": [
-        "Anticipo y cuotas",
-        "Acepta permuta"
+        "Apto Crédito",
+        "Anticipo y cuotas"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:42.239Z"
+      "scrapedAt": "2026-10-23T15:43:35.740Z"
+    },
+    {
+      "id": "734394",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/734394",
+      "titulo": "Casa A Reciclar Sobre Lote 13 X 17 En Venta. El Jaguel",
+      "precio": "USD 45.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Saavedra 4189",
+      "zona": "El Jaguel",
+      "ambientes": "3",
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": "100m²",
+      "supTotal": "100m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:43:38.533Z"
     },
     {
       "id": "526648",
@@ -264,11 +357,9 @@
       "supCubierta": null,
       "supTotal": "702m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:45.171Z"
+      "financiacion": [],
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:41.043Z"
     },
     {
       "id": "516872",
@@ -287,16 +378,15 @@
       "comodidades": [],
       "financiacion": [
         "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
+        "Anticipo y cuotas"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:48.892Z"
+      "scrapedAt": "2026-10-23T15:43:43.303Z"
     },
     {
       "id": "709487",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/709487",
-      "titulo": "Lote En Venta En Luis Guillón – Excelente Ubicación Y Apto Crédito",
+      "titulo": "Lote En Venta En Luis Guillón – Excelente Ubicación",
       "precio": "USD 47.000",
       "operacion": "Venta",
       "tipo": "Lotes / Terrenos",
@@ -312,50 +402,48 @@
         "Apto Crédito",
         "Acepta permuta"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:52.832Z"
+      "descripcion": "FINANCIACIÓN PARTICULAR. Lote 10 x 20 a metros de Av Dreyer en venta. Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:46.681Z"
     },
     {
-      "id": "673224",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/673224",
-      "titulo": "Departamentos En Venta - Proyecto De Pozo - Monte Grande",
-      "precio": "USD 51.000",
-      "operacion": "Venta",
-      "tipo": "Departamentos",
-      "direccion": "Maximo Paz 258",
-      "zona": "Monte Grande",
-      "ambientes": "1",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "31m²",
-      "supTotal": "66m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:56.106Z"
-    },
-    {
-      "id": "555258",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/555258",
-      "titulo": "Casa En Venta Sobre Lote 10 X 21. El Jaguel",
-      "precio": "USD 52.000",
+      "id": "290948",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/290948",
+      "titulo": "Casa Mas Departamento En Venta - Monte Grande",
+      "precio": "USD 49.500",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Saavedra 3541",
-      "zona": "El Jaguel",
-      "ambientes": "3",
-      "dormitorios": "2",
-      "banos": "1",
-      "supCubierta": "81m²",
-      "supTotal": "215m²",
+      "direccion": "Las Talitas nº397 esquina Echeverría",
+      "zona": "Monte Grande",
+      "ambientes": "4",
+      "dormitorios": "3",
+      "banos": "2",
+      "supCubierta": "90m²",
+      "supTotal": "223m²",
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:19:59.493Z"
+      "scrapedAt": "2026-10-23T15:43:49.171Z"
+    },
+    {
+      "id": "740051",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/740051",
+      "titulo": "Departamento 3 Ambientes En Almirante Brown - Burzaco",
+      "precio": "USD 53.000",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Avenida Monteverde 2470",
+      "zona": "Burzaco",
+      "ambientes": "3",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "55m²",
+      "supTotal": "59m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito"
+      ],
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:51.672Z"
     },
     {
       "id": "665131",
@@ -373,31 +461,10 @@
       "supTotal": "49m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito Hipotecario",
-        "Anticipo y cuotas",
-        "Acepta permuta"
+        "Apto Crédito Hipotecario"
       ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:02.834Z"
-    },
-    {
-      "id": "290948",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/290948",
-      "titulo": "Casa Mas Departamento En Venta - Monte Grande",
-      "precio": "USD 55.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Las Talitas nº397 esquina Echeverría",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "2",
-      "supCubierta": "90m²",
-      "supTotal": "223m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:06.106Z"
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-10-23T15:43:54.384Z"
     },
     {
       "id": "474241",
@@ -415,12 +482,10 @@
       "supTotal": "128m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
+        "Apto Crédito"
       ],
       "descripcion": "Departamento PH dos dormitorios con patio y terraza - Venta APTO CREDITO - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:09.025Z"
+      "scrapedAt": "2026-10-23T15:43:56.825Z"
     },
     {
       "id": "575093",
@@ -439,30 +504,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:12.308Z"
-    },
-    {
-      "id": "662476",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/662476",
-      "titulo": "Edificio Departamentos En Venta Desde El Pozo. Monte Grande",
-      "precio": "USD 58.500",
-      "operacion": "Venta",
-      "tipo": "Departamentos",
-      "direccion": "Maximo Paz 258",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "45m²",
-      "supTotal": "53m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:15.618Z"
+      "scrapedAt": "2026-10-23T15:43:59.161Z"
     },
     {
       "id": "594495",
@@ -481,7 +523,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:19.138Z"
+      "scrapedAt": "2026-10-23T15:44:01.601Z"
     },
     {
       "id": "684723",
@@ -498,11 +540,9 @@
       "supCubierta": null,
       "supTotal": "1120m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
+      "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:22.302Z"
+      "scrapedAt": "2026-10-23T15:44:04.043Z"
     },
     {
       "id": "708675",
@@ -519,11 +559,32 @@
       "supCubierta": null,
       "supTotal": "2000m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
+      "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:25.535Z"
+      "scrapedAt": "2026-10-23T15:44:06.810Z"
+    },
+    {
+      "id": "724763",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724763",
+      "titulo": "Departamento Mono Ambiente Premium Con Cochera En Venta - A Estrenar - Monte Grande",
+      "precio": "USD 62.000",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Dorrego 453",
+      "zona": "Monte Grande",
+      "ambientes": "1",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "26m²",
+      "supTotal": "7m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
+      "scrapedAt": "2026-10-23T15:44:09.438Z"
     },
     {
       "id": "652914",
@@ -542,39 +603,16 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:20:28.446Z"
+      "scrapedAt": "2026-10-23T15:44:11.911Z"
     },
     {
-      "id": "724763",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724763",
-      "titulo": "Departamento Mono Ambiente Premium Con Cochera En Venta - A Estrenar - Monte Grande",
+      "id": "738211",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/738211",
+      "titulo": "Anticipo Y Cuotas! Departamento 3 Ambientes En Venta - Apto Credito",
       "precio": "USD 65.000",
       "operacion": "Venta",
       "tipo": "Departamentos",
-      "direccion": "Dorrego 453",
-      "zona": "Monte Grande",
-      "ambientes": "1",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "26m²",
-      "supTotal": "7m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:31.434Z"
-    },
-    {
-      "id": "655486",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/655486",
-      "titulo": "Departamento 3 Ambientes En Venta Monte Grande - Apto Credito",
-      "precio": "USD 65.000",
-      "operacion": "Venta",
-      "tipo": "Departamentos",
-      "direccion": "Arana 111",
+      "direccion": "Eduardo Arana 111",
       "zona": "Monte Grande",
       "ambientes": "3",
       "dormitorios": "2",
@@ -583,35 +621,31 @@
       "supTotal": "58m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito Hipotecario",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:34.416Z"
-    },
-    {
-      "id": "647238",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/647238",
-      "titulo": "Departamento Mono-Ambiente En Venta Con Cochera. Monte Grande",
-      "precio": "USD 65.000",
-      "operacion": "Venta",
-      "tipo": "Departamentos",
-      "direccion": "Saavedra 224",
-      "zona": "Monte Grande",
-      "ambientes": "1",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "28m²",
-      "supTotal": "32m²",
-      "comodidades": [],
-      "financiacion": [
         "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:37.517Z"
+      "scrapedAt": "2026-10-23T15:44:14.496Z"
+    },
+    {
+      "id": "729540",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/729540",
+      "titulo": "Local Comercial En Venta. Monte Grande",
+      "precio": "USD 65.000",
+      "operacion": "Venta",
+      "tipo": "Locales",
+      "direccion": "Pehuajo 202",
+      "zona": "Monte Grande",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": "220m²",
+      "supTotal": "220m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:44:16.864Z"
     },
     {
       "id": "459879",
@@ -634,13 +668,13 @@
         "Acepta permuta"
       ],
       "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:41.028Z"
+      "scrapedAt": "2026-10-23T15:44:19.429Z"
     },
     {
       "id": "665648",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/665648",
       "titulo": "Edificio Departamentos En Venta Desde El Pozo. Monte Grande",
-      "precio": "USD 65.500",
+      "precio": "USD 66.027",
       "operacion": "Venta",
       "tipo": "Departamentos",
       "direccion": "Maximo Paz 258",
@@ -657,30 +691,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:43.875Z"
-    },
-    {
-      "id": "678117",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/678117",
-      "titulo": "Departamento 2 Ambientes Con Cochera En Venta De Pozo - Monte Grande",
-      "precio": "USD 67.000",
-      "operacion": "Venta",
-      "tipo": "Departamentos",
-      "direccion": "General Rodriguez 1051",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "50m²",
-      "supTotal": "50m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "Departamento mono ambiente premium con cochera en Venta - A estrenar - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:47.769Z"
+      "scrapedAt": "2026-10-23T15:44:22.069Z"
     },
     {
       "id": "542852",
@@ -703,7 +714,7 @@
         "Acepta permuta"
       ],
       "descripcion": "Departamento 2 Ambientes con cochera cubierta en Venta APTO CREDITO - Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:51.125Z"
+      "scrapedAt": "2026-10-23T15:44:24.751Z"
     },
     {
       "id": "720688",
@@ -722,10 +733,34 @@
       "comodidades": [],
       "financiacion": [
         "Apto Crédito",
-        "Anticipo y cuotas"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:54.530Z"
+      "scrapedAt": "2026-10-23T15:44:27.415Z"
+    },
+    {
+      "id": "662476",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/662476",
+      "titulo": "Edificio Departamentos En Venta Desde El Pozo. Monte Grande",
+      "precio": "USD 74.112",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Maximo Paz 258",
+      "zona": "Monte Grande",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "51m²",
+      "supTotal": "59m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
+      "scrapedAt": "2026-10-23T15:44:30.344Z"
     },
     {
       "id": "334249",
@@ -739,15 +774,58 @@
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
-      "supCubierta": null,
+      "supCubierta": "45m²",
       "supTotal": "45m²",
       "comodidades": [],
       "financiacion": [
         "Apto Crédito",
-        "Anticipo y cuotas"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:20:57.636Z"
+      "scrapedAt": "2026-10-23T15:44:32.993Z"
+    },
+    {
+      "id": "530017",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/530017",
+      "titulo": "Lote En Venta - Monte Grande - 1 Cuadra De La Estacion",
+      "precio": "USD 75.000",
+      "operacion": "Venta",
+      "tipo": "Lotes / Terrenos",
+      "direccion": "Benavidez 220",
+      "zona": "Monte Grande",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": null,
+      "supCubierta": null,
+      "supTotal": "182m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:44:35.665Z"
+    },
+    {
+      "id": "720672",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/720672",
+      "titulo": "Departamento 2 Ambientes Con Cochera Cubierta En Venta Apto Credito - Frente A Estacion Monte Grande",
+      "precio": "USD 76.000",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Ocantos 150",
+      "zona": "Monte Grande",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "49m²",
+      "supTotal": "50m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
+      "scrapedAt": "2026-10-23T15:44:38.619Z"
     },
     {
       "id": "452466",
@@ -768,29 +846,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:00.680Z"
-    },
-    {
-      "id": "720672",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/720672",
-      "titulo": "Departamento 2 Ambientes Con Cochera Cubierta En Venta Apto Credito - Frente A Estacion Monte Grande",
-      "precio": "USD 76.000",
-      "operacion": "Venta",
-      "tipo": "Departamentos",
-      "direccion": "Ocantos 150",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "49m²",
-      "supTotal": "50m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas"
-      ],
-      "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:21:03.608Z"
+      "scrapedAt": "2026-10-23T15:44:41.280Z"
     },
     {
       "id": "678106",
@@ -809,10 +865,30 @@
       "comodidades": [],
       "financiacion": [
         "Apto Crédito",
-        "Anticipo y cuotas"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:21:06.701Z"
+      "scrapedAt": "2026-10-23T15:44:43.792Z"
+    },
+    {
+      "id": "362895",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/362895",
+      "titulo": "Departamento + Local + Deposito En Venta Sobre Lote De 10Mts X 74Mts - Ranchos",
+      "precio": "USD 80.000",
+      "operacion": "Venta",
+      "tipo": "Locales",
+      "direccion": "Obdulio Hernandez Castro 2369",
+      "zona": "Ranchos",
+      "ambientes": "3",
+      "dormitorios": "1",
+      "banos": "2",
+      "supCubierta": "192m²",
+      "supTotal": "740m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:44:46.401Z"
     },
     {
       "id": "652514",
@@ -829,9 +905,11 @@
       "supCubierta": "102m²",
       "supTotal": "300m²",
       "comodidades": [],
-      "financiacion": [],
+      "financiacion": [
+        "Apto Crédito"
+      ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:09.497Z"
+      "scrapedAt": "2026-10-23T15:44:49.051Z"
     },
     {
       "id": "678113",
@@ -850,10 +928,53 @@
       "comodidades": [],
       "financiacion": [
         "Apto Crédito",
-        "Anticipo y cuotas"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
       "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:21:12.710Z"
+      "scrapedAt": "2026-10-23T15:44:51.732Z"
+    },
+    {
+      "id": "448686",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/448686",
+      "titulo": "Casa 4 Ambientes En Venta - Monte Grande, Apto Credito",
+      "precio": "USD 84.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Eugenio Rebizo 286",
+      "zona": "Monte Grande",
+      "ambientes": "4",
+      "dormitorios": "2",
+      "banos": "2",
+      "supCubierta": "90m²",
+      "supTotal": "145m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:44:54.629Z"
+    },
+    {
+      "id": "604032",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/604032",
+      "titulo": "Casa 4 Ambientes Amplia Con Jardin En Monte Grande - Venta",
+      "precio": "USD 85.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Chimondegui 1024",
+      "zona": "Monte Grande",
+      "ambientes": "4",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "100m²",
+      "supTotal": "576m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:44:57.230Z"
     },
     {
       "id": "714641",
@@ -870,92 +991,37 @@
       "supCubierta": "110m²",
       "supTotal": "450m²",
       "comodidades": [],
-      "financiacion": [],
+      "financiacion": [
+        "Apto Crédito"
+      ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:16.066Z"
+      "scrapedAt": "2026-10-23T15:44:59.905Z"
     },
     {
-      "id": "604032",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/604032",
-      "titulo": "Casa 4 Ambientes Amplia Con Jardin En Monte Grande - Venta",
-      "precio": "USD 86.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Chimondegui 1024",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "2",
-      "banos": "1",
-      "supCubierta": "100m²",
-      "supTotal": "576m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:19.207Z"
-    },
-    {
-      "id": "289183",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/289183",
-      "titulo": "Chalet 3 Dormitorios - Venta - Monte Grande",
-      "precio": "USD 88.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Recondo 1172",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "1",
-      "supCubierta": null,
-      "supTotal": "330m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:22.086Z"
-    },
-    {
-      "id": "448686",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/448686",
-      "titulo": "Chalet 4 Ambientes En Hermosa Zona Residencial - Venta - Monte Grande",
+      "id": "734328",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/734328",
+      "titulo": "Duplex 3 Dormitorios En Venta En Monte Grande",
       "precio": "USD 90.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Eugenio Rebizo 286",
+      "direccion": "Lavalle 544",
       "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
       "banos": "2",
-      "supCubierta": "90m²",
-      "supTotal": "145m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:25.109Z"
-    },
-    {
-      "id": "530017",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/530017",
-      "titulo": "Lote En Venta - Monte Grande - 1 Cuadra De La Estacion",
-      "precio": "USD 90.000",
-      "operacion": "Venta",
-      "tipo": "Lotes / Terrenos",
-      "direccion": "Benavidez 220",
-      "zona": "Monte Grande",
-      "ambientes": null,
-      "dormitorios": null,
-      "banos": null,
-      "supCubierta": null,
-      "supTotal": "182m²",
+      "supCubierta": "80m²",
+      "supTotal": "100m²",
       "comodidades": [],
       "financiacion": [
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:28.490Z"
+      "scrapedAt": "2026-10-23T15:45:02.672Z"
     },
     {
       "id": "718309",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/718309",
-      "titulo": "Casa 3 Dormitorios En Venta. Monte Grande",
+      "titulo": "Casa 3 Dormitorios Con Pileta En Venta - Monte Grande",
       "precio": "USD 96.000",
       "operacion": "Venta",
       "tipo": "Casas",
@@ -971,7 +1037,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:31.969Z"
+      "scrapedAt": "2026-10-23T15:45:05.636Z"
     },
     {
       "id": "518063",
@@ -992,7 +1058,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:34.569Z"
+      "scrapedAt": "2026-10-23T15:45:08.370Z"
     },
     {
       "id": "568422",
@@ -1013,28 +1079,7 @@
         "Apto Crédito"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:37.954Z"
-    },
-    {
-      "id": "714239",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/714239",
-      "titulo": "Oportunidad! Casa En Venta A Terminar En El Rodal. Canning - Monte Grande",
-      "precio": "USD 105.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Av. Pedro Dreyer 3539",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "4",
-      "banos": "2",
-      "supCubierta": "1222m²",
-      "supTotal": "176m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:41.225Z"
+      "scrapedAt": "2026-10-23T15:45:11.415Z"
     },
     {
       "id": "614863",
@@ -1052,10 +1097,33 @@
       "supTotal": "75m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
-      "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:21:44.183Z"
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:14.203Z"
+    },
+    {
+      "id": "673224",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/673224",
+      "titulo": "Departamentos En Venta - Proyecto De Pozo - Monte Grande",
+      "precio": "USD 109.147",
+      "operacion": "Venta",
+      "tipo": "Departamentos",
+      "direccion": "Maximo Paz 258",
+      "zona": "Monte Grande",
+      "ambientes": "3",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "77m²",
+      "supTotal": "85m²",
+      "comodidades": [],
+      "financiacion": [
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:17.201Z"
     },
     {
       "id": "557701",
@@ -1073,10 +1141,33 @@
       "supTotal": "71m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
-      "descripcion": "Departamento 2 ambientes con cochera cubierta en Venta APTO CREDITO - Frente a Estacion Monte Grande",
-      "scrapedAt": "2026-08-11T12:21:47.280Z"
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:19.835Z"
+    },
+    {
+      "id": "734389",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/734389",
+      "titulo": "Casa 4 Dormitorios En Venta. Monte Grande",
+      "precio": "USD 110.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Pellegrini 889",
+      "zona": "Monte Grande",
+      "ambientes": "4",
+      "dormitorios": "4",
+      "banos": "2",
+      "supCubierta": "158m²",
+      "supTotal": "245m²",
+      "comodidades": [],
+      "financiacion": [
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:22.572Z"
     },
     {
       "id": "556274",
@@ -1093,30 +1184,34 @@
       "supCubierta": null,
       "supTotal": "300m²",
       "comodidades": [],
-      "financiacion": [],
+      "financiacion": [
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:21:50.848Z"
+      "scrapedAt": "2026-10-23T15:45:25.172Z"
     },
     {
-      "id": "584436",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/584436",
-      "titulo": "Casa De 4 Dormitorios En Venta - Monte Grande",
-      "precio": "USD 120.000",
+      "id": "729507",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/729507",
+      "titulo": "Casa Con Financiacion 4 Ambientes Sobre Lote Grande - Venta Monte Grande",
+      "precio": "USD 116.000",
       "operacion": "Venta",
       "tipo": "Casas",
-      "direccion": "Manuel Wieman 722",
+      "direccion": "Pedro Dreyer 669",
       "zona": "Monte Grande",
       "ambientes": "4",
-      "dormitorios": "4",
+      "dormitorios": "3",
       "banos": "1",
-      "supCubierta": "111m²",
-      "supTotal": "300m²",
+      "supCubierta": "120m²",
+      "supTotal": "735m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
-      "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-08-11T12:21:54.427Z"
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:28.253Z"
     },
     {
       "id": "519139",
@@ -1134,10 +1229,12 @@
       "supTotal": "408m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
-      "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-08-11T12:21:57.915Z"
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:30.983Z"
     },
     {
       "id": "365820",
@@ -1156,29 +1253,26 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:01.593Z"
+      "scrapedAt": "2026-10-23T15:45:33.402Z"
     },
     {
-      "id": "362895",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/362895",
-      "titulo": "Excelente Propiedad Para Inversores!! --- Casa Y Local Sobre Lote De 10Mts X 74Mts --- Venta",
-      "precio": "USD 129.000",
+      "id": "728083",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/728083",
+      "titulo": "Local Gastronómico A Estrenar En Venta. Uribelarrea, Cañuelas",
+      "precio": "USD 125.000",
       "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Obdulio Hernandez Castro 2369",
-      "zona": "Ranchos",
-      "ambientes": "3",
-      "dormitorios": "3",
+      "tipo": "Locales",
+      "direccion": "Valeria de Crotto 1055",
+      "zona": "Uribelarrea",
+      "ambientes": null,
+      "dormitorios": null,
       "banos": null,
-      "supCubierta": null,
-      "supTotal": "3m²",
+      "supCubierta": "81m²",
+      "supTotal": "81m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Acepta permuta"
-      ],
-      "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-08-11T12:22:05.266Z"
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:36.155Z"
     },
     {
       "id": "373429",
@@ -1199,8 +1293,8 @@
         "Apto Crédito",
         "Acepta permuta"
       ],
-      "descripcion": "Excelente propiedad para inversores!! --- CASA y LOCAL sobre LOTE de 10mts x 74mts --- Venta",
-      "scrapedAt": "2026-08-11T12:22:08.499Z"
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:38.859Z"
     },
     {
       "id": "718595",
@@ -1222,7 +1316,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:11.712Z"
+      "scrapedAt": "2026-10-23T15:45:41.574Z"
     },
     {
       "id": "499131",
@@ -1244,7 +1338,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:14.925Z"
+      "scrapedAt": "2026-10-23T15:45:44.824Z"
     },
     {
       "id": "371412",
@@ -1266,7 +1360,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:18.333Z"
+      "scrapedAt": "2026-10-23T15:45:47.702Z"
     },
     {
       "id": "667058",
@@ -1288,7 +1382,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:21.714Z"
+      "scrapedAt": "2026-10-23T15:45:50.588Z"
     },
     {
       "id": "593042",
@@ -1306,10 +1400,10 @@
       "supTotal": "854m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:25.940Z"
+      "scrapedAt": "2026-10-23T15:45:53.292Z"
     },
     {
       "id": "705227",
@@ -1326,11 +1420,54 @@
       "supCubierta": "130m²",
       "supTotal": "400m²",
       "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:45:56.114Z"
+    },
+    {
+      "id": "531659",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/531659",
+      "titulo": "Lote De 10X50 Monte Grande A 2 1/2 Cuadras De La Estación, Zona Centro",
+      "precio": "USD 145.000",
+      "operacion": "Venta",
+      "tipo": "Lotes / Terrenos",
+      "direccion": "Azcuenaga 154",
+      "zona": "Monte Grande",
+      "ambientes": "3",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "100m²",
+      "supTotal": "500m²",
+      "comodidades": [],
       "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:30.247Z"
+      "scrapedAt": "2026-10-23T15:45:58.840Z"
+    },
+    {
+      "id": "531660",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/531660",
+      "titulo": "Chalet A Reciclar A 2 1/2Cuadras De La Estación Monte Grande--Lote 10X50",
+      "precio": "USD 145.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Azcuenaga 154",
+      "zona": "Monte Grande",
+      "ambientes": "4",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "117m²",
+      "supTotal": "500m²",
+      "comodidades": [],
+      "financiacion": [
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:46:01.636Z"
     },
     {
       "id": "539259",
@@ -1352,7 +1489,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:34.165Z"
+      "scrapedAt": "2026-10-23T15:46:04.396Z"
     },
     {
       "id": "651521",
@@ -1375,7 +1512,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:37.512Z"
+      "scrapedAt": "2026-10-23T15:46:07.307Z"
     },
     {
       "id": "579720",
@@ -1397,26 +1534,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:40.438Z"
-    },
-    {
-      "id": "520906",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/520906",
-      "titulo": "Excelentes Consultorios Médicos U Oficinas Reciclados A Estrenar!!",
-      "precio": "USD 150.000",
-      "operacion": "Venta",
-      "tipo": null,
-      "direccion": "Alem 672",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": null,
-      "banos": null,
-      "supCubierta": "96m²",
-      "supTotal": "96m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:43.532Z"
+      "scrapedAt": "2026-10-23T15:46:09.950Z"
     },
     {
       "id": "519118",
@@ -1438,7 +1556,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:46.686Z"
+      "scrapedAt": "2026-10-23T15:46:12.727Z"
     },
     {
       "id": "482386",
@@ -1461,7 +1579,30 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:49.871Z"
+      "scrapedAt": "2026-10-23T15:46:15.604Z"
+    },
+    {
+      "id": "728082",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/728082",
+      "titulo": "Casa Quinta En Venta Zona Céntrica. Uribelarrea, Cañuelas",
+      "precio": "USD 155.000",
+      "operacion": "Venta",
+      "tipo": "Casas",
+      "direccion": "Hermana Gufani 164",
+      "zona": "Uribelarrea",
+      "ambientes": "4",
+      "dormitorios": "3",
+      "banos": "2",
+      "supCubierta": "144m²",
+      "supTotal": "1200m²",
+      "comodidades": [],
+      "financiacion": [
+        "Apto Crédito",
+        "Anticipo y cuotas",
+        "Acepta permuta"
+      ],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:46:18.313Z"
     },
     {
       "id": "540925",
@@ -1484,7 +1625,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:53.328Z"
+      "scrapedAt": "2026-10-23T15:46:21.379Z"
     },
     {
       "id": "537515",
@@ -1507,30 +1648,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:22:56.992Z"
-    },
-    {
-      "id": "384154",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/384154",
-      "titulo": "Chalet De Categoría A Reciclar",
-      "precio": "USD 160.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Ocantos 680",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "4",
-      "supCubierta": "200m²",
-      "supTotal": "200m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:00.496Z"
+      "scrapedAt": "2026-10-23T15:46:24.042Z"
     },
     {
       "id": "542926",
@@ -1553,30 +1671,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:04.667Z"
-    },
-    {
-      "id": "525548",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/525548",
-      "titulo": "Duplex 4 Ambientes En Venta Cochera Y Jardin Apto Credito - Lomas De Zamora - Oportunidad",
-      "precio": "USD 167.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Almafuerte 433",
-      "zona": "Lomas de Zamora",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "2",
-      "supCubierta": "100m²",
-      "supTotal": "200m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito",
-        "Anticipo y cuotas",
-        "Acepta permuta"
-      ],
-      "descripcion": "Duplex 4 Ambientes En Venta cochera y jardin APTO CREDITO - Lomas De Zamora - OPORTUNIDAD",
-      "scrapedAt": "2026-08-11T12:23:09.065Z"
+      "scrapedAt": "2026-10-23T15:46:27.437Z"
     },
     {
       "id": "463809",
@@ -1594,10 +1689,12 @@
       "supTotal": "75m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito Hipotecario"
+        "Apto Crédito Hipotecario",
+        "Anticipo y cuotas",
+        "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:13.126Z"
+      "scrapedAt": "2026-10-23T15:46:29.976Z"
     },
     {
       "id": "479338",
@@ -1615,11 +1712,12 @@
       "supTotal": "500m²",
       "comodidades": [],
       "financiacion": [
+        "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:16.757Z"
+      "scrapedAt": "2026-10-23T15:46:32.581Z"
     },
     {
       "id": "526646",
@@ -1637,11 +1735,12 @@
       "supTotal": "641m²",
       "comodidades": [],
       "financiacion": [
+        "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:20.084Z"
+      "scrapedAt": "2026-10-23T15:46:35.336Z"
     },
     {
       "id": "695177",
@@ -1659,32 +1758,12 @@
       "supTotal": "375m²",
       "comodidades": [],
       "financiacion": [
+        "Apto Crédito",
         "Anticipo y cuotas",
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:22.961Z"
-    },
-    {
-      "id": "423612",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/423612",
-      "titulo": "Hermosa Casa En Barrio Villa Adriana Cañuelas",
-      "precio": "USD 190.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Ruta 205 Km 54,4",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "2",
-      "supCubierta": "140m²",
-      "supTotal": "600m²",
-      "comodidades": [],
-      "financiacion": [
-        "Acepta permuta"
-      ],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:23:26.184Z"
+      "scrapedAt": "2026-10-23T15:46:38.091Z"
     },
     {
       "id": "564734",
@@ -1702,31 +1781,11 @@
       "supTotal": "460m²",
       "comodidades": [],
       "financiacion": [
-        "Apto Crédito"
+        "Apto Crédito",
+        "Acepta permuta"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-08-11T12:23:29.578Z"
-    },
-    {
-      "id": "464122",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/464122",
-      "titulo": "Chalet Con Local. Impecable Estado!",
-      "precio": "USD 210.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Colon 620",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "3",
-      "supCubierta": null,
-      "supTotal": "300m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-08-11T12:23:33.123Z"
+      "scrapedAt": "2026-10-23T15:46:41.030Z"
     },
     {
       "id": "516866",
@@ -1747,7 +1806,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-08-11T12:23:36.859Z"
+      "scrapedAt": "2026-10-23T15:46:44.085Z"
     },
     {
       "id": "658731",
@@ -1759,7 +1818,7 @@
       "direccion": "San Martin 76",
       "zona": "Monte Grande",
       "ambientes": "4",
-      "dormitorios": "2",
+      "dormitorios": "3",
       "banos": "2",
       "supCubierta": "180m²",
       "supTotal": null,
@@ -1768,7 +1827,7 @@
         "Apto Crédito"
       ],
       "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-08-11T12:23:40.471Z"
+      "scrapedAt": "2026-10-23T15:46:46.788Z"
     },
     {
       "id": "525107",
@@ -1789,28 +1848,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-08-11T12:23:43.630Z"
-    },
-    {
-      "id": "372322",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/372322",
-      "titulo": "Casa 5 Ambientes En Venta - Monte Grande - Lote 12 X 50",
-      "precio": "USD 250.000",
-      "operacion": "Venta",
-      "tipo": "Casas",
-      "direccion": "Ocantos 832",
-      "zona": "Monte Grande",
-      "ambientes": "4",
-      "dormitorios": "4",
-      "banos": "2",
-      "supCubierta": null,
-      "supTotal": "600m²",
-      "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "Hermosa CASA de 3 dormitorios c/piscina en VENTA, Monte Grande APTA CREDITO BANCARIO",
-      "scrapedAt": "2026-08-11T12:23:46.946Z"
+      "scrapedAt": "2026-10-23T15:46:49.265Z"
     },
     {
       "id": "556996",
@@ -1829,7 +1867,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-08-11T12:23:50.335Z"
+      "scrapedAt": "2026-10-23T15:46:51.838Z"
     },
     {
       "id": "590522",
@@ -1850,7 +1888,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-08-11T12:23:53.932Z"
+      "scrapedAt": "2026-10-23T15:46:54.305Z"
     },
     {
       "id": "447415",
@@ -1867,11 +1905,28 @@
       "supCubierta": "460m²",
       "supTotal": "460m²",
       "comodidades": [],
-      "financiacion": [
-        "Apto Crédito"
-      ],
-      "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-08-11T12:23:57.360Z"
+      "financiacion": [],
+      "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
+      "scrapedAt": "2026-10-23T15:46:56.755Z"
+    },
+    {
+      "id": "482044",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/482044",
+      "titulo": "Locales Comerciales + 3 Departamentos En Venta Sobre Avenida De Mayo. Ramos Mejia",
+      "precio": "USD 300.000",
+      "operacion": "Venta",
+      "tipo": "Locales",
+      "direccion": "Avenida de Mayo 2100",
+      "zona": "Ramos Mejía",
+      "ambientes": "4",
+      "dormitorios": "3",
+      "banos": "4",
+      "supCubierta": "400m²",
+      "supTotal": "221m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
+      "scrapedAt": "2026-10-23T15:46:59.340Z"
     },
     {
       "id": "499935",
@@ -1892,26 +1947,7 @@
         "Apto Crédito"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-08-11T12:24:01.124Z"
-    },
-    {
-      "id": "482044",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/482044",
-      "titulo": "Locales Comerciales + 3 Departamentos En Venta Sobre Avenida De Mayo. Ramos Mejia",
-      "precio": "USD 350.000",
-      "operacion": "Venta",
-      "tipo": "Locales",
-      "direccion": "Avenida de Mayo 2100",
-      "zona": "Ramos Mejía",
-      "ambientes": "4",
-      "dormitorios": "3",
-      "banos": "4",
-      "supCubierta": "400m²",
-      "supTotal": "221m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-08-11T12:24:04.608Z"
+      "scrapedAt": "2026-10-23T15:47:02.133Z"
     },
     {
       "id": "441942",
@@ -1933,7 +1969,7 @@
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-08-11T12:24:08.388Z"
+      "scrapedAt": "2026-10-23T15:47:05.062Z"
     },
     {
       "id": "406334",
@@ -1954,7 +1990,7 @@
         "Apto Crédito"
       ],
       "descripcion": "ESTACIONAMIENTO / COCHERAS en Venta a 4 cuadras de la estacion de Monte Grande - LOTE",
-      "scrapedAt": "2026-08-11T12:24:12.401Z"
+      "scrapedAt": "2026-10-23T15:47:07.723Z"
     },
     {
       "id": "499354",
@@ -1976,7 +2012,7 @@
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-08-11T12:24:16.381Z"
+      "scrapedAt": "2026-10-23T15:47:10.441Z"
     },
     {
       "id": "612999",
@@ -1998,7 +2034,7 @@
         "Acepta permuta"
       ],
       "descripcion": "PARA INVERSIONISTA 6 departamentos DE 2 y 3 AMBIENTES y 1 casa en dos plantas en Luis Guillon",
-      "scrapedAt": "2026-08-11T12:24:20.770Z"
+      "scrapedAt": "2026-10-23T15:47:13.303Z"
     },
     {
       "id": "482389",
@@ -2021,7 +2057,7 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:24.418Z"
+      "scrapedAt": "2026-10-23T15:47:15.981Z"
     },
     {
       "id": "662387",
@@ -2044,13 +2080,13 @@
         "Acepta permuta"
       ],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:27.616Z"
+      "scrapedAt": "2026-10-23T15:47:18.626Z"
     },
     {
       "id": "565125",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/565125",
       "titulo": "Excepcional Esquina ---- Frente A La Clinica Monte Grande",
-      "precio": "USD 350.000",
+      "precio": "USD 300.000",
       "operacion": "Venta",
       "tipo": "Locales",
       "direccion": null,
@@ -2063,7 +2099,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-08-11T12:24:31.274Z"
+      "scrapedAt": "2026-10-23T15:47:21.204Z"
     },
     {
       "id": "605335",
@@ -2082,13 +2118,13 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:34.762Z"
+      "scrapedAt": "2026-10-23T15:47:24.571Z"
     },
     {
       "id": "699651",
       "url": "https://www.fracchiapropiedades.com.ar/propiedad/699651",
       "titulo": "Departamento 2 Ambientes Con Patio Compartido - Alquiler Monte Grande",
-      "precio": "$ 390.000",
+      "precio": "$ 350.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
       "direccion": "Azcuenaga 1114",
@@ -2101,7 +2137,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:38.361Z"
+      "scrapedAt": "2026-10-23T15:47:27.255Z"
     },
     {
       "id": "589332",
@@ -2120,7 +2156,26 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:42.291Z"
+      "scrapedAt": "2026-10-23T15:47:29.828Z"
+    },
+    {
+      "id": "579308",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/579308",
+      "titulo": "Local En Excelente Ubicacion - Alquiler - El Jaguel - A Metros De La Estacion",
+      "precio": "$ 400.000",
+      "operacion": "Alquiler",
+      "tipo": "Locales",
+      "direccion": "El ceibo 106",
+      "zona": "El Jaguel",
+      "ambientes": null,
+      "dormitorios": null,
+      "banos": "2",
+      "supCubierta": "60m²",
+      "supTotal": "60m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:47:32.501Z"
     },
     {
       "id": "605338",
@@ -2139,26 +2194,26 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:45.805Z"
+      "scrapedAt": "2026-10-23T15:47:35.236Z"
     },
     {
-      "id": "269920",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/269920",
-      "titulo": "Departamento 2 Ambientes Centrico - Alquiler Monte Grande",
-      "precio": "$ 490.000",
+      "id": "732703",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/732703",
+      "titulo": "Departamento 2 Ambientes - Alquiler Monte Grande Centro",
+      "precio": "$ 465.000",
       "operacion": "Alquiler",
       "tipo": "Departamentos",
-      "direccion": "Rivadavia 581",
+      "direccion": "Rivadavia 591",
       "zona": "Monte Grande",
       "ambientes": "2",
       "dormitorios": "1",
       "banos": "1",
-      "supCubierta": "37m²",
-      "supTotal": "37m²",
+      "supCubierta": "38m²",
+      "supTotal": "38m²",
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:49.541Z"
+      "scrapedAt": "2026-10-23T15:47:37.922Z"
     },
     {
       "id": "552799",
@@ -2177,7 +2232,45 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:53.281Z"
+      "scrapedAt": "2026-10-23T15:47:41.432Z"
+    },
+    {
+      "id": "647238",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/647238",
+      "titulo": "Departamento Mono-Ambiente Con Cochera En Alquiler - Monte Grande",
+      "precio": "$ 495.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "Saavedra 224",
+      "zona": "Monte Grande",
+      "ambientes": "1",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "28m²",
+      "supTotal": "32m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:47:44.241Z"
+    },
+    {
+      "id": "732702",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/732702",
+      "titulo": "Departamento 2 Ambientes Con Cochera - Alquiler Monte Grande Centro",
+      "precio": "$ 495.000",
+      "operacion": "Alquiler",
+      "tipo": "Departamentos",
+      "direccion": "Rivadavia 597",
+      "zona": "Monte Grande",
+      "ambientes": "2",
+      "dormitorios": "1",
+      "banos": "1",
+      "supCubierta": "38m²",
+      "supTotal": "38m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:47:47.015Z"
     },
     {
       "id": "519036",
@@ -2196,140 +2289,7 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:24:57.563Z"
-    },
-    {
-      "id": "724742",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724742",
-      "titulo": "Departamento Monoambiente En Alquiler En Monte Grande",
-      "precio": "$ 520.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Parish Robertson 141",
-      "zona": "Monte Grande",
-      "ambientes": "1",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "31m²",
-      "supTotal": "31m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:01.535Z"
-    },
-    {
-      "id": "724740",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/724740",
-      "titulo": "Departamento Monoambiente En Alquiler En Monte Grande",
-      "precio": "$ 520.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Vicente Lopez 672",
-      "zona": "Monte Grande",
-      "ambientes": "1",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "31m²",
-      "supTotal": "31m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:05.624Z"
-    },
-    {
-      "id": "714644",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/714644",
-      "titulo": "Departamento 2 Ambientes Con Cochera - Centrico - Alquiler Monte Grande",
-      "precio": "$ 520.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Rivadavia 581",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "35m²",
-      "supTotal": "35m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:09.490Z"
-    },
-    {
-      "id": "343389",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/343389",
-      "titulo": "Departamento 3 Ambientes Centrico En Alquiler - Tristan Suarez Centro",
-      "precio": "$ 550.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Gaddini 81",
-      "zona": "Tristán Suárez",
-      "ambientes": "3",
-      "dormitorios": "2",
-      "banos": "1",
-      "supCubierta": "75m²",
-      "supTotal": null,
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:12.887Z"
-    },
-    {
-      "id": "718325",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/718325",
-      "titulo": "Departamento 2 Ambientes Con Cochera En Alquiler. Monte Grande",
-      "precio": "$ 590.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Rotta 231",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "42m²",
-      "supTotal": "42m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:16.512Z"
-    },
-    {
-      "id": "411120",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/411120",
-      "titulo": "Departamento - Duplex 3 Ambientes Con Cochera Y Patio Trasero - Monte Grande",
-      "precio": "$ 600.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Rivadavia 1680",
-      "zona": "Monte Grande",
-      "ambientes": "3",
-      "dormitorios": "2",
-      "banos": "2",
-      "supCubierta": "75m²",
-      "supTotal": "75m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:20.307Z"
-    },
-    {
-      "id": "714061",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/714061",
-      "titulo": "Departamento 2 Ambientes Premium Con Cochera - Alquiler Monte Grande",
-      "precio": "$ 850.000",
-      "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Dorrego 453",
-      "zona": "Monte Grande",
-      "ambientes": "2",
-      "dormitorios": "1",
-      "banos": "1",
-      "supCubierta": "47m²",
-      "supTotal": "55m²",
-      "comodidades": [],
-      "financiacion": [],
-      "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:24.062Z"
+      "scrapedAt": "2026-10-23T15:47:49.866Z"
     },
     {
       "id": "714634",
@@ -2348,45 +2308,83 @@
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:27.891Z"
+      "scrapedAt": "2026-10-23T15:47:52.726Z"
     },
     {
-      "id": "714904",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/714904",
-      "titulo": "Duplex 3 Dormitorios En Alquiler En Monte Grande",
-      "precio": "$ 1.100.000",
+      "id": "676565",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/676565",
+      "titulo": "Casa De 2 Dormitorios En Alquiler En Monte Grande",
+      "precio": "$ 980.000",
       "operacion": "Alquiler",
-      "tipo": "Departamentos",
-      "direccion": "Gral Lavalle 544",
+      "tipo": "Casas",
+      "direccion": "Pedro Dreyer 515",
+      "zona": "Monte Grande",
+      "ambientes": "3",
+      "dormitorios": "2",
+      "banos": "1",
+      "supCubierta": "80m²",
+      "supTotal": "300m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "Casa de 3 dormitorios con Amplio Quincho p/diversas utilidades - Alquiler - Monte Grande",
+      "scrapedAt": "2026-10-23T15:47:55.343Z"
+    },
+    {
+      "id": "251335",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/251335",
+      "titulo": "Casa De 3 Dormitorios Con Amplio Quincho P/Diversas Utilidades - Alquiler - Monte Grande",
+      "precio": "$ 1.080.000",
+      "operacion": "Alquiler",
+      "tipo": "Casas",
+      "direccion": "Garzón 666",
       "zona": "Monte Grande",
       "ambientes": "4",
       "dormitorios": "3",
-      "banos": "2",
-      "supCubierta": "80m²",
-      "supTotal": "100m²",
+      "banos": "1",
+      "supCubierta": null,
+      "supTotal": "500m²",
+      "comodidades": [],
+      "financiacion": [],
+      "descripcion": "Casa de 3 dormitorios con Amplio Quincho p/diversas utilidades - Alquiler - Monte Grande",
+      "scrapedAt": "2026-10-23T15:47:57.953Z"
+    },
+    {
+      "id": "731996",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/731996",
+      "titulo": "Local Comercial 69M2 En Alquiler. Monte Grande",
+      "precio": "$ 1.100.000",
+      "operacion": "Alquiler",
+      "tipo": "Locales",
+      "direccion": "Enrique Santamarina 728",
+      "zona": "Monte Grande",
+      "ambientes": "1",
+      "dormitorios": null,
+      "banos": "1",
+      "supCubierta": "69m²",
+      "supTotal": "69m²",
       "comodidades": [],
       "financiacion": [],
       "descripcion": "",
-      "scrapedAt": "2026-08-11T12:25:31.674Z"
+      "scrapedAt": "2026-10-23T15:48:00.810Z"
     },
     {
-      "id": "533357",
-      "url": "https://www.fracchiapropiedades.com.ar/propiedad/533357",
-      "titulo": "Local 240M2 Sobre Av. Santamarina. Monte Grande",
-      "precio": "$ 2.700.000",
+      "id": "652394",
+      "url": "https://www.fracchiapropiedades.com.ar/propiedad/652394",
+      "titulo": "¡Casa En Esquina Estratégica Para Uso Comercial! – Monte Grande",
+      "precio": "$ 2.300.000",
       "operacion": "Alquiler",
       "tipo": "Locales",
-      "direccion": "Enrique Santamarina 311",
+      "direccion": "Azcuenaga 297",
       "zona": "Monte Grande",
-      "ambientes": null,
+      "ambientes": "4",
       "dormitorios": null,
-      "banos": "2",
-      "supCubierta": "240m²",
-      "supTotal": "240m²",
+      "banos": null,
+      "supCubierta": "105m²",
+      "supTotal": "182m²",
       "comodidades": [],
       "financiacion": [],
-      "descripcion": "Locales comerciales + 3 departamentos en venta sobre Avenida de Mayo. Ramos Mejia",
-      "scrapedAt": "2026-08-11T12:25:35.385Z"
+      "descripcion": "",
+      "scrapedAt": "2026-10-23T15:48:03.661Z"
     }
   ]
 }

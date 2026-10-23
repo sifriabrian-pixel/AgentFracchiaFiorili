@@ -144,7 +144,7 @@ export async function askClaude(history) {
   for (let attempt = 1; attempt <= MAX_RETRIES + 1; attempt++) {
     try {
       response = await client.messages.create({
-        model:      'claude-sonnet-4-6',
+        model:      'claude-sonnet-5-5',
         max_tokens: 1024,
         // Prompt caching — el system prompt se cachea y se cobra 90% menos en llamadas repetidas
         system: [

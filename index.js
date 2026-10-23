@@ -54,6 +54,13 @@ if (req.url === '/stats') {
   return
 }
 
+if (req.url === '/reload-props') {
+  reloadProperties()
+  res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
+  res.end('OK — propiedades recargadas')
+  return
+}
+
 if (req.url === '/qr') {
     if (isConnected) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
