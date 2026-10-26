@@ -168,7 +168,8 @@ export async function askClaude(history) {
     }
   }
 
-  const rawText = response.content[0]?.text || 'Disculpá, tuve un problema técnico. Intentá de nuevo 🙏'
+  const textBlock = response.content.find(b => b.type === 'text')
+  const rawText = textBlock?.text || 'Disculpá, tuve un problema técnico. Intentá de nuevo 🙏'
   const triggers = parseTriggers(rawText)
   const text     = cleanText(rawText)
 
